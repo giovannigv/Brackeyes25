@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=38 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://dt78ulqtsoup5" path="res://scenes/botão_1.tscn" id="5_lovnl"]
 [ext_resource type="PackedScene" uid="uid://c7emex2wa3uw2" path="res://scenes/botão_2.tscn" id="6_5vyx7"]
 [ext_resource type="PackedScene" uid="uid://dnearrcq5yimx" path="res://scenes/botão_3.tscn" id="7_jw5hu"]
+[ext_resource type="PackedScene" uid="uid://cj2dfx21cqp1l" path="res://scenes/dropzone.tscn" id="8_8d3mv"]
+[ext_resource type="PackedScene" uid="uid://qad1g2kbaoan" path="res://scenes/objeto.tscn" id="8_o7glw"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p2rcx"]
 particles_animation = true
@@ -229,3 +231,13 @@ scale = Vector2(0.4, 0.4)
 position = Vector2(169, 137)
 rotation = -0.436332
 scale = Vector2(0.3, 0.3)
+
+[node name="Dropzone" parent="." instance=ExtResource("8_8d3mv")]
+position = Vector2(399, 147)
+rotation = 0.436332
+scale = Vector2(0.2, 0.2)
+
+[node name="Objeto" parent="." instance=ExtResource("8_o7glw")]
+position = Vector2(399, 147)
+rotation = 0.436332
+scale = Vector2(0.125, 0.125)
