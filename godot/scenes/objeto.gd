@@ -36,7 +36,7 @@ func _on_area_2d_mouse_entered() -> void:
 #Quando o mouse sai, aumenta levemente a escala do botão para ressaltar que é interativo
 func _on_area_2d_mouse_exited() -> void:
 	if not Global.is_dragging:
-		draggable = true
+		draggable = false
 		scale = Vector2(scale.x + 0.01, scale.y + 0.01)
 
 #Se o objeto tocou na dropzone, altera a cor dela
