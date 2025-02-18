@@ -12,9 +12,10 @@ func _ready() -> void:
 	pause_overlay.game_exited.connect(_save_game)
 
 func _process(_delta: float) -> void:
-	var intensidade = 1.0 - ($Timer.wait_time * 5/100)
+	var intensidade = 1.0 - ($Timer.time_left * 5/100)
 	$GPUParticles2D.process_material.initial_velocity_min = intensidade*50
 	$GPUParticles2D.process_material.spread = intensidade*45
+	$GPUParticles2D.set_self_modulate(Color(get_self_modulate().r - intensidade, get_self_modulate().g, get_self_modulate().b - intensidade))
 
 func _input(event) -> void:
 	if event.is_action_pressed("pause") and not pause_overlay.visible:
