@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://qad1g2kbaoan"]
 
-[ext_resource type="Texture2D" uid="uid://dv1p7oeilkg10" path="res://art/objeto.png" id="1_2cey0"]
 [ext_resource type="Script" path="res://scenes/objeto.gd" id="1_ekv24"]
+[ext_resource type="Texture2D" uid="uid://bku6xhvtbsoua" path="res://art/mug.jpg" id="2_jpn7g"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngaa"]
 size = Vector2(336, 336)
@@ -11,7 +11,7 @@ script = ExtResource("1_ekv24")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_2cey0")
+texture = ExtResource("2_jpn7g")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)

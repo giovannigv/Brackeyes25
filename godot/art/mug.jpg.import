@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blxcksmbl02ac"
-path="res://.godot/imported/objeto.png-d44a144d360dfb20aeb64e8200a7a35f.ctex"
+uid="uid://bku6xhvtbsoua"
+path="res://.godot/imported/mug.jpg-7a40fcb951b94044fca74204713d0c41.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/objeto.png"
-dest_files=["res://.godot/imported/objeto.png-d44a144d360dfb20aeb64e8200a7a35f.ctex"]
+source_file="res://art/mug.jpg"
+dest_files=["res://.godot/imported/mug.jpg-7a40fcb951b94044fca74204713d0c41.ctex"]
 
 [params]
 

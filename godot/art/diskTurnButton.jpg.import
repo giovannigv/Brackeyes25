@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blxcksmbl02ac"
-path="res://.godot/imported/objeto.png-d44a144d360dfb20aeb64e8200a7a35f.ctex"
+uid="uid://hqubm15j36uv"
+path="res://.godot/imported/diskTurnButton.jpg-f06331bbe9dbe77b3b56000a26bb5d17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/objeto.png"
-dest_files=["res://.godot/imported/objeto.png-d44a144d360dfb20aeb64e8200a7a35f.ctex"]
+source_file="res://art/diskTurnButton.jpg"
+dest_files=["res://.godot/imported/diskTurnButton.jpg-f06331bbe9dbe77b3b56000a26bb5d17.ctex"]
 
 [params]
 

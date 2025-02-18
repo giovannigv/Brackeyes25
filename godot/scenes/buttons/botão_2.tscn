@@ -1,16 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://dnearrcq5yimx"]
+[gd_scene load_steps=4 format=3 uid="uid://c7emex2wa3uw2"]
 
-[ext_resource type="Texture2D" uid="uid://uo4r5fl0ue0l" path="res://art/botão 3.png" id="1_frbiv"]
-[ext_resource type="Script" path="res://scenes/botão.gd" id="2_q70y7"]
+[ext_resource type="Texture2D" uid="uid://ikvyuvdc43j3" path="res://art/botão 2.png" id="1_tbscw"]
+[ext_resource type="Script" path="res://scenes/buttons/game_button.gd" id="2_qqnuy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngaa"]
-size = Vector2(62, 62)
+size = Vector2(192, 56)
 
 [node name="Botão" type="Node2D"]
-script = ExtResource("2_q70y7")
+script = ExtResource("2_qqnuy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_frbiv")
+texture = ExtResource("1_tbscw")
 
 [node name="Area2D" type="Area2D" parent="."]
 

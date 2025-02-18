@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://blxcksmbl02ac"
-path="res://.godot/imported/objeto.png-d44a144d360dfb20aeb64e8200a7a35f.ctex"
+uid="uid://bm7fa6c60p2jj"
+path="res://.godot/imported/turnBtn.jpg-bfae47ab7f04c7366589d3fe65e0cc2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/objeto.png"
-dest_files=["res://.godot/imported/objeto.png-d44a144d360dfb20aeb64e8200a7a35f.ctex"]
+source_file="res://turnBtn.jpg"
+dest_files=["res://.godot/imported/turnBtn.jpg-bfae47ab7f04c7366589d3fe65e0cc2a.ctex"]
 
 [params]
 
