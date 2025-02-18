@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ikvyuvdc43j3"
-path="res://.godot/imported/botão 2.png-bba885f2b1f6cf3047c4a61bf2637c95.ctex"
+uid="uid://dlb78bsdx084b"
+path="res://.godot/imported/btn_1.png-f52f9d8a58973bb89e95f5d273beccd9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/botão 2.png"
-dest_files=["res://.godot/imported/botão 2.png-bba885f2b1f6cf3047c4a61bf2637c95.ctex"]
+source_file="res://art/btn_1.png"
+dest_files=["res://.godot/imported/btn_1.png-f52f9d8a58973bb89e95f5d273beccd9.ctex"]
 
 [params]
 

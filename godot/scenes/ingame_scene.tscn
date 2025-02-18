@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
 [ext_resource type="Texture2D" uid="uid://snxbxcjc2jmc" path="res://art/worktable.jpg" id="4_3fwxn"]
 [ext_resource type="PackedScene" uid="uid://dt78ulqtsoup5" path="res://scenes/buttons/btn_3step.tscn" id="5_lovnl"]
-[ext_resource type="PackedScene" uid="uid://c7emex2wa3uw2" path="res://scenes/buttons/botão_2.tscn" id="6_5vyx7"]
+[ext_resource type="PackedScene" uid="uid://c7emex2wa3uw2" path="res://scenes/buttons/btn_2.tscn" id="6_5vyx7"]
 [ext_resource type="PackedScene" uid="uid://dnearrcq5yimx" path="res://scenes/buttons/btn_emergency.tscn" id="7_jw5hu"]
 [ext_resource type="PackedScene" uid="uid://cj2dfx21cqp1l" path="res://scenes/dropzone.tscn" id="8_8d3mv"]
 [ext_resource type="PackedScene" uid="uid://qad1g2kbaoan" path="res://scenes/objeto.tscn" id="8_o7glw"]
