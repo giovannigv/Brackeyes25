@@ -1,5 +1,6 @@
 extends Node
 
+@warning_ignore("unused_signal")
 signal on_value_change(key, value)
 
 const SECTION = "user"

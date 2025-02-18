@@ -1,17 +1,192 @@
-[gd_scene load_steps=6 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=36 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
-[ext_resource type="Texture2D" uid="uid://dmelj2qgr8w7k" path="res://icon.svg" id="2_h1yxu"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
-[ext_resource type="Script" path="res://scenes/node_example.gd" id="3_a5686"]
+[ext_resource type="Texture2D" uid="uid://snxbxcjc2jmc" path="res://art/worktable.jpg" id="4_3fwxn"]
+[ext_resource type="PackedScene" uid="uid://dt78ulqtsoup5" path="res://scenes/botão_1.tscn" id="5_lovnl"]
+[ext_resource type="PackedScene" uid="uid://c7emex2wa3uw2" path="res://scenes/botão_2.tscn" id="6_5vyx7"]
+[ext_resource type="PackedScene" uid="uid://dnearrcq5yimx" path="res://scenes/botão_3.tscn" id="7_jw5hu"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p2rcx"]
+particles_animation = true
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = true
+
+[sub_resource type="Curve" id="Curve_iwbhd"]
+min_value = -360.0
+max_value = 360.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_1w034"]
+width = 500
+curve = SubResource("Curve_iwbhd")
+
+[sub_resource type="Curve" id="Curve_b5kya"]
+min_value = -1024.0
+max_value = 1024.0
+
+[sub_resource type="CurveTexture" id="CurveTexture_1mxgt"]
+width = 500
+curve = SubResource("Curve_b5kya")
+
+[sub_resource type="Curve" id="Curve_nkaq7"]
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_6dmfm"]
+width = 500
+curve = SubResource("Curve_nkaq7")
+
+[sub_resource type="Curve" id="Curve_26015"]
+max_value = 100.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_r62jw"]
+width = 500
+curve = SubResource("Curve_26015")
+
+[sub_resource type="Curve" id="Curve_x6jnx"]
+min_value = 0.99
+
+[sub_resource type="Curve" id="Curve_qdvd6"]
+min_value = 0.99
+
+[sub_resource type="Curve" id="Curve_wc6ph"]
+min_value = 0.99
+
+[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_56fcj"]
+curve_x = SubResource("Curve_x6jnx")
+curve_y = SubResource("Curve_qdvd6")
+curve_z = SubResource("Curve_wc6ph")
+
+[sub_resource type="Curve" id="Curve_0diu0"]
+min_value = -1024.0
+max_value = 1024.0
+
+[sub_resource type="CurveTexture" id="CurveTexture_5mtl6"]
+width = 500
+curve = SubResource("Curve_0diu0")
+
+[sub_resource type="Curve" id="Curve_2g817"]
+min_value = -1024.0
+max_value = 1024.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_qewuk"]
+width = 500
+curve = SubResource("Curve_2g817")
+
+[sub_resource type="Curve" id="Curve_8glpf"]
+min_value = -2.0
+max_value = 2.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ndti7"]
+width = 500
+curve = SubResource("Curve_8glpf")
+
+[sub_resource type="Curve" id="Curve_655c1"]
+min_value = -1024.0
+max_value = 1024.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_441ib"]
+width = 500
+curve = SubResource("Curve_655c1")
+
+[sub_resource type="Curve" id="Curve_jr027"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_ps6ta"]
+width = 500
+curve = SubResource("Curve_jr027")
+
+[sub_resource type="Curve" id="Curve_a0hci"]
+min_value = -200.0
+max_value = 200.0
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_bnh6o"]
+width = 500
+curve = SubResource("Curve_a0hci")
+
+[sub_resource type="Curve" id="Curve_enyn0"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="CurveTexture" id="CurveTexture_elhyy"]
+width = 500
+curve = SubResource("Curve_enyn0")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u64ns"]
+lifetime_randomness = 0.5
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 15.0
+angle_min = -720.0
+angle_max = 720.0
+inherit_velocity_ratio = 1.0
+spread = 180.0
+flatness = 1.0
+angular_velocity_min = -720.0
+angular_velocity_max = 720.0
+angular_velocity_curve = SubResource("CurveTexture_1w034")
+directional_velocity_min = -720.0
+directional_velocity_max = 720.0
+directional_velocity_curve = SubResource("CurveXYZTexture_56fcj")
+orbit_velocity_curve = SubResource("CurveTexture_ndti7")
+gravity = Vector3(0, -98, 0)
+linear_accel_min = -100.0
+linear_accel_max = 100.0
+radial_accel_min = -100.0
+radial_accel_max = 100.0
+tangential_accel_min = -100.0
+tangential_accel_max = 100.0
+tangential_accel_curve = SubResource("CurveTexture_bnh6o")
+damping_max = 100.0
+damping_curve = SubResource("CurveTexture_r62jw")
+scale_max = 7.0
+scale_curve = SubResource("CurveTexture_441ib")
+scale_over_velocity_max = 1000.0
+scale_over_velocity_curve = SubResource("CurveTexture_ps6ta")
+emission_curve = SubResource("CurveTexture_5mtl6")
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.03
+hue_variation_curve = SubResource("CurveTexture_qewuk")
+anim_speed_max = 16.0
+anim_speed_curve = SubResource("CurveTexture_6dmfm")
+anim_offset_max = 1.0
+anim_offset_curve = SubResource("CurveTexture_1mxgt")
+turbulence_enabled = true
+turbulence_noise_strength = 10.0
+turbulence_noise_scale = 5.0
+turbulence_noise_speed = Vector3(10, 10, 10)
+turbulence_noise_speed_random = 2.0
+turbulence_influence_min = 0.0
+turbulence_influence_max = 0.5
+turbulence_initial_displacement_min = -25.0
+turbulence_initial_displacement_max = 25.0
+turbulence_influence_over_life = SubResource("CurveTexture_elhyy")
+collision_mode = 1
+collision_friction = 0.5
+collision_bounce = 0.5
+collision_use_scale = true
+sub_emitter_mode = 1
+sub_emitter_frequency = 50.0
+sub_emitter_keep_velocity = true
 
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_objyc")
-
-[node name="NodeExample" type="Sprite2D" parent="." groups=["Persist"]]
-texture = ExtResource("2_h1yxu")
-script = ExtResource("3_a5686")
 
 [node name="UI" type="CanvasLayer" parent="."]
 
@@ -23,3 +198,34 @@ visible = false
 unique_name_in_owner = true
 process_mode = 2
 visible = false
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 2133.0
+offset_bottom = 842.0
+scale = Vector2(0.27, 0.385)
+texture = ExtResource("4_3fwxn")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_p2rcx")
+position = Vector2(287, 20)
+process_material = SubResource("ParticleProcessMaterial_u64ns")
+lifetime = 5.0
+preprocess = 1.0
+speed_scale = 2.0
+randomness = 0.5
+collision_base_size = 3.0
+
+[node name="Botão 1" parent="." instance=ExtResource("5_lovnl")]
+position = Vector2(56, 188)
+rotation = -0.523599
+scale = Vector2(0.5, 0.5)
+
+[node name="Botão 2" parent="." instance=ExtResource("6_5vyx7")]
+position = Vector2(113, 162)
+rotation = -0.436332
+scale = Vector2(0.4, 0.4)
+
+[node name="Botão 3" parent="." instance=ExtResource("7_jw5hu")]
+position = Vector2(169, 137)
+rotation = -0.436332
+scale = Vector2(0.3, 0.3)

@@ -1,7 +1,9 @@
 class_name FadeOverlay
 extends ColorRect
 
+@warning_ignore("unused_signal")
 signal on_complete_fade_in
+@warning_ignore("unused_signal")
 signal on_complete_fade_out
 
 @export var fade_in_duration: float = 2.0
