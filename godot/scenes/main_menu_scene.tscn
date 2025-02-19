@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://dv2y18ye8j7o0"]
+[gd_scene load_steps=12 format=3 uid="uid://dv2y18ye8j7o0"]
 
 [ext_resource type="Script" path="res://scenes/main_menu_scene.gd" id="1_1foie"]
 [ext_resource type="PackedScene" uid="uid://cik30de5gaaah" path="res://scenes/ingame_scene.tscn" id="2_nl5i6"]
@@ -6,6 +6,12 @@
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="3_kf1us"]
 [ext_resource type="PackedScene" uid="uid://b4blrdjthcxnn" path="res://ui/components/game_logo.tscn" id="4_fnufg"]
 [ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://music/corgie-title.ogg" id="6_drnm6"]
+[ext_resource type="Texture2D" uid="uid://c5kdlrl6xwpv5" path="res://art/ui/Painel_tela_inicial.png" id="7_07fli"]
+[ext_resource type="Texture2D" uid="uid://expio881unna" path="res://art/ui/PT_botao.png" id="7_le3qb"]
+
+[sub_resource type="Theme" id="Theme_ah1jt"]
+
+[sub_resource type="Theme" id="Theme_q8h5r"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_2ikbh"]
 font_size = 8
@@ -24,41 +30,95 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+size_flags_stretch_ratio = 0.0
+theme = SubResource("Theme_ah1jt")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
+custom_minimum_size = Vector2(420, 0)
 layout_mode = 2
-theme_override_constants/separation = 5
+theme_override_constants/separation = 20
+
+[node name="PainelTelaInicial" type="Sprite2D" parent="UI/CenterContainer/VBoxContainer"]
+visibility_layer = 2
+z_index = -1
+position = Vector2(218, 337)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_07fli")
 
 [node name="GameLogo" parent="UI/CenterContainer/VBoxContainer" instance=ExtResource("4_fnufg")]
+z_index = 1
 layout_mode = 2
 
 [node name="ContinueButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
+z_index = 1
+custom_minimum_size = Vector2(140, 0)
 layout_mode = 2
+theme = SubResource("Theme_q8h5r")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/icon_max_width = 350
+theme_override_font_sizes/font_size = 30
 text = "continue"
+icon = ExtResource("7_le3qb")
+flat = true
+icon_alignment = 1
+
+[node name="PtBotao" type="Sprite2D" parent="UI/CenterContainer/VBoxContainer/ContinueButton"]
+position = Vector2(115, 224)
+scale = Vector2(0.746094, 0.771186)
 
 [node name="NewGameButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
+z_index = 1
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_hover_pressed_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_colors/font_hover_color = Color(0.233925, 0.233925, 0.233925, 1)
+theme_override_colors/font_focus_color = Color(0.233925, 0.233925, 0.233925, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/icon_max_width = 350
+theme_override_font_sizes/font_size = 30
 text = "new_game"
+icon = ExtResource("7_le3qb")
+flat = true
+icon_alignment = 1
 
 [node name="SettingsButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
+z_index = 1
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_hover_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_colors/font_focus_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/icon_max_width = 350
+theme_override_font_sizes/font_size = 30
 text = "settings"
+icon = ExtResource("7_le3qb")
+flat = true
+icon_alignment = 1
 
 [node name="ExitButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
 unique_name_in_owner = true
+z_index = 1
 custom_minimum_size = Vector2(180, 0)
 layout_mode = 2
 size_flags_horizontal = 4
+theme_override_colors/font_hover_pressed_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_colors/font_hover_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_colors/font_focus_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/icon_max_width = 350
+theme_override_font_sizes/font_size = 30
 text = "leave_game"
+icon = ExtResource("7_le3qb")
+flat = true
+icon_alignment = 1
 
 [node name="Credits" type="MarginContainer" parent="UI/CenterContainer/VBoxContainer"]
+z_index = 1
 layout_mode = 2
 size_flags_horizontal = 4
 theme_override_constants/margin_top = 10

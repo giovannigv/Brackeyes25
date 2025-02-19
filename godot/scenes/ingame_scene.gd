@@ -29,7 +29,7 @@ func _input(event) -> void:
 
 #Se o player faz algo errado, pune ele tirando 2 segundo do tempo restante
 func punish_player():
-	if $Timer.time_left - 2 <= 0:
+	if $Timer.time_left - 10 <= 0:
 		$Timer.wait_time = 0.01
 	else:
 		$Timer.wait_time = $Timer.time_left - 1
@@ -38,7 +38,7 @@ func punish_player():
 
 #Se o player fez algo certo, recompensa ele acrescentando 1 segundo no tempo restante
 func reward_player():
-	$Timer.wait_time = $Timer.time_left + 3
+	$Timer.wait_time = $Timer.time_left + 5
 	$Timer.stop()
 	$Timer.start()
 
