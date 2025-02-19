@@ -32,13 +32,13 @@ func punish_player():
 	if $Timer.time_left - 2 <= 0:
 		$Timer.wait_time = 0.01
 	else:
-		$Timer.wait_time = $Timer.time_left - 2
+		$Timer.wait_time = $Timer.time_left - 1
 	$Timer.stop()
 	$Timer.start()
 
 #Se o player fez algo certo, recompensa ele acrescentando 1 segundo no tempo restante
 func reward_player():
-	$Timer.wait_time = $Timer.time_left + 1
+	$Timer.wait_time = $Timer.time_left + 3
 	$Timer.stop()
 	$Timer.start()
 

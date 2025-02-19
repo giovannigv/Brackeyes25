@@ -8,8 +8,12 @@ signal button_pressed #Sinal que indica que um botão foi pressionado
 #Quando o botão é clicado, faz algo
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
-		pressed_this_level = true
-		emit_signal("button_pressed") 
+		emiteSinal()
+
+#Função utilizada pelos botões para emitir o sinal de que foi pressionado
+func emiteSinal():
+	pressed_this_level = true
+	emit_signal("button_pressed")
 
 #Quando o mouse entra, diminui levemente a escala do botão para ressaltar que é interativo
 func _on_area_2d_mouse_entered() -> void:
