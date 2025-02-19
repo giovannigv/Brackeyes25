@@ -316,4 +316,12 @@ scale = Vector2(0.2, 0.2)
 position = Vector2(303, 115)
 scale = Vector2(0.2, 0.2)
 
+[connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Botão 2" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Botão 3" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Botão 4" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="button_pressed" from="Btn_turn" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Botão" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="btn_pad" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="btn_select" to="." method="_on_button_pressed"]
