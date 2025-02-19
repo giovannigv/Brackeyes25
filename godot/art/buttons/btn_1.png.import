@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://du4rklrkva04u"
-path="res://.godot/imported/btn_pad.jpg-9e73c236216b8a0c8b7eb6a0c8708f80.ctex"
+uid="uid://dlb78bsdx084b"
+path="res://.godot/imported/btn_1.png-4930b0b903a7a8300977c39415470f8e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/btn_pad.jpg"
-dest_files=["res://.godot/imported/btn_pad.jpg-9e73c236216b8a0c8b7eb6a0c8708f80.ctex"]
+source_file="res://art/buttons/btn_1.png"
+dest_files=["res://.godot/imported/btn_1.png-4930b0b903a7a8300977c39415470f8e.ctex"]
 
 [params]
 

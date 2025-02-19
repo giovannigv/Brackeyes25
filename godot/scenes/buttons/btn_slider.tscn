@@ -1,8 +1,8 @@
 [gd_scene load_steps=5 format=3 uid="uid://bj0qa1jdfhhf1"]
 
 [ext_resource type="Script" path="res://scenes/buttons/btn_slider.gd" id="1_8s2mj"]
-[ext_resource type="Texture2D" uid="uid://olx0goofgrf0" path="res://art/slider_slot.jpg" id="2_7ls5j"]
-[ext_resource type="Texture2D" uid="uid://4ejpmi3di8kx" path="res://art/slider_btn.png" id="3_0b1vs"]
+[ext_resource type="Texture2D" uid="uid://olx0goofgrf0" path="res://art/buttons/slider_slot.jpg" id="2_7ls5j"]
+[ext_resource type="Texture2D" uid="uid://4ejpmi3di8kx" path="res://art/buttons/slider_btn.png" id="3_0b1vs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngaa"]
 size = Vector2(41, 172)

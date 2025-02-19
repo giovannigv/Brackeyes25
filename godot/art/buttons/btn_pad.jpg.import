@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8u0vemyep5hw"
-path="res://.godot/imported/btn_default_off.jpg-49b504236bb3117cc1686690bbdcb648.ctex"
+uid="uid://du4rklrkva04u"
+path="res://.godot/imported/btn_pad.jpg-dc8f42cc9688b572962a50ff143dfcc5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/btn_default_off.jpg"
-dest_files=["res://.godot/imported/btn_default_off.jpg-49b504236bb3117cc1686690bbdcb648.ctex"]
+source_file="res://art/buttons/btn_pad.jpg"
+dest_files=["res://.godot/imported/btn_pad.jpg-dc8f42cc9688b572962a50ff143dfcc5.ctex"]
 
 [params]
 

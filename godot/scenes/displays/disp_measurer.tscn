@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://c08d56aq8oeph"]
+
+[ext_resource type="Texture2D" uid="uid://dhr0dwtqwuiet" path="res://art/displays/disp_Measurer.png" id="1_2c1sk"]
+[ext_resource type="Script" path="res://scenes/displays/disp_measurer.gd" id="1_dmb1n"]
+[ext_resource type="Texture2D" uid="uid://ke51v0dwj7jt" path="res://art/displays/disp_pointer.png" id="2_2djbw"]
+
+[node name="disp_measurer" type="Node2D"]
+script = ExtResource("1_dmb1n")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_2c1sk")
+
+[node name="SpritePointer" type="Sprite2D" parent="Sprite2D"]
+position = Vector2(0, 20)
+rotation = -1.5708
+texture = ExtResource("2_2djbw")

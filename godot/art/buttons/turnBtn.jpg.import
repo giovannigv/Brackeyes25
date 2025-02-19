@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://uo4r5fl0ue0l"
-path="res://.godot/imported/btn_emergency.png-fdb26e673fff39a4b86f9719be6c8c5c.ctex"
+uid="uid://cv3wm6e5ki7u"
+path="res://.godot/imported/turnBtn.jpg-433d442769859bb30d59ac61ddc8d790.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/btn_emergency.png"
-dest_files=["res://.godot/imported/btn_emergency.png-fdb26e673fff39a4b86f9719be6c8c5c.ctex"]
+source_file="res://art/buttons/turnBtn.jpg"
+dest_files=["res://.godot/imported/turnBtn.jpg-433d442769859bb30d59ac61ddc8d790.ctex"]
 
 [params]
 
