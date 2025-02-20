@@ -1,22 +1,141 @@
-[gd_scene load_steps=4 format=3 uid="uid://blhkshp77a2xk"]
+[gd_scene load_steps=11 format=3 uid="uid://blhkshp77a2xk"]
 
-[ext_resource type="Script" path="res://scenes/buttons/btn_default.gd" id="1_6o2pw"]
+[ext_resource type="Script" path="res://scenes/buttons/btn_select.gd" id="1_6o6gy"]
 [ext_resource type="Texture2D" uid="uid://b6rrp0t1irnsh" path="res://art/buttons/btn_select.jpg" id="2_822ai"]
+[ext_resource type="Material" uid="uid://seaqwilel5wq" path="res://art/buttons/material/btn_active_mat.tres" id="3_520v8"]
+[ext_resource type="Texture2D" uid="uid://b8a5iwwjmle2l" path="res://art/buttons/btn_pad_yellow.png" id="4_3o4ec"]
+[ext_resource type="Texture2D" uid="uid://cb1tcj4x8ohym" path="res://art/buttons/btn_pad_orange.png" id="5_hgrcd"]
+[ext_resource type="Texture2D" uid="uid://dec8ts2khunje" path="res://art/buttons/btn_pad_red.png" id="6_pp4u7"]
+[ext_resource type="Texture2D" uid="uid://bc5dvbvujkimv" path="res://art/buttons/btn_pad_pink.png" id="7_kvn3c"]
+[ext_resource type="Texture2D" uid="uid://k0hs3xprckhv" path="res://art/buttons/btn_pad_blue.png" id="8_411kp"]
+[ext_resource type="Texture2D" uid="uid://dj8tq1h2ow5r2" path="res://art/buttons/btn_mini.png" id="9_8ufnk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngaa"]
 size = Vector2(214, 74)
 
 [node name="btn_select" type="Node2D"]
-script = ExtResource("1_6o2pw")
+script = ExtResource("1_6o6gy")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(107, 37)
 texture = ExtResource("2_822ai")
 
 [node name="Area2D" type="Area2D" parent="."]
+position = Vector2(107, 37)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_4ngaa")
 
+[node name="btn_yellow" type="TextureButton" parent="."]
+material = ExtResource("3_520v8")
+use_parent_material = true
+custom_minimum_size = Vector2(27, 27)
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 42.0
+offset_bottom = 44.0
+texture_normal = ExtResource("4_3o4ec")
+stretch_mode = 0
+
+[node name="btn_orange" type="TextureButton" parent="."]
+material = ExtResource("3_520v8")
+use_parent_material = true
+custom_minimum_size = Vector2(27, 27)
+offset_left = 47.0
+offset_top = 5.0
+offset_right = 83.0
+offset_bottom = 43.0
+texture_normal = ExtResource("5_hgrcd")
+stretch_mode = 0
+
+[node name="btn_red" type="TextureButton" parent="."]
+material = ExtResource("3_520v8")
+use_parent_material = true
+custom_minimum_size = Vector2(27, 27)
+offset_left = 89.0
+offset_top = 6.0
+offset_right = 126.0
+offset_bottom = 43.0
+texture_normal = ExtResource("6_pp4u7")
+stretch_mode = 0
+
+[node name="btn_pink" type="TextureButton" parent="."]
+material = ExtResource("3_520v8")
+use_parent_material = true
+custom_minimum_size = Vector2(27, 27)
+offset_left = 131.0
+offset_top = 5.0
+offset_right = 168.0
+offset_bottom = 43.0
+texture_normal = ExtResource("7_kvn3c")
+stretch_mode = 0
+
+[node name="btn_blue" type="TextureButton" parent="."]
+material = ExtResource("3_520v8")
+use_parent_material = true
+custom_minimum_size = Vector2(27, 27)
+offset_left = 172.0
+offset_top = 5.0
+offset_right = 209.0
+offset_bottom = 42.0
+texture_normal = ExtResource("8_411kp")
+stretch_mode = 0
+
+[node name="btn_mini" type="TextureButton" parent="."]
+material = ExtResource("3_520v8")
+use_parent_material = true
+offset_left = 3.0
+offset_top = 52.0
+offset_right = 43.0
+offset_bottom = 70.0
+texture_normal = ExtResource("9_8ufnk")
+stretch_mode = 0
+
+[node name="btn_mini_2" type="TextureButton" parent="."]
+material = ExtResource("3_520v8")
+use_parent_material = true
+offset_left = 45.0
+offset_top = 52.0
+offset_right = 85.0
+offset_bottom = 70.0
+texture_normal = ExtResource("9_8ufnk")
+stretch_mode = 0
+
+[node name="btn_mini_3" type="TextureButton" parent="."]
+material = ExtResource("3_520v8")
+use_parent_material = true
+offset_left = 87.0
+offset_top = 52.0
+offset_right = 127.0
+offset_bottom = 70.0
+texture_normal = ExtResource("9_8ufnk")
+stretch_mode = 0
+
+[node name="btn_mini_4" type="TextureButton" parent="."]
+material = ExtResource("3_520v8")
+use_parent_material = true
+offset_left = 129.0
+offset_top = 52.0
+offset_right = 169.0
+offset_bottom = 70.0
+texture_normal = ExtResource("9_8ufnk")
+stretch_mode = 0
+
+[node name="btn_mini_5" type="TextureButton" parent="."]
+material = ExtResource("3_520v8")
+use_parent_material = true
+offset_left = 171.0
+offset_top = 52.0
+offset_right = 211.0
+offset_bottom = 70.0
+texture_normal = ExtResource("9_8ufnk")
+stretch_mode = 0
+
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
+[connection signal="button_up" from="btn_yellow" to="." method="_on_btn_yellow_button_up"]
+[connection signal="button_up" from="btn_orange" to="." method="_on_btn_orange_button_up"]
+[connection signal="button_up" from="btn_red" to="." method="_on_btn_red_button_up"]
+[connection signal="button_up" from="btn_pink" to="." method="_on_btn_pink_button_up"]
+[connection signal="button_up" from="btn_blue" to="." method="_on_btn_blue_button_up"]
