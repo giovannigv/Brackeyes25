@@ -20,7 +20,6 @@ func _ready() -> void:
 	continue_button.visible = SaveGame.has_save() and SaveGame.ENABLED
 	
 	# connect signals
-	new_game_button.pressed()
 	new_game_button.pressed.connect(_on_play_button_pressed)
 	continue_button.pressed.connect(_on_continue_button_pressed)
 	settings_button.pressed.connect(_on_settings_button_pressed)

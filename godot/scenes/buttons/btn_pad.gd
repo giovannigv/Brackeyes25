@@ -32,11 +32,10 @@ func padControl(namePad: String):
 			print("Wrong")
 
 #ISSO É GAMBIARRA TIRAR DEPOIS DA NOVA SPRITE
-func showOrder(index):
+func showOrder(indexLength):
 	var arrayBtns = [btn_yellow3, btn_orange3, btn_red, btn_pink3, btn_blue4]
 	var beforeIndex = -2
-	var realIndex = index + 1
-	print("CHAMOU ",index)
+	var realIndex = indexLength + 1
 	for i in realIndex:
 		beforeIndex += 1
 		if(beforeIndex >= 0):
