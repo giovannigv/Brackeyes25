@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://nbaodrlopo7y"]
 
 [ext_resource type="PackedScene" uid="uid://cpo1u33eut0i4" path="res://ui/components/float_range_game_settings_option.tscn" id="1_0gpwr"]
-[ext_resource type="FontFile" uid="uid://b1rs3eryvjadx" path="res://art/p22nudgewinkpro-regular.ttf" id="1_8yk3i"]
+[ext_resource type="FontFile" uid="uid://b1rs3eryvjadx" path="res://fonts/p22nudgewinkpro-regular.ttf" id="1_8yk3i"]
 [ext_resource type="Script" path="res://ui/components/game_settings.gd" id="1_eje8l"]
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="2_mudwu"]
 [ext_resource type="Texture2D" uid="uid://boeqgn5ha510i" path="res://art/ui/PS_caixa_texto_azul.png" id="3_lf66u"]
@@ -22,7 +22,10 @@ script = ExtResource("1_eje8l")
 layout_mode = 2
 theme_override_constants/margin_top = 10
 
-[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 z_index = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
@@ -30,156 +33,154 @@ theme_override_constants/h_separation = 20
 theme_override_constants/v_separation = 15
 columns = 4
 
-[node name="Empty1" type="Label" parent="MarginContainer/GridContainer"]
+[node name="Empty1" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 
-[node name="Empty2" type="Label" parent="MarginContainer/GridContainer"]
+[node name="Empty2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 
-[node name="Language" type="Label" parent="MarginContainer/GridContainer"]
+[node name="Language" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 z_index = 2
 layout_mode = 2
 text = "settings_language"
-visible_characters = 22
-visible_ratio = 1.29412
 
-[node name="PsCaixaTextoAzul" type="Sprite2D" parent="MarginContainer/GridContainer/Language"]
+[node name="PsCaixaTextoAzul" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/Language"]
 z_index = 1
 z_as_relative = false
 position = Vector2(83, 9)
 scale = Vector2(0.255, 0.255)
 texture = ExtResource("3_lf66u")
 
-[node name="PsCaixaTextoAzulPerninha" type="Sprite2D" parent="MarginContainer/GridContainer/Language/PsCaixaTextoAzul"]
+[node name="PsCaixaTextoAzulPerninha" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/Language/PsCaixaTextoAzul"]
 position = Vector2(227.451, 43.1373)
 texture = ExtResource("4_sixx1")
 
-[node name="LanguageDropdown" type="OptionButton" parent="MarginContainer/GridContainer"]
+[node name="LanguageDropdown" type="OptionButton" parent="MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="MasterVolumeEnabled" type="Label" parent="MarginContainer/GridContainer"]
+[node name="MasterVolumeEnabled" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 theme = ExtResource("2_mudwu")
 text = "settings_volume_master_enabled"
 
-[node name="PsCaixaTexto" type="Sprite2D" parent="MarginContainer/GridContainer/MasterVolumeEnabled"]
+[node name="PsCaixaTexto" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MasterVolumeEnabled"]
 z_index = 1
 z_as_relative = false
 position = Vector2(116, 9)
 scale = Vector2(0.344762, 0.255)
 texture = ExtResource("6_42yps")
 
-[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/GridContainer/MasterVolumeEnabled/PsCaixaTexto"]
+[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MasterVolumeEnabled/PsCaixaTexto"]
 position = Vector2(227.451, 43.1373)
 texture = ExtResource("7_wlrq4")
 
-[node name="MasterEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
+[node name="MasterEnabledToggle" type="CheckButton" parent="MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 button_pressed = true
 
-[node name="MasterVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
+[node name="MasterVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "settings_volume_master"
 
-[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/GridContainer/MasterVolumeLabel"]
+[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MasterVolumeLabel"]
 z_index = 1
 z_as_relative = false
 position = Vector2(83, 9)
 scale = Vector2(0.255, 0.255)
 texture = ExtResource("6_42yps")
 
-[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/GridContainer/MasterVolumeLabel/PsCaixaTexto2"]
+[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MasterVolumeLabel/PsCaixaTexto2"]
 position = Vector2(227.451, 43.1373)
 texture = ExtResource("7_wlrq4")
 
-[node name="MasterVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
+[node name="MasterVolumeSlider" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
 layout_mode = 2
 property = "mastervolume"
 
-[node name="MusicEnabledLabel" type="Label" parent="MarginContainer/GridContainer"]
+[node name="MusicEnabledLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "settings_volume_music_enabled"
 
-[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/GridContainer/MusicEnabledLabel"]
+[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MusicEnabledLabel"]
 z_index = 1
 z_as_relative = false
 position = Vector2(116, 9)
 scale = Vector2(0.344762, 0.255)
 texture = ExtResource("6_42yps")
 
-[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/GridContainer/MusicEnabledLabel/PsCaixaTexto2"]
+[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MusicEnabledLabel/PsCaixaTexto2"]
 position = Vector2(227.451, 43.1373)
 texture = ExtResource("7_wlrq4")
 
-[node name="MusicEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
+[node name="MusicEnabledToggle" type="CheckButton" parent="MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 button_pressed = true
 
-[node name="MusicVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
+[node name="MusicVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "settings_volume_music"
 
-[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/GridContainer/MusicVolumeLabel"]
+[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MusicVolumeLabel"]
 z_index = 1
 z_as_relative = false
 position = Vector2(83, 9)
 scale = Vector2(0.255, 0.255)
 texture = ExtResource("6_42yps")
 
-[node name="PsCaixaTextoPerninha2" type="Sprite2D" parent="MarginContainer/GridContainer/MusicVolumeLabel/PsCaixaTexto2"]
+[node name="PsCaixaTextoPerninha2" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MusicVolumeLabel/PsCaixaTexto2"]
 position = Vector2(227.451, 43.1373)
 texture = ExtResource("7_wlrq4")
 
-[node name="MusicVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
+[node name="MusicVolumeSlider" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
 layout_mode = 2
 property = "musicvolume"
 
-[node name="SoundEnabledLabel" type="Label" parent="MarginContainer/GridContainer"]
+[node name="SoundEnabledLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "settings_volume_sound_enabled"
 
-[node name="PsCaixaTexto3" type="Sprite2D" parent="MarginContainer/GridContainer/SoundEnabledLabel"]
+[node name="PsCaixaTexto3" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/SoundEnabledLabel"]
 z_index = 1
 z_as_relative = false
 position = Vector2(116, 9)
 scale = Vector2(0.344762, 0.255)
 texture = ExtResource("6_42yps")
 
-[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/GridContainer/SoundEnabledLabel/PsCaixaTexto3"]
+[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/SoundEnabledLabel/PsCaixaTexto3"]
 position = Vector2(227.451, 43.1373)
 texture = ExtResource("7_wlrq4")
 
-[node name="SoundEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
+[node name="SoundEnabledToggle" type="CheckButton" parent="MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 button_pressed = true
 
-[node name="SoundVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
+[node name="SoundVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 text = "settings_volume_sound"
 
-[node name="PsCaixaTexto3" type="Sprite2D" parent="MarginContainer/GridContainer/SoundVolumeLabel"]
+[node name="PsCaixaTexto3" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/SoundVolumeLabel"]
 z_index = 1
 z_as_relative = false
 position = Vector2(83, 9)
 scale = Vector2(0.255, 0.255)
 texture = ExtResource("6_42yps")
 
-[node name="PsCaixaTextoPerninha3" type="Sprite2D" parent="MarginContainer/GridContainer/SoundVolumeLabel/PsCaixaTexto3"]
+[node name="PsCaixaTextoPerninha3" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/SoundVolumeLabel/PsCaixaTexto3"]
 position = Vector2(227.451, 43.1373)
 texture = ExtResource("7_wlrq4")
 
-[node name="SoundVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
+[node name="SoundVolumeSlider" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
 layout_mode = 2
 property = "soundvolume"
 
-[connection signal="item_selected" from="MarginContainer/GridContainer/LanguageDropdown" to="." method="_on_language_dropdown_item_selected"]
-[connection signal="toggled" from="MarginContainer/GridContainer/MasterEnabledToggle" to="." method="_on_master_volume_toggle_toggled"]
-[connection signal="toggled" from="MarginContainer/GridContainer/MusicEnabledToggle" to="." method="_on_music_enabled_toggle_toggled"]
-[connection signal="toggled" from="MarginContainer/GridContainer/SoundEnabledToggle" to="." method="_on_sound_enabled_toggle_toggled"]
+[connection signal="item_selected" from="MarginContainer/VBoxContainer/GridContainer/LanguageDropdown" to="." method="_on_language_dropdown_item_selected"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/GridContainer/MasterEnabledToggle" to="." method="_on_master_volume_toggle_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/GridContainer/MusicEnabledToggle" to="." method="_on_music_enabled_toggle_toggled"]
+[connection signal="toggled" from="MarginContainer/VBoxContainer/GridContainer/SoundEnabledToggle" to="." method="_on_sound_enabled_toggle_toggled"]

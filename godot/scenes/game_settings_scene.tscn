@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://g4qhvbvdm62w"]
+[gd_scene load_steps=9 format=3 uid="uid://g4qhvbvdm62w"]
 
 [ext_resource type="Script" path="res://scenes/game_settings_scene.gd" id="1_3764u"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_w6tmj"]
 [ext_resource type="PackedScene" uid="uid://nbaodrlopo7y" path="res://ui/components/game_settings.tscn" id="2_qsqie"]
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="3_unbh4"]
 [ext_resource type="Texture2D" uid="uid://1mn5vyiitgbv" path="res://art/ui/Painel_Settings.png" id="4_6yqvw"]
-[ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://music/corgie-title.ogg" id="4_7okdb"]
+[ext_resource type="Texture2D" uid="uid://sti1a6tqb4ub" path="res://art/ui/PS_botao_return.png" id="4_x7n8s"]
+[ext_resource type="Texture2D" uid="uid://4lemli5tlcbf" path="res://art/ui/PS_botao_return_perninha.png" id="6_isxy5"]
+[ext_resource type="AudioStream" uid="uid://p1yj5d85bcde" path="res://music/Intensidade 1.ogg" id="6_uamxh"]
 
 [node name="GameSettingsScene" type="Node2D"]
 script = ExtResource("1_3764u")
@@ -16,8 +18,18 @@ script = ExtResource("1_3764u")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 30.0
+offset_top = -19.0
+offset_right = 30.0
+offset_bottom = -19.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="PainelSettings" type="Sprite2D" parent="UI/CenterContainer"]
+z_as_relative = false
+position = Vector2(932, 472)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("4_6yqvw")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="UI/CenterContainer"]
 layout_mode = 2
@@ -31,6 +43,7 @@ text = "settings"
 
 [node name="GameSettings" parent="UI/CenterContainer/VBoxContainer" instance=ExtResource("2_qsqie")]
 z_index = 1
+custom_minimum_size = Vector2(600, 0)
 layout_mode = 2
 
 [node name="ReturnButton" type="Button" parent="UI/CenterContainer/VBoxContainer"]
@@ -38,18 +51,25 @@ unique_name_in_owner = true
 z_index = 1
 layout_mode = 2
 theme = ExtResource("3_unbh4")
+theme_override_constants/icon_max_width = 200
+theme_override_font_sizes/font_size = 30
 text = "return_to_main"
+icon = ExtResource("4_x7n8s")
+flat = true
+icon_alignment = 1
 
-[node name="PainelSettings" type="Sprite2D" parent="UI/CenterContainer"]
-position = Vector2(937, 511)
+[node name="PsBotaoReturnPerninha" type="Sprite2D" parent="UI/CenterContainer/VBoxContainer/ReturnButton"]
+z_index = 2
+z_as_relative = false
+position = Vector2(376, 114)
 scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_6yqvw")
+texture = ExtResource("6_isxy5")
 
 [node name="FadeOverlay" parent="UI" instance=ExtResource("1_w6tmj")]
 unique_name_in_owner = true
 visible = false
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("4_7okdb")
+stream = ExtResource("6_uamxh")
 autoplay = true
 bus = &"Music"

@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bgbs57lr2uhnv"
+path="res://.godot/imported/Intensidade 3.ogg-31676a0074a3434ace7b919fc924c95e.oggvorbisstr"
+
+[deps]
+
+source_file="res://music/Intensidade 3.ogg"
+dest_files=["res://.godot/imported/Intensidade 3.ogg-31676a0074a3434ace7b919fc924c95e.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

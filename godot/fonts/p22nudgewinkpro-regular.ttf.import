@@ -3,12 +3,12 @@
 importer="font_data_dynamic"
 type="FontFile"
 uid="uid://b1rs3eryvjadx"
-path="res://.godot/imported/p22nudgewinkpro-regular.ttf-6bee81e0719df7449f28ceda8224b769.fontdata"
+path="res://.godot/imported/p22nudgewinkpro-regular.ttf-1b9a221dce9ad30bfdfc1e32d869bf1e.fontdata"
 
 [deps]
 
-source_file="res://art/p22nudgewinkpro-regular.ttf"
-dest_files=["res://.godot/imported/p22nudgewinkpro-regular.ttf-6bee81e0719df7449f28ceda8224b769.fontdata"]
+source_file="res://fonts/p22nudgewinkpro-regular.ttf"
+dest_files=["res://.godot/imported/p22nudgewinkpro-regular.ttf-1b9a221dce9ad30bfdfc1e32d869bf1e.fontdata"]
 
 [params]
 

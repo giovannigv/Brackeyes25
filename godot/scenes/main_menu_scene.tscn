@@ -5,9 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://g4qhvbvdm62w" path="res://scenes/game_settings_scene.tscn" id="3_dgs4d"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="3_kf1us"]
 [ext_resource type="PackedScene" uid="uid://b4blrdjthcxnn" path="res://ui/components/game_logo.tscn" id="4_fnufg"]
-[ext_resource type="AudioStream" uid="uid://dlchk3c1baiy8" path="res://music/corgie-title.ogg" id="6_drnm6"]
 [ext_resource type="Texture2D" uid="uid://c5kdlrl6xwpv5" path="res://art/ui/Painel_tela_inicial.png" id="7_07fli"]
 [ext_resource type="Texture2D" uid="uid://expio881unna" path="res://art/ui/PT_botao.png" id="7_le3qb"]
+[ext_resource type="AudioStream" uid="uid://p1yj5d85bcde" path="res://music/Intensidade 1.ogg" id="8_sppvn"]
 
 [sub_resource type="Theme" id="Theme_ah1jt"]
 
@@ -134,6 +134,6 @@ unique_name_in_owner = true
 visible = false
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("6_drnm6")
+stream = ExtResource("8_sppvn")
 autoplay = true
 bus = &"Music"
