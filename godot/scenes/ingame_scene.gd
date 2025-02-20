@@ -94,9 +94,6 @@ func _on_button_pressed() -> void:
 					$pwd4.number = 0
 				else:
 					$pwd4.number += 1
-			
-			else:
-				punish_player()
 		
 		1: #Nível 1 - Deve pressionar o botão 1
 			if $"Botão 1".pressed_this_level == true:
@@ -130,7 +127,6 @@ func _on_computer_clicked() -> void:
 	$pwd3.set_visible(true)
 	$pwd4.set_visible(true)
 	$btn_ok.set_visible(true)
-	reward_player()
 
 #Verifica se o código que foi inserido e progride caso esteja correto
 func _on_btn_ok_button_pressed() -> void:
@@ -141,7 +137,4 @@ func _on_btn_ok_button_pressed() -> void:
 		$pwd4.set_visible(false)
 		$btn_ok.set_visible(false)
 		Global.level = 1
-		reward_player()
-		print("Código OK")
-	else:
-		punish_player()
+		$Timer.start()
