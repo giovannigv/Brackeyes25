@@ -1,14 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://nbaodrlopo7y"]
+[gd_scene load_steps=10 format=3 uid="uid://nbaodrlopo7y"]
 
 [ext_resource type="PackedScene" uid="uid://cpo1u33eut0i4" path="res://ui/components/float_range_game_settings_option.tscn" id="1_0gpwr"]
 [ext_resource type="FontFile" uid="uid://b1rs3eryvjadx" path="res://art/p22nudgewinkpro-regular.ttf" id="1_8yk3i"]
 [ext_resource type="Script" path="res://ui/components/game_settings.gd" id="1_eje8l"]
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="2_mudwu"]
+[ext_resource type="Texture2D" uid="uid://boeqgn5ha510i" path="res://art/ui/PS_caixa_texto_azul.png" id="3_lf66u"]
+[ext_resource type="Texture2D" uid="uid://dk1ls55i51wuj" path="res://art/ui/PS_caixa_texto_azul_perninha.png" id="4_sixx1"]
+[ext_resource type="Texture2D" uid="uid://jr6ajkqgshkm" path="res://art/ui/PS_caixa_texto.png" id="6_42yps"]
+[ext_resource type="Texture2D" uid="uid://ggghivvblrjx" path="res://art/ui/PS_caixa_texto_perninha.png" id="7_wlrq4"]
 
 [sub_resource type="Theme" id="Theme_r0e11"]
 default_font = ExtResource("1_8yk3i")
 
 [node name="GameSettings" type="VBoxContainer"]
+offset_right = 596.0
+offset_bottom = 147.0
 theme = SubResource("Theme_r0e11")
 script = ExtResource("1_eje8l")
 
@@ -17,10 +23,11 @@ layout_mode = 2
 theme_override_constants/margin_top = 10
 
 [node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+z_index = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_constants/h_separation = 20
-theme_override_constants/v_separation = 8
+theme_override_constants/v_separation = 15
 columns = 4
 
 [node name="Empty1" type="Label" parent="MarginContainer/GridContainer"]
@@ -30,8 +37,22 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Language" type="Label" parent="MarginContainer/GridContainer"]
+z_index = 2
 layout_mode = 2
 text = "settings_language"
+visible_characters = 22
+visible_ratio = 1.29412
+
+[node name="PsCaixaTextoAzul" type="Sprite2D" parent="MarginContainer/GridContainer/Language"]
+z_index = 1
+z_as_relative = false
+position = Vector2(83, 9)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("3_lf66u")
+
+[node name="PsCaixaTextoAzulPerninha" type="Sprite2D" parent="MarginContainer/GridContainer/Language/PsCaixaTextoAzul"]
+position = Vector2(227.451, 43.1373)
+texture = ExtResource("4_sixx1")
 
 [node name="LanguageDropdown" type="OptionButton" parent="MarginContainer/GridContainer"]
 unique_name_in_owner = true
@@ -42,6 +63,17 @@ layout_mode = 2
 theme = ExtResource("2_mudwu")
 text = "settings_volume_master_enabled"
 
+[node name="PsCaixaTexto" type="Sprite2D" parent="MarginContainer/GridContainer/MasterVolumeEnabled"]
+z_index = 1
+z_as_relative = false
+position = Vector2(116, 9)
+scale = Vector2(0.344762, 0.255)
+texture = ExtResource("6_42yps")
+
+[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/GridContainer/MasterVolumeEnabled/PsCaixaTexto"]
+position = Vector2(227.451, 43.1373)
+texture = ExtResource("7_wlrq4")
+
 [node name="MasterEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -50,6 +82,17 @@ button_pressed = true
 [node name="MasterVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
 layout_mode = 2
 text = "settings_volume_master"
+
+[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/GridContainer/MasterVolumeLabel"]
+z_index = 1
+z_as_relative = false
+position = Vector2(83, 9)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("6_42yps")
+
+[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/GridContainer/MasterVolumeLabel/PsCaixaTexto2"]
+position = Vector2(227.451, 43.1373)
+texture = ExtResource("7_wlrq4")
 
 [node name="MasterVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
@@ -60,6 +103,17 @@ property = "mastervolume"
 layout_mode = 2
 text = "settings_volume_music_enabled"
 
+[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/GridContainer/MusicEnabledLabel"]
+z_index = 1
+z_as_relative = false
+position = Vector2(116, 9)
+scale = Vector2(0.344762, 0.255)
+texture = ExtResource("6_42yps")
+
+[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/GridContainer/MusicEnabledLabel/PsCaixaTexto2"]
+position = Vector2(227.451, 43.1373)
+texture = ExtResource("7_wlrq4")
+
 [node name="MusicEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -68,6 +122,17 @@ button_pressed = true
 [node name="MusicVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
 layout_mode = 2
 text = "settings_volume_music"
+
+[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/GridContainer/MusicVolumeLabel"]
+z_index = 1
+z_as_relative = false
+position = Vector2(83, 9)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("6_42yps")
+
+[node name="PsCaixaTextoPerninha2" type="Sprite2D" parent="MarginContainer/GridContainer/MusicVolumeLabel/PsCaixaTexto2"]
+position = Vector2(227.451, 43.1373)
+texture = ExtResource("7_wlrq4")
 
 [node name="MusicVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
@@ -78,6 +143,17 @@ property = "musicvolume"
 layout_mode = 2
 text = "settings_volume_sound_enabled"
 
+[node name="PsCaixaTexto3" type="Sprite2D" parent="MarginContainer/GridContainer/SoundEnabledLabel"]
+z_index = 1
+z_as_relative = false
+position = Vector2(116, 9)
+scale = Vector2(0.344762, 0.255)
+texture = ExtResource("6_42yps")
+
+[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/GridContainer/SoundEnabledLabel/PsCaixaTexto3"]
+position = Vector2(227.451, 43.1373)
+texture = ExtResource("7_wlrq4")
+
 [node name="SoundEnabledToggle" type="CheckButton" parent="MarginContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
@@ -86,6 +162,17 @@ button_pressed = true
 [node name="SoundVolumeLabel" type="Label" parent="MarginContainer/GridContainer"]
 layout_mode = 2
 text = "settings_volume_sound"
+
+[node name="PsCaixaTexto3" type="Sprite2D" parent="MarginContainer/GridContainer/SoundVolumeLabel"]
+z_index = 1
+z_as_relative = false
+position = Vector2(83, 9)
+scale = Vector2(0.255, 0.255)
+texture = ExtResource("6_42yps")
+
+[node name="PsCaixaTextoPerninha3" type="Sprite2D" parent="MarginContainer/GridContainer/SoundVolumeLabel/PsCaixaTexto3"]
+position = Vector2(227.451, 43.1373)
+texture = ExtResource("7_wlrq4")
 
 [node name="SoundVolumeSlider" parent="MarginContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
