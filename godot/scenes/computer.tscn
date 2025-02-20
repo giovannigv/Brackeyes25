@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cm21n43p6xrva"]
+[gd_scene load_steps=6 format=3 uid="uid://cm21n43p6xrva"]
 
 [ext_resource type="Script" path="res://scenes/buttons/game_button.gd" id="1_8g452"]
+[ext_resource type="PackedScene" uid="uid://rmxwgdkyw7fh" path="res://scenes/buttons/pwd.tscn" id="2_7u17v"]
 
 [sub_resource type="Gradient" id="Gradient_4kpxq"]
 offsets = PackedFloat32Array(1)
@@ -26,5 +27,25 @@ texture = SubResource("GradientTexture1D_7sa2e")
 position = Vector2(53, 14.5)
 scale = Vector2(10, 10)
 shape = SubResource("RectangleShape2D_n8yxl")
+
+[node name="pwd1" parent="." instance=ExtResource("2_7u17v")]
+visible = false
+position = Vector2(-28, 43)
+rotation = -0.174533
+
+[node name="pwd2" parent="." instance=ExtResource("2_7u17v")]
+visible = false
+position = Vector2(6, 39)
+rotation = -0.174533
+
+[node name="pwd3" parent="." instance=ExtResource("2_7u17v")]
+visible = false
+position = Vector2(40, 37)
+rotation = -0.174533
+
+[node name="pwd4" parent="." instance=ExtResource("2_7u17v")]
+visible = false
+position = Vector2(79, 34)
+rotation = -0.174533
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

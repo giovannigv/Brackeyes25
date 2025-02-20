@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=52 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -17,7 +17,6 @@
 [ext_resource type="PackedScene" uid="uid://blhkshp77a2xk" path="res://scenes/buttons/btn_select.tscn" id="14_cydub"]
 [ext_resource type="PackedScene" uid="uid://c08d56aq8oeph" path="res://scenes/displays/disp_measurer.tscn" id="15_we4ge"]
 [ext_resource type="PackedScene" uid="uid://cm21n43p6xrva" path="res://scenes/computer.tscn" id="17_uo444"]
-[ext_resource type="PackedScene" uid="uid://rmxwgdkyw7fh" path="res://scenes/buttons/pwd.tscn" id="18_7nguh"]
 [ext_resource type="PackedScene" uid="uid://c24ks6s1fm2rt" path="res://scenes/buttons/btn_ok.tscn" id="19_sbo42"]
 [ext_resource type="AudioStream" uid="uid://p1yj5d85bcde" path="res://music/Intensidade 1.ogg" id="20_aia42"]
 [ext_resource type="AudioStream" uid="uid://xqixo5r3tdvu" path="res://music/Intensidade 2.ogg" id="20_yqewc"]
@@ -249,14 +248,15 @@ rotation = -0.261799
 scale = Vector2(1.865, 1.865)
 
 [node name="Botão 3" parent="." instance=ExtResource("7_jw5hu")]
+z_index = 1
 position = Vector2(326, 969)
 rotation = -0.436332
 scale = Vector2(1.565, 1.565)
 
 [node name="Botão 4" parent="." instance=ExtResource("7_jw5hu")]
 z_index = 1
-position = Vector2(432, 928)
-rotation = -0.436332
+position = Vector2(1701, 1027)
+rotation = 0.436332
 scale = Vector2(1.52, 1.52)
 
 [node name="Dropzone" parent="." instance=ExtResource("8_8d3mv")]
@@ -265,7 +265,12 @@ rotation = 0.0767945
 scale = Vector2(0.77, 0.77)
 
 [node name="Dropzone2" parent="." instance=ExtResource("8_8d3mv")]
-position = Vector2(433, 922)
+position = Vector2(1702, 1021)
+rotation = 0.436332
+scale = Vector2(0.94, 0.94)
+
+[node name="Dropzone3" parent="." instance=ExtResource("8_8d3mv")]
+position = Vector2(318, 971)
 rotation = -0.436332
 scale = Vector2(0.94, 0.94)
 
@@ -326,25 +331,9 @@ scale = Vector2(1.26, 1.26)
 position = Vector2(1504, 275)
 rotation = 0.174533
 
-[node name="pwd1" parent="." instance=ExtResource("18_7nguh")]
+[node name="btn_ok" parent="Computer" instance=ExtResource("19_sbo42")]
 visible = false
-position = Vector2(1467, 312)
-
-[node name="pwd2" parent="." instance=ExtResource("18_7nguh")]
-visible = false
-position = Vector2(1503, 315)
-
-[node name="pwd3" parent="." instance=ExtResource("18_7nguh")]
-visible = false
-position = Vector2(1539, 319)
-
-[node name="pwd4" parent="." instance=ExtResource("18_7nguh")]
-visible = false
-position = Vector2(1577, 320)
-
-[node name="btn_ok" parent="." instance=ExtResource("19_sbo42")]
-visible = false
-position = Vector2(1615, 324)
+position = Vector2(114.578, 33.6144)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_aia42")
@@ -371,8 +360,4 @@ bus = &"Music"
 [connection signal="button_pressed" from="btn_pad" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="btn_select" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Computer" to="." method="_on_computer_clicked"]
-[connection signal="button_pressed" from="pwd1" to="." method="_on_button_pressed"]
-[connection signal="button_pressed" from="pwd2" to="." method="_on_button_pressed"]
-[connection signal="button_pressed" from="pwd3" to="." method="_on_button_pressed"]
-[connection signal="button_pressed" from="pwd4" to="." method="_on_button_pressed"]
-[connection signal="button_pressed" from="btn_ok" to="." method="_on_btn_ok_button_pressed"]
+[connection signal="button_pressed" from="Computer/btn_ok" to="." method="_on_btn_ok_button_pressed"]

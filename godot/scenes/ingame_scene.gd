@@ -66,36 +66,7 @@ func _on_button_pressed() -> void:
 	#Gerenciamento do nível
 	match Global.level:
 		
-		0: #Nível 0 - O jogo ainda não começou. O jogador deve colocar a senha de 4 dígitos correta no computador
-			if $pwd1.pressed_this_level == true:
-				$pwd1.pressed_this_level = false
-				if $pwd1.number + 1 > 10:
-					$pwd1.number = 0
-				else:
-					$pwd1.number += 1
-					
-			elif $pwd2.pressed_this_level == true:
-				$pwd2.pressed_this_level = false
-				if $pwd2.number + 1 > 10:
-					$pwd2.number = 0
-				else:
-					$pwd2.number += 1
-			
-			elif $pwd3.pressed_this_level == true:
-				$pwd3.pressed_this_level = false
-				if $pwd3.number + 1 > 10:
-					$pwd3.number = 0
-				else:
-					$pwd3.number += 1
-			
-			elif $pwd4.pressed_this_level == true:
-				$pwd4.pressed_this_level = false
-				if $pwd4.number + 1 > 10:
-					$pwd4.number = 0
-				else:
-					$pwd4.number += 1
-		
-		1: #Nível 1 - Deve pressionar o botão 1
+		1: #Nível 1 - Lower electrons' dance
 			if $"Botão 1".pressed_this_level == true:
 				$"Botão 1".pressed_this_level = false
 				Global.level = 2
@@ -121,20 +92,19 @@ func _on_button_pressed() -> void:
 
 #Quando o computador está desligado e é clicado, ele desativa a função de ligar e ativa os botões da senha
 func _on_computer_clicked() -> void:
-	$Computer.set_visible(false)
-	$pwd1.set_visible(true)
-	$pwd2.set_visible(true)
-	$pwd3.set_visible(true)
-	$pwd4.set_visible(true)
-	$btn_ok.set_visible(true)
+	$Computer/Sprite2D.set_visible(false)
+	$Computer/pwd1.set_visible(true)
+	$Computer/pwd2.set_visible(true)
+	$Computer/pwd3.set_visible(true)
+	$Computer/pwd4.set_visible(true)
+	$Computer/btn_ok.set_visible(true)
 
-#Verifica se o código que foi inserido e progride caso esteja correto
 func _on_btn_ok_button_pressed() -> void:
-	if $pwd1.number == 0 && $pwd2.number == 4 && $pwd3.number == 5 && $pwd4.number == 1:
-		$pwd1.set_visible(false)
-		$pwd2.set_visible(false)
-		$pwd3.set_visible(false)
-		$pwd4.set_visible(false)
-		$btn_ok.set_visible(false)
+	if $Computer/pwd1.number == 0 && $Computer/pwd2.number == 4 && $Computer/pwd3.number == 5 && $Computer/pwd4.number == 1:
+		$Computer/pwd1.set_visible(false)
+		$Computer/pwd2.set_visible(false)
+		$Computer/pwd3.set_visible(false)
+		$Computer/pwd4.set_visible(false)
+		$Computer/btn_ok.set_visible(false)
 		Global.level = 1
 		$Timer.start()
