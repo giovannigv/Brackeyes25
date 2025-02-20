@@ -10,6 +10,8 @@ func _ready() -> void:
 		SaveGame.load_game(get_tree())
 	
 	pause_overlay.game_exited.connect(_save_game)
+	
+	$Timer.set_paused(true)
 
 func _process(_delta: float) -> void:
 	#Sistema de gerenciamento do estabilidade
@@ -101,10 +103,11 @@ func _on_computer_clicked() -> void:
 
 func _on_btn_ok_button_pressed() -> void:
 	if $Computer/pwd1.number == 0 && $Computer/pwd2.number == 4 && $Computer/pwd3.number == 5 && $Computer/pwd4.number == 1:
+		$Computer.set_visible(false)
 		$Computer/pwd1.set_visible(false)
 		$Computer/pwd2.set_visible(false)
 		$Computer/pwd3.set_visible(false)
 		$Computer/pwd4.set_visible(false)
 		$Computer/btn_ok.set_visible(false)
 		Global.level = 1
-		$Timer.start()
+		$Timer.set_paused(false)

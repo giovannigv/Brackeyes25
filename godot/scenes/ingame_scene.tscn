@@ -228,7 +228,7 @@ texture = ExtResource("4_cg5xa")
 
 [node name="GPUParticles2D" type="GPUParticles2D" parent="."]
 material = SubResource("CanvasItemMaterial_p2rcx")
-position = Vector2(948, 206)
+position = Vector2(512, 334)
 amount = 40
 process_material = SubResource("ParticleProcessMaterial_u64ns")
 lifetime = 5.0
@@ -283,6 +283,7 @@ scale = Vector2(0.985, 0.985)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
+autostart = true
 script = ExtResource("10_82cjg")
 
 [node name="ProgressBar" type="ProgressBar" parent="Timer"]
@@ -328,7 +329,7 @@ position = Vector2(1087, 684)
 scale = Vector2(1.26, 1.26)
 
 [node name="Computer" parent="." instance=ExtResource("17_uo444")]
-position = Vector2(1504, 275)
+position = Vector2(1473, 297)
 rotation = 0.174533
 
 [node name="btn_ok" parent="Computer" instance=ExtResource("19_sbo42")]
