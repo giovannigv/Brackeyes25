@@ -1,6 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://c24ks6s1fm2rt"]
+[gd_scene load_steps=5 format=3 uid="uid://c24ks6s1fm2rt"]
 
 [ext_resource type="Script" path="res://scenes/buttons/game_button.gd" id="1_j72v7"]
+
+[sub_resource type="Gradient" id="Gradient_563iq"]
+offsets = PackedFloat32Array(1)
+colors = PackedColorArray(0, 1, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_m0iwv"]
+gradient = SubResource("Gradient_563iq")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngaa"]
 size = Vector2(25, 55)
@@ -9,6 +16,9 @@ size = Vector2(25, 55)
 script = ExtResource("1_j72v7")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -5.96046e-08)
+scale = Vector2(0.101563, 56)
+texture = SubResource("GradientTexture1D_m0iwv")
 
 [node name="Area2D" type="Area2D" parent="."]
 
