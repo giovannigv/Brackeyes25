@@ -13,12 +13,26 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	#Sistema de gerenciamento do estabilidade
-	var intensidade = 1.0 - ($Timer.time_left * 5/100)
+	var stability = $Timer.time_left * 5/100 #Estabilidade do reator. Vai de 1 à 0
+	var intensidade = 1.0 - stability
 	$GPUParticles2D.process_material.initial_velocity_min = intensidade*50
 	$GPUParticles2D.process_material.spread = intensidade*45
 	$GPUParticles2D.set_self_modulate(Color(get_self_modulate().r - intensidade, get_self_modulate().g, get_self_modulate().b - intensidade))
 	$GPUParticles2D.process_material.scale_min = lerp(0.5, 2.5, intensidade)
 	$GPUParticles2D.process_material.scale_max = lerp(1.0, 3.0, intensidade)
+	
+	if stability <= 1.0 && stability >= 0.66:
+		$Music.set_volume_db(0)
+		$Music2.set_volume_db(-80)
+		$Music3.set_volume_db(-80)
+	elif stability <= 0.65 && stability >= 0.33:
+		$Music.set_volume_db(-80)
+		$Music2.set_volume_db(0)
+		$Music3.set_volume_db(-80)
+	elif stability <= 0.32 && stability >= 0:
+		$Music.set_volume_db(-80)
+		$Music2.set_volume_db(-80)
+		$Music3.set_volume_db(0)
 
 func _input(event) -> void:
 	if event.is_action_pressed("pause") and not pause_overlay.visible:

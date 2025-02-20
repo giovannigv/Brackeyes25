@@ -1,4 +1,4 @@
-[gd_scene load_steps=51 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=53 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -19,7 +19,9 @@
 [ext_resource type="PackedScene" uid="uid://cm21n43p6xrva" path="res://scenes/computer.tscn" id="17_uo444"]
 [ext_resource type="PackedScene" uid="uid://rmxwgdkyw7fh" path="res://scenes/buttons/pwd.tscn" id="18_7nguh"]
 [ext_resource type="PackedScene" uid="uid://c24ks6s1fm2rt" path="res://scenes/buttons/btn_ok.tscn" id="19_sbo42"]
+[ext_resource type="AudioStream" uid="uid://p1yj5d85bcde" path="res://music/Intensidade 1.ogg" id="20_aia42"]
 [ext_resource type="AudioStream" uid="uid://xqixo5r3tdvu" path="res://music/Intensidade 2.ogg" id="20_yqewc"]
+[ext_resource type="AudioStream" uid="uid://bgbs57lr2uhnv" path="res://music/Intensidade 3.ogg" id="22_k4et3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p2rcx"]
 particles_animation = true
@@ -346,7 +348,17 @@ visible = false
 position = Vector2(1615, 324)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_aia42")
+autoplay = true
+bus = &"Music"
+
+[node name="Music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_yqewc")
+autoplay = true
+bus = &"Music"
+
+[node name="Music3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_k4et3")
 autoplay = true
 bus = &"Music"
 
