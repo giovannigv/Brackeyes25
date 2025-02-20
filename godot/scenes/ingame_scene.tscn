@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=50 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -16,6 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://4lgm6qxinri2" path="res://scenes/buttons/btn_pad.tscn" id="13_4vwrj"]
 [ext_resource type="PackedScene" uid="uid://blhkshp77a2xk" path="res://scenes/buttons/btn_select.tscn" id="14_cydub"]
 [ext_resource type="PackedScene" uid="uid://c08d56aq8oeph" path="res://scenes/displays/disp_measurer.tscn" id="15_we4ge"]
+[ext_resource type="PackedScene" uid="uid://cm21n43p6xrva" path="res://scenes/computer.tscn" id="17_uo444"]
+[ext_resource type="PackedScene" uid="uid://rmxwgdkyw7fh" path="res://scenes/buttons/pwd.tscn" id="18_7nguh"]
+[ext_resource type="PackedScene" uid="uid://c24ks6s1fm2rt" path="res://scenes/buttons/btn_ok.tscn" id="19_sbo42"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p2rcx"]
 particles_animation = true
@@ -317,6 +320,30 @@ scale = Vector2(1.41, 1.41)
 position = Vector2(1087, 684)
 scale = Vector2(1.26, 1.26)
 
+[node name="Computer" parent="." instance=ExtResource("17_uo444")]
+position = Vector2(1504, 275)
+rotation = 0.174533
+
+[node name="pwd1" parent="." instance=ExtResource("18_7nguh")]
+visible = false
+position = Vector2(1467, 312)
+
+[node name="pwd2" parent="." instance=ExtResource("18_7nguh")]
+visible = false
+position = Vector2(1503, 315)
+
+[node name="pwd3" parent="." instance=ExtResource("18_7nguh")]
+visible = false
+position = Vector2(1539, 319)
+
+[node name="pwd4" parent="." instance=ExtResource("18_7nguh")]
+visible = false
+position = Vector2(1577, 320)
+
+[node name="btn_ok" parent="." instance=ExtResource("19_sbo42")]
+visible = false
+position = Vector2(1615, 324)
+
 [connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Botão 2" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Botão 3" to="." method="_on_button_pressed"]
@@ -326,3 +353,9 @@ scale = Vector2(1.26, 1.26)
 [connection signal="button_pressed" from="Botão" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="btn_pad" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="btn_select" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Computer" to="." method="_on_computer_clicked"]
+[connection signal="button_pressed" from="pwd1" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="pwd2" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="pwd3" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="pwd4" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="btn_ok" to="." method="_on_btn_ok_button_pressed"]
