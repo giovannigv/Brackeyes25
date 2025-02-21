@@ -1,19 +1,19 @@
-keys,en,de
-credits,Credits here,Credits hier
-new_game,New Game,Neues Spiel
-continue,Continue,Fortfahren
-settings,Game Settings,Einstellungen
-leave_game,Leave game,Spiel verlassen
-return_to_main,Return,Zurück
-return_to_menu,Back to menu,Zurück
-settings_volume_master_enabled,Master Enabled,Lautstärke an
-settings_volume_master,Master Volume,Lautstärke (Allgemein)
-settings_volume_music_enabled,Music enabled,Musik an
-settings_volume_music,Music Volume,Musik Lautstärke
-settings_volume_sound_enabled,Sound enabled,Sound an
-settings_volume_sound,Sound Volume,Sound Lautstärke
-settings_language,Game Language,Spielsprache
-game_paused,Game paused,Spiel pausiert
-resume_game,Resume game,Weiterspielen
-restart_game,Restart game,Spiel neu starten
-game_over,Game Over,Spiel vorbei
+keys,en,de,pt
+credits,Credits here,Credits hier,Créditos
+new_game,New Game,Neues Spiel,Novo Jogo
+continue,Continue,Fortfahren, Continuar
+settings,Game Settings,Einstellungen,Configurações
+leave_game,Leave game,Spiel verlassen,Sair
+return_to_main,Return,Zurück,Voltar
+return_to_menu,Back to menu,Zurück,Voltar ao menu
+settings_volume_master_enabled,Master Enabled,Lautstärke an,Habilitar Volume
+settings_volume_master,Master Volume,Lautstärke (Allgemein),Volume Geral
+settings_volume_music_enabled,Music enabled,Musik an,Habilitar Música
+settings_volume_music,Music Volume,Musik Lautstärke, Volume Música
+settings_volume_sound_enabled,Sound enabled,Sound an, Habilitar Sons
+settings_volume_sound,Sound Volume,Sound Lautstärke, Volumes Sons
+settings_language,Game Language,Spielsprache,Lingua
+game_paused,Game paused,Spiel pausiert,Pausa
+resume_game,Resume game,Weiterspielen,Continuar
+restart_game,Restart game,Spiel neu starten,Reiniciar
+game_over,Game Over,Spiel vorbei,Fim de Jogo

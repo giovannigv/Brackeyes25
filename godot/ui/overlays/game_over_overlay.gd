@@ -16,7 +16,6 @@ func grab_button_focus() -> void:
 	restart_button.grab_focus()
 	
 func _resume() -> void:
-	print("called")
 	get_tree().paused = false
 	visible = false
 
@@ -25,7 +24,6 @@ func _exit() -> void:
 	get_tree().quit()
 
 func _on_restart_button_go_button_down() -> void:
-	print("Restart")
 	get_tree().paused = false
 	visible = false
 	get_tree().reload_current_scene()
