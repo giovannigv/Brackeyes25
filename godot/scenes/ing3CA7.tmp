@@ -233,7 +233,6 @@ visible = false
 
 [node name="GameOverOverlay" parent="UI" instance=ExtResource("4_j3emw")]
 unique_name_in_owner = true
-process_mode = 2
 visible = false
 
 [node name="TextureRect" type="TextureRect" parent="."]

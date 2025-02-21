@@ -49,8 +49,8 @@ func _input(event) -> void:
 func game_over() -> void:
 	get_viewport().set_input_as_handled()
 	get_tree().paused = true
-	game_over_overlay.grab_button_focus()
 	game_over_overlay.visible = true
+	game_over_overlay.grab_button_focus()
 
 #Se o player faz algo errado, pune ele tirando 2 segundo do tempo restante
 func punish_player():
