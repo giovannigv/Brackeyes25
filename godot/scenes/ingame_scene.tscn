@@ -387,6 +387,14 @@ rotation = 0.445068
 scale = Vector2(1.85227, 2.03731)
 texture = ExtResource("22_8o2tj")
 
+[node name="Tutorial" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 387.0
+offset_top = 41.0
+offset_right = 427.0
+offset_bottom = 81.0
+
 [node name="Tutorial 1" type="Label" parent="."]
 z_index = 1
 offset_left = 387.0
