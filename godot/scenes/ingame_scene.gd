@@ -138,6 +138,7 @@ func _on_btn_ok_button_pressed() -> void:
 		$Computer/pwd3.set_visible(false)
 		$Computer/pwd4.set_visible(false)
 		$Computer/btn_ok.set_visible(false)
+		$"Tutorial 2".set_visible(false)
 		$"Tutorial 3".set_visible(false)
 		$"Tutorial Computer".set_visible(true)
 		Global.level = 1
