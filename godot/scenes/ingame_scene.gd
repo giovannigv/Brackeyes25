@@ -14,6 +14,7 @@ func _ready() -> void:
 	game_over_overlay.game_exited.connect(_save_game)
 	
 	$Timer.set_paused(true)
+	Global.level = 0
 
 func _process(_delta: float) -> void:
 	#Sistema de gerenciamento do estabilidade
@@ -80,6 +81,7 @@ func _on_button_pressed() -> void:
 		0:
 			if $btn_file.pressed_this_level == true:
 				$btn_file.pressed_this_level = false
+				$"Tutorial 1".set_visible(false)
 				$"Tutorial 2".set_visible(false)
 				$"Tutorial 3".set_visible(true)
 		
@@ -128,6 +130,7 @@ func _on_computer_clicked() -> void:
 	if $"Tutorial 1".visible == true:
 		$"Tutorial 1".set_visible(false)
 		$"Tutorial 2".set_visible(true)
+		$"Tutorial 3".set_visible(false)
 
 #Verifica se a senha está correta
 func _on_btn_ok_button_pressed() -> void:
@@ -138,6 +141,7 @@ func _on_btn_ok_button_pressed() -> void:
 		$Computer/pwd3.set_visible(false)
 		$Computer/pwd4.set_visible(false)
 		$Computer/btn_ok.set_visible(false)
+		$"Tutorial 1".set_visible(false)
 		$"Tutorial 2".set_visible(false)
 		$"Tutorial 3".set_visible(false)
 		$"Tutorial Computer".set_visible(true)
