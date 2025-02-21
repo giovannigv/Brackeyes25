@@ -1,5 +1,8 @@
 extends GameButton
 
+@warning_ignore("unused_signal")
+signal picked_correct
+
 @onready var btn_mini: TextureButton = $btn_mini
 @onready var btn_mini_2: TextureButton = $btn_mini_2
 @onready var btn_mini_3: TextureButton = $btn_mini_3
@@ -16,21 +19,22 @@ var button_dict = {
 	"pink": "btn_mini_4",
 	"blue": "btn_mini_5"
 }
+var started: bool = false
 
 func _on_area_2d_input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	pass
 	
 func _ready() -> void:
 	buttons = [btn_mini, btn_mini_2, btn_mini_3, btn_mini_4, btn_mini_5]
-	chooseRandomButton()
 
 func verifyButton(nameButton: String) -> void:
-	if(chosen.name == button_dict[nameButton]):
-		print("Correct")
-		finish_event = true
-	else:
-		print("Wrong")
-		chooseRandomButton()
+	if started == true:
+		if chosen.name == button_dict[nameButton]:
+			print("Correct")
+			emit_signal("picked_correct")
+		else:
+			print("Wrong")
+			chooseRandomButton()
 
 func chooseRandomButton():
 	if(chosen):

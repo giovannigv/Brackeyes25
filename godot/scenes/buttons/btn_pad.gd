@@ -1,13 +1,22 @@
 extends GameButton
-	
+
+@warning_ignore("unused_signal")
+signal pad_finished
+
 @onready var btn_yellow3: TextureButton = $btn_yellow3
 @onready var btn_orange3: TextureButton = $btn_orange3
 @onready var btn_red: TextureButton = $btn_red
 @onready var btn_pink3: TextureButton = $btn_pink3
 @onready var btn_blue4: TextureButton = $btn_blue4
 
+var enabled: bool = true
 var index = 0
 var finish_event = false
+
+func _process(_delta: float) -> void:
+	if index > 4 && enabled == true:
+		enabled = false
+		emit_signal("pad_finished")
 
 func _on_area_2d_input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	pass
@@ -16,16 +25,13 @@ func padControl(namePad: String):
 	const array = ['btn_yellow3', 'btn_orange3', 'btn_red', 'btn_pink3', 'btn_blue4']
 
 	#Lembrar q esse materi btn_active_mat é POC pra teste
-	if(index > 4):
-		finish_event = true
+	if(array[index] == namePad):
+		index += 1
+		print("Correct")
+		showOrder(index)
 	else:
-		if(array[index] == namePad):
-			index += 1
-			print("Correct")
-			showOrder(index)
-		else:
-			index = 0
-			print("Wrong")
+		index = 0
+		print("Wrong")
 
 #ISSO É GAMBIARRA TIRAR DEPOIS DA NOVA SPRITE
 func showOrder(indexLength):

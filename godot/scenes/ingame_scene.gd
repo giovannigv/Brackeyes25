@@ -96,23 +96,20 @@ func _on_button_pressed() -> void:
 			if $"Blue Button 1".pressed_this_level == true || $"Blue Button 2".pressed_this_level == true:
 				Global.level = 3
 				reward_player()
-				$"Tutorial Computer".text = "Good. Now insert the base substance capsule.\nYou can do it by interacting with the pad."
+				$"Tutorial Computer".text = "Good. Now insert the\nbase substance capsule.\nYou can do it by\ninteracting with the pad."
 				$Pad.showOrder(0)
 			else:
 				punish_player()
 		
 		3: #Nível 2 - Insert Base Substance Capsule
-			if $"Botão 2".pressed_this_level == true:
-				$"Botão 2".pressed_this_level = false
-				Global.level = 4
-				reward_player()
+			if $"Pad".pressed_this_level == true:
+				$"Pad".pressed_this_level = false
 			else:
 				punish_player()
-		4: #Nível 2 - Deve pressionar o botão 3
-			if $"Botão 3".pressed_this_level == true:
-				$"Botão 3".pressed_this_level = false
+		4:
+			if $"Selector".pressed_this_level == true:
+				$"Selector".pressed_this_level = false
 				Global.level = 5
-				reward_player()
 			else:
 				punish_player()
 		5:
@@ -154,3 +151,18 @@ func _on_btn_default_slider_max() -> void:
 		Global.level = 2
 		reward_player()
 		$"Tutorial Computer".text = "Deposit the electrons\nto the channel\nby clicking one of\nthe blue buttons."
+
+#Ativa quando o jogador terminou a sequência
+func _on_pad_pad_finished() -> void:
+	Global.level = 4
+	reward_player()
+	$"Tutorial Computer".text = "Now use the selector\nto pick the\ncorrect rail that\nthe capsule must go."
+	$"Selector".started = true
+	$"Selector".chooseRandomButton()
+
+#Ativa quando o jogador clica no botão correto
+func _on_selector_picked_correct() -> void:
+	$"Selector".started = false
+	Global.level = 5
+	reward_player()
+	$"Tutorial Computer".text = "Teste"
