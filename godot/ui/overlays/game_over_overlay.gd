@@ -1,5 +1,6 @@
 extends CenterContainer
 
+@warning_ignore("unused_signal")
 signal game_exited
 
 @onready var settings_button := %SettingsButton

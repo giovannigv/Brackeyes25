@@ -17,7 +17,7 @@ var button_dict = {
 	"blue": "btn_mini_5"
 }
 
-func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	pass
 	
 func _ready() -> void:
