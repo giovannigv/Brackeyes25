@@ -83,7 +83,14 @@ func _on_button_pressed() -> void:
 				$"Tutorial 2".set_visible(false)
 				$"Tutorial 3".set_visible(true)
 		
-		2: #Nível 1 - Lower electrons' dance
+		1: #Nível 1 - Lower electrons' dance
+			if $Slider.pressed_this_level == true:
+				$Slider.pressed_this_level = false
+				reward_player()
+			else:
+				punish_player()
+		
+		2: 
 			if $"Blue Button 1".pressed_this_level == true || $"Blue Button 2".pressed_this_level == true:
 				Global.level = 3
 				reward_player()
