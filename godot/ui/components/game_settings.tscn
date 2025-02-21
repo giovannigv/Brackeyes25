@@ -1,13 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://nbaodrlopo7y"]
+[gd_scene load_steps=8 format=3 uid="uid://nbaodrlopo7y"]
 
 [ext_resource type="PackedScene" uid="uid://cpo1u33eut0i4" path="res://ui/components/float_range_game_settings_option.tscn" id="1_0gpwr"]
 [ext_resource type="FontFile" uid="uid://b1rs3eryvjadx" path="res://fonts/p22nudgewinkpro-regular.ttf" id="1_8yk3i"]
 [ext_resource type="Script" path="res://ui/components/game_settings.gd" id="1_eje8l"]
 [ext_resource type="Theme" uid="uid://d22mpqutkotsu" path="res://ui/theme.tres" id="2_mudwu"]
 [ext_resource type="Texture2D" uid="uid://boeqgn5ha510i" path="res://art/ui/PS_caixa_texto_azul.png" id="3_lf66u"]
-[ext_resource type="Texture2D" uid="uid://dk1ls55i51wuj" path="res://art/ui/PS_caixa_texto_azul_perninha.png" id="4_sixx1"]
 [ext_resource type="Texture2D" uid="uid://jr6ajkqgshkm" path="res://art/ui/PS_caixa_texto.png" id="6_42yps"]
-[ext_resource type="Texture2D" uid="uid://ggghivvblrjx" path="res://art/ui/PS_caixa_texto_perninha.png" id="7_wlrq4"]
 
 [sub_resource type="Theme" id="Theme_r0e11"]
 default_font = ExtResource("1_8yk3i")
@@ -20,6 +18,7 @@ script = ExtResource("1_eje8l")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
+theme_override_constants/margin_left = 10
 theme_override_constants/margin_top = 10
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
@@ -28,8 +27,9 @@ layout_mode = 2
 [node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer"]
 z_index = 2
 custom_minimum_size = Vector2(300, 0)
+layout_direction = 1
 layout_mode = 2
-theme_override_constants/h_separation = 20
+theme_override_constants/h_separation = 30
 theme_override_constants/v_separation = 15
 columns = 4
 
@@ -39,141 +39,140 @@ layout_mode = 2
 [node name="Empty2" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
 layout_mode = 2
 
-[node name="Language" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="BG_Language" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 30)
+layout_mode = 2
+texture = ExtResource("3_lf66u")
+expand_mode = 3
+
+[node name="Language" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/BG_Language"]
 z_index = 2
 layout_mode = 2
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 204.0
+offset_bottom = 24.0
 text = "settings_language"
-
-[node name="PsCaixaTextoAzul" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/Language"]
-z_index = 1
-z_as_relative = false
-position = Vector2(83, 9)
-scale = Vector2(0.255, 0.255)
-texture = ExtResource("3_lf66u")
-
-[node name="PsCaixaTextoAzulPerninha" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/Language/PsCaixaTextoAzul"]
-position = Vector2(227.451, 43.1373)
-texture = ExtResource("4_sixx1")
 
 [node name="LanguageDropdown" type="OptionButton" parent="MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 
-[node name="MasterVolumeEnabled" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="BG_Master" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
-theme = ExtResource("2_mudwu")
-text = "settings_volume_master_enabled"
-
-[node name="PsCaixaTexto" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MasterVolumeEnabled"]
-z_index = 1
-z_as_relative = false
-position = Vector2(116, 9)
-scale = Vector2(0.344762, 0.255)
 texture = ExtResource("6_42yps")
+expand_mode = 3
 
-[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MasterVolumeEnabled/PsCaixaTexto"]
-position = Vector2(227.451, 43.1373)
-texture = ExtResource("7_wlrq4")
+[node name="MasterVolumeEnabled" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/BG_Master"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 229.0
+offset_bottom = 24.0
+theme = ExtResource("2_mudwu")
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "settings_volume_master_enabled"
 
 [node name="MasterEnabledToggle" type="CheckButton" parent="MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 button_pressed = true
 
-[node name="MasterVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="BG_Master2" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
-text = "settings_volume_master"
-
-[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MasterVolumeLabel"]
-z_index = 1
-z_as_relative = false
-position = Vector2(83, 9)
-scale = Vector2(0.255, 0.255)
 texture = ExtResource("6_42yps")
+expand_mode = 3
 
-[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MasterVolumeLabel/PsCaixaTexto2"]
-position = Vector2(227.451, 43.1373)
-texture = ExtResource("7_wlrq4")
+[node name="MasterVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/BG_Master2"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 171.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "settings_volume_master"
 
 [node name="MasterVolumeSlider" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
 layout_mode = 2
 property = "mastervolume"
 
-[node name="MusicEnabledLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="BG_Music" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
-text = "settings_volume_music_enabled"
-
-[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MusicEnabledLabel"]
-z_index = 1
-z_as_relative = false
-position = Vector2(116, 9)
-scale = Vector2(0.344762, 0.255)
 texture = ExtResource("6_42yps")
+expand_mode = 3
 
-[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MusicEnabledLabel/PsCaixaTexto2"]
-position = Vector2(227.451, 43.1373)
-texture = ExtResource("7_wlrq4")
+[node name="MusicEnabledLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/BG_Music"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 220.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "settings_volume_music_enabled"
 
 [node name="MusicEnabledToggle" type="CheckButton" parent="MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 button_pressed = true
 
-[node name="MusicVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="BG_Music2" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
-text = "settings_volume_music"
-
-[node name="PsCaixaTexto2" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MusicVolumeLabel"]
-z_index = 1
-z_as_relative = false
-position = Vector2(83, 9)
-scale = Vector2(0.255, 0.255)
 texture = ExtResource("6_42yps")
+expand_mode = 3
 
-[node name="PsCaixaTextoPerninha2" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/MusicVolumeLabel/PsCaixaTexto2"]
-position = Vector2(227.451, 43.1373)
-texture = ExtResource("7_wlrq4")
+[node name="MusicVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/BG_Music2"]
+layout_mode = 2
+offset_left = 5.0
+offset_top = 7.0
+offset_right = 163.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "settings_volume_music"
 
 [node name="MusicVolumeSlider" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true
 layout_mode = 2
 property = "musicvolume"
 
-[node name="SoundEnabledLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="BG_Sound" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
-text = "settings_volume_sound_enabled"
-
-[node name="PsCaixaTexto3" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/SoundEnabledLabel"]
-z_index = 1
-z_as_relative = false
-position = Vector2(116, 9)
-scale = Vector2(0.344762, 0.255)
 texture = ExtResource("6_42yps")
+expand_mode = 3
 
-[node name="PsCaixaTextoPerninha" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/SoundEnabledLabel/PsCaixaTexto3"]
-position = Vector2(227.451, 43.1373)
-texture = ExtResource("7_wlrq4")
+[node name="SoundEnabledLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/BG_Sound"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 220.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "settings_volume_sound_enabled"
 
 [node name="SoundEnabledToggle" type="CheckButton" parent="MarginContainer/VBoxContainer/GridContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 button_pressed = true
 
-[node name="SoundVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer"]
+[node name="BG_Sound2" type="TextureRect" parent="MarginContainer/VBoxContainer/GridContainer"]
+custom_minimum_size = Vector2(200, 30)
 layout_mode = 2
-text = "settings_volume_sound"
-
-[node name="PsCaixaTexto3" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/SoundVolumeLabel"]
-z_index = 1
-z_as_relative = false
-position = Vector2(83, 9)
-scale = Vector2(0.255, 0.255)
 texture = ExtResource("6_42yps")
+expand_mode = 3
 
-[node name="PsCaixaTextoPerninha3" type="Sprite2D" parent="MarginContainer/VBoxContainer/GridContainer/SoundVolumeLabel/PsCaixaTexto3"]
-position = Vector2(227.451, 43.1373)
-texture = ExtResource("7_wlrq4")
+[node name="SoundVolumeLabel" type="Label" parent="MarginContainer/VBoxContainer/GridContainer/BG_Sound2"]
+layout_mode = 2
+offset_left = 4.0
+offset_top = 7.0
+offset_right = 162.0
+offset_bottom = 24.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+text = "settings_volume_sound"
 
 [node name="SoundVolumeSlider" parent="MarginContainer/VBoxContainer/GridContainer" instance=ExtResource("1_0gpwr")]
 unique_name_in_owner = true

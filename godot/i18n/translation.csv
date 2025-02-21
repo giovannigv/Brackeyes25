@@ -1,7 +1,7 @@
 keys,en,de,pt
 credits,Credits here,Credits hier,Créditos
 new_game,New Game,Neues Spiel,Novo Jogo
-continue,Continue,Fortfahren, Continuar
+continue,Continue,Fortfahren,Continuar
 settings,Game Settings,Einstellungen,Configurações
 leave_game,Leave game,Spiel verlassen,Sair
 return_to_main,Return,Zurück,Voltar
@@ -12,7 +12,7 @@ settings_volume_music_enabled,Music enabled,Musik an,Habilitar Música
 settings_volume_music,Music Volume,Musik Lautstärke, Volume Música
 settings_volume_sound_enabled,Sound enabled,Sound an, Habilitar Sons
 settings_volume_sound,Sound Volume,Sound Lautstärke, Volumes Sons
-settings_language,Game Language,Spielsprache,Lingua
+settings_language,Game Language,Spielsprache,Linguagem
 game_paused,Game paused,Spiel pausiert,Pausa
 resume_game,Resume game,Weiterspielen,Continuar
 restart_game,Restart game,Spiel neu starten,Reiniciar
