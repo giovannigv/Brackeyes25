@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var fade_overlay = %FadeOverlay
 @onready var pause_overlay = %PauseOverlay
+@onready var game_over_overlay = %GameOverOverlay
 
 func _ready() -> void:
 	fade_overlay.visible = true
@@ -10,6 +11,7 @@ func _ready() -> void:
 		SaveGame.load_game(get_tree())
 	
 	pause_overlay.game_exited.connect(_save_game)
+	game_over_overlay.game_exited.connect(_save_game)
 	
 	$Timer.set_paused(true)
 
@@ -43,6 +45,12 @@ func _input(event) -> void:
 		pause_overlay.grab_button_focus()
 		pause_overlay.visible = true
 
+func game_over() -> void:
+	get_viewport().set_input_as_handled()
+	get_tree().paused = true
+	game_over_overlay.grab_button_focus()
+	game_over_overlay.visible = true
+
 #Se o player faz algo errado, pune ele tirando 2 segundo do tempo restante
 func punish_player():
 	if $Timer.time_left - 10 <= 0:
@@ -62,7 +70,7 @@ func _save_game() -> void:
 	SaveGame.save_game(get_tree())
 
 func _on_timer_timeout() -> void:
-	print("Game Over")
+	game_over()
 
 func _on_button_pressed() -> void:
 	#Gerenciamento do nível

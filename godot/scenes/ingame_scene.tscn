@@ -1,9 +1,10 @@
-[gd_scene load_steps=52 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=54 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
 [ext_resource type="Texture2D" uid="uid://bd61mt0afsxkc" path="res://art/worktable.png" id="4_cg5xa"]
+[ext_resource type="PackedScene" uid="uid://bvb35n80s7iiu" path="res://ui/overlays/game_over_overlay.tscn" id="4_j3emw"]
 [ext_resource type="PackedScene" uid="uid://dt78ulqtsoup5" path="res://scenes/buttons/btn_3step.tscn" id="5_lovnl"]
 [ext_resource type="PackedScene" uid="uid://c7emex2wa3uw2" path="res://scenes/buttons/btn_2.tscn" id="6_5vyx7"]
 [ext_resource type="PackedScene" uid="uid://dnearrcq5yimx" path="res://scenes/buttons/btn_emergency.tscn" id="7_jw5hu"]
@@ -20,6 +21,7 @@
 [ext_resource type="PackedScene" uid="uid://c24ks6s1fm2rt" path="res://scenes/buttons/btn_ok.tscn" id="19_sbo42"]
 [ext_resource type="AudioStream" uid="uid://p1yj5d85bcde" path="res://music/Intensidade 1.ogg" id="20_aia42"]
 [ext_resource type="AudioStream" uid="uid://xqixo5r3tdvu" path="res://music/Intensidade 2.ogg" id="20_yqewc"]
+[ext_resource type="Texture2D" uid="uid://dvlcc6dyjhao" path="res://art/btn_reader.png" id="22_8o2tj"]
 [ext_resource type="AudioStream" uid="uid://bgbs57lr2uhnv" path="res://music/Intensidade 3.ogg" id="22_k4et3"]
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p2rcx"]
@@ -219,6 +221,10 @@ unique_name_in_owner = true
 process_mode = 2
 visible = false
 
+[node name="GameOverOverlay" parent="UI" instance=ExtResource("4_j3emw")]
+unique_name_in_owner = true
+visible = false
+
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_top = 2.0
 offset_right = 7104.0
@@ -243,7 +249,7 @@ rotation = 0.162316
 scale = Vector2(1.77, 1.788)
 
 [node name="Botão 2" parent="." instance=ExtResource("6_5vyx7")]
-position = Vector2(316, 757)
+position = Vector2(331, 742)
 rotation = -0.261799
 scale = Vector2(1.865, 1.865)
 
@@ -255,7 +261,7 @@ scale = Vector2(1.565, 1.565)
 
 [node name="Botão 4" parent="." instance=ExtResource("7_jw5hu")]
 z_index = 1
-position = Vector2(1701, 1027)
+position = Vector2(1781, 917)
 rotation = 0.436332
 scale = Vector2(1.52, 1.52)
 
@@ -265,7 +271,7 @@ rotation = 0.0767945
 scale = Vector2(0.77, 0.77)
 
 [node name="Dropzone2" parent="." instance=ExtResource("8_8d3mv")]
-position = Vector2(1702, 1021)
+position = Vector2(1779, 916)
 rotation = 0.436332
 scale = Vector2(0.94, 0.94)
 
@@ -304,8 +310,13 @@ rotation = 0.436332
 scale = Vector2(0.54, 0.54)
 
 [node name="Botão" parent="." instance=ExtResource("11_72awg")]
-position = Vector2(1802, 932)
-rotation = 0.436332
+position = Vector2(606, 765)
+rotation = -0.552362
+scale = Vector2(1.815, 1.815)
+
+[node name="Botão2" parent="." instance=ExtResource("11_72awg")]
+position = Vector2(611, 884)
+rotation = -0.552362
 scale = Vector2(1.815, 1.815)
 
 [node name="btn_default" parent="." instance=ExtResource("12_5ps5e")]
@@ -313,12 +324,11 @@ position = Vector2(989, 896)
 scale = Vector2(1.045, 1.045)
 
 [node name="btn_pad" parent="." instance=ExtResource("13_4vwrj")]
-position = Vector2(796, 881)
+position = Vector2(698, 810)
 scale = Vector2(1.24, 1.24)
 
 [node name="btn_select" parent="." instance=ExtResource("14_cydub")]
-position = Vector2(1292, 892)
-scale = Vector2(1.14, 1.14)
+position = Vector2(1156, 840)
 
 [node name="disp_measurer" parent="." instance=ExtResource("15_we4ge")]
 position = Vector2(920, 662)
@@ -351,6 +361,12 @@ stream = ExtResource("22_k4et3")
 autoplay = true
 bus = &"Music"
 
+[node name="BtnReader" type="Sprite2D" parent="."]
+position = Vector2(1795, 729)
+rotation = 0.445068
+scale = Vector2(1.85227, 2.03731)
+texture = ExtResource("22_8o2tj")
+
 [connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Botão 2" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Botão 3" to="." method="_on_button_pressed"]
@@ -358,6 +374,7 @@ bus = &"Music"
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_pressed" from="Btn_turn" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Botão" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Botão2" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="btn_pad" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="btn_select" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Computer" to="." method="_on_computer_clicked"]
