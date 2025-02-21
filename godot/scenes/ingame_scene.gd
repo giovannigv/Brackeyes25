@@ -17,7 +17,7 @@ func _ready() -> void:
 
 func _process(_delta: float) -> void:
 	#Sistema de gerenciamento do estabilidade
-	var stability = $Timer.time_left * 5/100 #Estabilidade do reator. Vai de 1 à 0
+	var stability = $Timer.time_left * 4/100 #Estabilidade do reator. Vai de 1 à 0
 	var intensidade = 1.0 - stability
 	$GPUParticles2D.process_material.initial_velocity_min = intensidade*50
 	$GPUParticles2D.process_material.spread = intensidade*45
@@ -84,13 +84,15 @@ func _on_button_pressed() -> void:
 				$"Tutorial 3".set_visible(true)
 		
 		2: #Nível 1 - Lower electrons' dance
-			if $"Botão".pressed_this_level == true || $"Botão2".pressed_this_level == true:
+			if $"Blue Button 1".pressed_this_level == true || $"Blue Button 2".pressed_this_level == true:
 				Global.level = 3
 				reward_player()
+				$"Tutorial Computer".text = "Good. Now insert the base substance capsule.\nYou can do it by interacting with the pad."
+				$Pad.showOrder(0)
 			else:
 				punish_player()
 		
-		3: #Nível 2 - Deve pressionar o botão 2
+		3: #Nível 2 - Insert Base Substance Capsule
 			if $"Botão 2".pressed_this_level == true:
 				$"Botão 2".pressed_this_level = false
 				Global.level = 4
@@ -139,4 +141,4 @@ func _on_btn_default_slider_max() -> void:
 	if Global.level == 1:
 		Global.level = 2
 		reward_player()
-		$"Tutorial Computer".text = "Deposit the electrons \n to the channel \n by clicking one of \n the blue buttons."
+		$"Tutorial Computer".text = "Deposit the electrons\nto the channel\nby clicking one of\nthe blue buttons."

@@ -272,13 +272,13 @@ position = Vector2(331, 742)
 rotation = -0.261799
 scale = Vector2(1.865, 1.865)
 
-[node name="Botão 3" parent="." instance=ExtResource("7_jw5hu")]
+[node name="Big F Button 1" parent="." instance=ExtResource("7_jw5hu")]
 z_index = 1
 position = Vector2(326, 969)
 rotation = -0.436332
 scale = Vector2(1.565, 1.565)
 
-[node name="Botão 4" parent="." instance=ExtResource("7_jw5hu")]
+[node name="Big F Button 2" parent="." instance=ExtResource("7_jw5hu")]
 z_index = 1
 position = Vector2(1781, 917)
 rotation = 0.436332
@@ -306,7 +306,7 @@ rotation = -0.0418879
 scale = Vector2(0.985, 0.985)
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 20.0
+wait_time = 25.0
 one_shot = true
 autostart = true
 script = ExtResource("10_82cjg")
@@ -323,7 +323,7 @@ max_value = 60.0
 value = 50.0
 show_percentage = false
 
-[node name="Btn_turn" parent="." instance=ExtResource("10_ttvc3")]
+[node name="Dial" parent="." instance=ExtResource("10_ttvc3")]
 position = Vector2(1577, 915)
 rotation = 0.436332
 scale = Vector2(0.54, 0.54)
@@ -342,11 +342,11 @@ scale = Vector2(1.815, 1.815)
 position = Vector2(989, 896)
 scale = Vector2(1.045, 1.045)
 
-[node name="btn_pad" parent="." instance=ExtResource("13_4vwrj")]
+[node name="Pad" parent="." instance=ExtResource("13_4vwrj")]
 position = Vector2(698, 810)
 scale = Vector2(1.24, 1.24)
 
-[node name="btn_select" parent="." instance=ExtResource("14_cydub")]
+[node name="Selector" parent="." instance=ExtResource("14_cydub")]
 position = Vector2(1156, 840)
 
 [node name="disp_measurer" parent="." instance=ExtResource("15_we4ge")]
@@ -449,15 +449,15 @@ position = Vector2(58, 333)
 
 [connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Botão 2" to="." method="_on_button_pressed"]
-[connection signal="button_pressed" from="Botão 3" to="." method="_on_button_pressed"]
-[connection signal="button_pressed" from="Botão 4" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Big F Button 1" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Big F Button 2" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-[connection signal="button_pressed" from="Btn_turn" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Dial" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Blue Button 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Blue Button 2" to="." method="_on_button_pressed"]
 [connection signal="slider_max" from="Slider" to="." method="_on_btn_default_slider_max"]
-[connection signal="button_pressed" from="btn_pad" to="." method="_on_button_pressed"]
-[connection signal="button_pressed" from="btn_select" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Pad" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Selector" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Computer" to="." method="_on_computer_clicked"]
 [connection signal="button_pressed" from="Computer/btn_ok" to="." method="_on_btn_ok_button_pressed"]
 [connection signal="button_pressed" from="btn_file" to="." method="_on_button_pressed"]

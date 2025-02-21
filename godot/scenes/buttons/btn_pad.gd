@@ -11,10 +11,6 @@ var finish_event = false
 
 func _on_area_2d_input_event(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
 	pass
-	
-func _on_ready():
-	print("OPA")
-	showOrder(0)
 
 func padControl(namePad: String):
 	const array = ['btn_yellow3', 'btn_orange3', 'btn_red', 'btn_pink3', 'btn_blue4']
@@ -40,7 +36,7 @@ func showOrder(indexLength):
 		beforeIndex += 1
 		if(beforeIndex >= 0):
 			arrayBtns[beforeIndex].use_parent_material = true
-		await get_tree().create_timer(1).timeout
+		await get_tree().create_timer(0.5).timeout
 		arrayBtns[i].use_parent_material = false
 	
 	
