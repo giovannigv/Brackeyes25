@@ -1,4 +1,4 @@
-[gd_scene load_steps=58 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=62 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -24,6 +24,8 @@
 [ext_resource type="Texture2D" uid="uid://dvlcc6dyjhao" path="res://art/btn_reader.png" id="22_8o2tj"]
 [ext_resource type="AudioStream" uid="uid://bgbs57lr2uhnv" path="res://music/Intensidade 3.ogg" id="22_k4et3"]
 [ext_resource type="PackedScene" uid="uid://llfs1trs66ko" path="res://scenes/buttons/btn_file.tscn" id="24_c3uwm"]
+[ext_resource type="Texture2D" uid="uid://1mn5vyiitgbv" path="res://art/ui/Painel_Settings.png" id="24_vdb4c"]
+[ext_resource type="LabelSettings" uid="uid://b0a2nwarrivfq" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85n1e"]
 font_size = 32
@@ -211,8 +213,89 @@ bg_color = Color(0.205117, 0.205117, 0.205117, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2thkp"]
 bg_color = Color(0.23017, 0.708015, 0.335578, 1)
 
-[sub_resource type="LabelSettings" id="LabelSettings_41w3m"]
-font_size = 32
+[sub_resource type="Animation" id="Animation_xica6"]
+resource_name = "move_tutorial"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(583, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(244, -178), Vector2(36, -5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.32, 0.32), Vector2(1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_nunr1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(583, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17, -423)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.32, 0.32)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uyjuq"]
+_data = {
+"RESET": SubResource("Animation_nunr1"),
+"move_tutorial": SubResource("Animation_xica6")
+}
 
 [sub_resource type="LabelSettings" id="LabelSettings_0cdbj"]
 font_size = 14
@@ -390,50 +473,68 @@ texture = ExtResource("22_8o2tj")
 [node name="Tutorial" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 387.0
-offset_top = 41.0
-offset_right = 427.0
-offset_bottom = 81.0
+offset_left = 583.0
+offset_top = 50.0
+offset_right = 1132.0
+offset_bottom = 425.0
 
-[node name="Tutorial 1" type="Label" parent="."]
+[node name="TextureRect" type="TextureRect" parent="Tutorial"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = -423.0
+offset_right = 556.0
+offset_bottom = -72.0
+scale = Vector2(0.32, 0.32)
+texture = ExtResource("24_vdb4c")
+expand_mode = 1
+
+[node name="Tutorial 1" type="Label" parent="Tutorial/TextureRect"]
 z_index = 1
-offset_left = 387.0
-offset_top = 41.0
-offset_right = 1536.0
-offset_bottom = 230.0
+offset_left = 83.0
+offset_top = 86.0
+offset_right = 487.0
+offset_bottom = 326.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/line_spacing = 10
 text = "One more day at work.
 I'll have to turn on the computer as always to see how the reactor is doing. 
 What could go wrong?
 (Click on the computer to turn it on)"
-label_settings = SubResource("LabelSettings_41w3m")
-horizontal_alignment = 1
+label_settings = ExtResource("25_w1ccr")
 vertical_alignment = 1
+autowrap_mode = 2
 
-[node name="Tutorial 2" type="Label" parent="."]
+[node name="Tutorial 2" type="Label" parent="Tutorial/TextureRect"]
 visible = false
 z_index = 1
-offset_left = 628.0
-offset_top = 41.0
-offset_right = 1338.0
-offset_bottom = 182.0
+offset_left = 77.0
+offset_top = 68.0
+offset_right = 495.0
+offset_bottom = 319.0
 text = "Looks like I need the password for today.
 It should be in a notebook or file around here.
 I should look around."
-label_settings = SubResource("LabelSettings_41w3m")
+label_settings = ExtResource("25_w1ccr")
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Tutorial 3" type="Label" parent="Tutorial/TextureRect"]
+visible = false
+z_index = 1
+offset_left = 78.0
+offset_top = 61.0
+offset_right = 495.0
+offset_bottom = 321.0
+text = "It says here that the password is 0451."
+label_settings = ExtResource("25_w1ccr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Tutorial 3" type="Label" parent="."]
-visible = false
-z_index = 1
-offset_left = 655.0
-offset_top = 45.0
-offset_right = 1244.0
-offset_bottom = 90.0
-text = "It says here that the password is 0451."
-label_settings = SubResource("LabelSettings_41w3m")
-horizontal_alignment = 1
-vertical_alignment = 1
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Tutorial"]
+libraries = {
+"": SubResource("AnimationLibrary_uyjuq")
+}
+autoplay = "move_tutorial"
 
 [node name="Tutorial Computer" type="Label" parent="."]
 visible = false

@@ -1,0 +1,9 @@
+[gd_resource type="LabelSettings" load_steps=2 format=3 uid="uid://b0a2nwarrivfq"]
+
+[ext_resource type="FontFile" uid="uid://b1rs3eryvjadx" path="res://fonts/p22nudgewinkpro-regular.ttf" id="1_1nyax"]
+
+[resource]
+line_spacing = 10.0
+font = ExtResource("1_1nyax")
+font_size = 25
+font_color = Color(0, 0, 0, 1)

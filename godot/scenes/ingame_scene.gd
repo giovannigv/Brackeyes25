@@ -81,9 +81,9 @@ func _on_button_pressed() -> void:
 		0:
 			if $btn_file.pressed_this_level == true:
 				$btn_file.pressed_this_level = false
-				$"Tutorial 1".set_visible(false)
-				$"Tutorial 2".set_visible(false)
-				$"Tutorial 3".set_visible(true)
+				$"Tutorial/TextureRect/Tutorial 1".set_visible(false)
+				$"Tutorial/TextureRect/Tutorial 2".set_visible(false)
+				$"Tutorial/TextureRect/Tutorial 3".set_visible(true)
 		
 		1: #Nível 1 - Lower electrons' dance
 			if $Slider.pressed_this_level == true:
@@ -124,10 +124,10 @@ func _on_computer_clicked() -> void:
 	$Computer/pwd4.set_visible(true)
 	$Computer/btn_ok.set_visible(true)
 	
-	if $"Tutorial 1".visible == true:
-		$"Tutorial 1".set_visible(false)
-		$"Tutorial 2".set_visible(true)
-		$"Tutorial 3".set_visible(false)
+	if $"Tutorial/TextureRect/Tutorial 1".visible == true:
+		$"Tutorial/TextureRect/Tutorial 1".set_visible(false)
+		$"Tutorial/TextureRect/Tutorial 2".set_visible(true)
+		$"Tutorial/TextureRect/Tutorial 3".set_visible(false)
 
 #Verifica se a senha está correta
 func _on_btn_ok_button_pressed() -> void:
@@ -138,12 +138,13 @@ func _on_btn_ok_button_pressed() -> void:
 		$Computer/pwd3.set_visible(false)
 		$Computer/pwd4.set_visible(false)
 		$Computer/btn_ok.set_visible(false)
-		$"Tutorial 1".set_visible(false)
-		$"Tutorial 2".set_visible(false)
-		$"Tutorial 3".set_visible(false)
+		$"Tutorial/TextureRect/Tutorial 1".set_visible(false)
+		$"Tutorial/TextureRect/Tutorial 2".set_visible(false)
+		$"Tutorial/TextureRect/Tutorial 3".set_visible(false)
 		$"Tutorial Computer".set_visible(true)
 		Global.level = 1
 		$Timer.set_paused(false)
+		$Tutorial/AnimationPlayer.play_backwards("move_tutorial")
 
 #Ativa quando o slider foi colocado no máximo
 func _on_btn_default_slider_max() -> void:
