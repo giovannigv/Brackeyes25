@@ -1,5 +1,7 @@
 extends Timer
-@onready var progress_bar: ProgressBar = $ProgressBar
+@onready var texture_progress_bar: TextureProgressBar = $TextureProgressBar
+
+var max = 60
 
 func _process(_delta: float) -> void:
-	progress_bar.value = time_left
+	texture_progress_bar.value = max - time_left
