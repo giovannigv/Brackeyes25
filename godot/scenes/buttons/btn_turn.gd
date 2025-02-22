@@ -3,6 +3,8 @@ extends GameButton
 @onready var sprite_button: Sprite2D = $Sprite2D/Sprite_Button
 @onready var disp_wave: Node2D = $"../disp_wave"
 
+signal finish_turn
+
 var maxRot = 249
 var gotRight = false
 
@@ -20,4 +22,5 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 
 func gotRightWave():
 	gotRight = true
+	emit_signal("finish_turn")
 	emiteSinal()

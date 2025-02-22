@@ -17,4 +17,3 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 			sprite_slider.position.y = 64
 		if sprite_slider.position.y == -56:
 			emit_signal("slider_max")
-		print(sprite_slider.position.y)

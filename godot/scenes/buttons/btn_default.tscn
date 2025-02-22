@@ -1,21 +1,21 @@
 [gd_scene load_steps=4 format=3 uid="uid://coswys42lkajm"]
 
 [ext_resource type="Script" path="res://scenes/buttons/btn_default.gd" id="1_8hr3d"]
-[ext_resource type="Texture2D" uid="uid://8u0vemyep5hw" path="res://art/buttons/btn_default_off.jpg" id="2_c5sip"]
+[ext_resource type="Texture2D" uid="uid://b3p13811phl1j" path="res://art/buttons/btn_default_off.png" id="2_kflq7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngaa"]
-size = Vector2(67, 52)
+size = Vector2(84, 52)
 
 [node name="btn_default" type="Node2D"]
 script = ExtResource("1_8hr3d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_c5sip")
+texture = ExtResource("2_kflq7")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(-0.5, 0)
+position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_4ngaa")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

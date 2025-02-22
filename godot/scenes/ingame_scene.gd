@@ -123,6 +123,7 @@ func _on_button_pressed() -> void:
 		6:
 			if $"Blue Button 2".pressed_this_level == true:
 				$"Blue Button 2".pressed_this_level = false
+				
 		
 		#Reduce Core Power
 		7:
@@ -131,6 +132,10 @@ func _on_button_pressed() -> void:
 				if $Dial.gotRight == true:
 					reward_player()
 		
+func showLevelObjective():
+	match Global.level:
+		6:
+			$"Tutorial Computer".text = "Hold another Blue Button to inset protons impact on inner Layer."
 
 #Quando o computador está desligado e é clicado, ele desativa a função de ligar e ativa os botões da senha
 func _on_computer_clicked() -> void:
@@ -186,7 +191,11 @@ func _on_selector_picked_correct() -> void:
 	reward_player()
 	$"Tutorial Computer".text = "Please rewind the protons in the inner layer.\nIt can be done by using the dial to match the wave ondulation."
 
-func 
+func _on_dial_finish_turn() -> void:
+	Global.level = 6
+	reward_player()
+	showLevelObjective()
+
 
 #Ativa quando o computador é ligado
 func _on_computer_pc_on() -> void:

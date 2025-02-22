@@ -1,21 +1,14 @@
 [gd_scene load_steps=3 format=3 uid="uid://by6y7chbnqowk"]
 
-[ext_resource type="Texture2D" uid="uid://c2nlnt7snvcrs" path="res://art/displays/disp_ring.png" id="1_bd50v"]
 [ext_resource type="Script" path="res://scenes/displays/disp_timer.gd" id="2_q5hsr"]
+[ext_resource type="Texture2D" uid="uid://bgdo00oftnw1y" path="res://art/displays/disp_clock.png" id="2_sumnf"]
 
-[node name="disp_timer" type="TextureProgressBar"]
-offset_right = 40.0
-offset_bottom = 40.0
-fill_mode = 4
-texture_under = ExtResource("1_bd50v")
-texture_progress = ExtResource("1_bd50v")
-tint_under = Color(0.360784, 0.360784, 0.360784, 0)
-tint_progress = Color(0.148932, 0.734665, 0.454045, 1)
+[node name="disp_timer" type="Node2D"]
 script = ExtResource("2_q5hsr")
 
-[node name="timer_to_complete" type="Timer" parent="."]
-unique_name_in_owner = true
-wait_time = 10.0
-one_shot = true
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_sumnf")
+offset = Vector2(-8.915, -2.86)
 
-[connection signal="timeout" from="timer_to_complete" to="." method="_on_timer_to_complete_timeout"]
+[node name="timer_to_complete" type="Timer" parent="."]
+wait_time = 10.0

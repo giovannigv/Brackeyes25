@@ -6,7 +6,7 @@ var finish_event: bool = false
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
-		sprite_btn_default.texture = ResourceLoader.load("res://art/buttons/btn_default_on.jpg")
+		sprite_btn_default.texture = ResourceLoader.load("res://art/buttons/btn_default_on.png")
 		emiteSinal()
 	if event.is_action_released("click"):
-		sprite_btn_default.texture = ResourceLoader.load("res://art/buttons/btn_default_off.jpg")
+		sprite_btn_default.texture = ResourceLoader.load("res://art/buttons/btn_default_off.png")

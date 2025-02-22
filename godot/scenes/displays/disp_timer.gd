@@ -1,7 +1,10 @@
-extends TextureProgressBar
+extends Node2D
 
-@onready var timer_to_complete: Timer = %timer_to_complete
+@onready var timer_to_complete: Timer = $timer_to_complete
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 const fullTime = 10
+const eachStep = 36 #degree for rotation
 var moved = false
 var finish_event = false
 
@@ -14,11 +17,11 @@ func _input(event):
 	
 func _process(delta: float) -> void:
 	if(moved):
-		value = fullTime
+		sprite_2d.rotation_degrees = 0
 		timer_to_complete.start(fullTime)
 		moved = false
 	else:
-		value = timer_to_complete.time_left
+		sprite_2d.rotation_degrees =  eachStep * timer_to_complete.time_left
 
 func _on_timer_to_complete_timeout() -> void:
 	finish_event = true

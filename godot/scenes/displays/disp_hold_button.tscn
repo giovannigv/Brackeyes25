@@ -7,7 +7,6 @@
 offset_right = 40.0
 offset_bottom = 40.0
 max_value = 8.0
-texture_under = ExtResource("1_t8l2s")
 texture_progress = ExtResource("1_t8l2s")
 tint_under = Color(0.051971, 0.051971, 0.051971, 1)
 script = ExtResource("2_grem2")

@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
 [ext_resource type="Texture2D" uid="uid://bd61mt0afsxkc" path="res://art/worktable.png" id="4_cg5xa"]
 [ext_resource type="PackedScene" uid="uid://bvb35n80s7iiu" path="res://ui/overlays/game_over_overlay.tscn" id="4_j3emw"]
+[ext_resource type="PackedScene" uid="uid://dt78ulqtsoup5" path="res://scenes/buttons/btn_3step.tscn" id="5_lovnl"]
 [ext_resource type="Texture2D" uid="uid://c6cqinmsb3d1v" path="res://art/displays/tv.png" id="6_kogdk"]
 [ext_resource type="PackedScene" uid="uid://dnearrcq5yimx" path="res://scenes/buttons/btn_emergency.tscn" id="7_jw5hu"]
 [ext_resource type="PackedScene" uid="uid://cj2dfx21cqp1l" path="res://scenes/draggables/dropzone.tscn" id="8_8d3mv"]
@@ -34,7 +35,6 @@
 [ext_resource type="PackedScene" uid="uid://dhgw6enyyltpn" path="res://scenes/draggables/key_draggable.tscn" id="32_s6xq2"]
 [ext_resource type="PackedScene" uid="uid://b1263b46q38kr" path="res://scenes/draggables/key_dropzone.tscn" id="33_30076"]
 [ext_resource type="PackedScene" uid="uid://dwy6jpf5ox0fk" path="res://scenes/displays/disp_wave.tscn" id="34_tmhbh"]
-[ext_resource type="PackedScene" uid="uid://by6y7chbnqowk" path="res://scenes/displays/disp_timer.tscn" id="36_q1iga"]
 [ext_resource type="PackedScene" uid="uid://6oxbkg1c5cbk" path="res://scenes/buttons/slap.tscn" id="36_u6ch2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85n1e"]
@@ -254,6 +254,11 @@ the slider."
 vertical_alignment = 1
 autowrap_mode = 2
 
+[node name="Botão 1" parent="." instance=ExtResource("5_lovnl")]
+position = Vector2(1103, 1022)
+rotation = 0.162316
+scale = Vector2(1.77, 1.788)
+
 [node name="Big F Button 1" parent="." instance=ExtResource("7_jw5hu")]
 z_index = 1
 position = Vector2(363, 970)
@@ -374,6 +379,7 @@ offset_left = 380.0
 offset_top = 754.0
 offset_right = 537.0
 offset_bottom = 793.0
+value = 0.0
 
 [node name="DispHoldButton2" parent="." instance=ExtResource("27_fxhw2")]
 offset_left = 406.0
@@ -381,6 +387,7 @@ offset_top = 776.0
 offset_right = 563.0
 offset_bottom = 815.0
 rotation = -0.0291888
+value = 0.0
 tint_progress = Color(1, 0.027451, 0, 1)
 
 [node name="DispHoldButton3" parent="." instance=ExtResource("27_fxhw2")]
@@ -389,6 +396,7 @@ offset_top = 805.0
 offset_right = 584.0
 offset_bottom = 844.0
 rotation = -0.0749924
+value = 0.0
 
 [node name="SendKey" type="Sprite2D" parent="."]
 position = Vector2(439, 306)
@@ -409,17 +417,13 @@ scale = Vector2(0.5, 0.5)
 position = Vector2(434, 310)
 
 [node name="slap" parent="." instance=ExtResource("36_u6ch2")]
-visible = false
 position = Vector2(1607, 436)
 
-[node name="disp_timer" parent="." instance=ExtResource("36_q1iga")]
-position = Vector2(134, 907)
-
+[connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 2" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_pressed" from="Dial" to="." method="_on_button_pressed"]
-[connection signal="finish_turn" from="Dial" to="." method="_on_dial_finish_turn"]
 [connection signal="button_pressed" from="Blue Button 1" to="." method="_on_button_pressed"]
 [connection signal="slider_max" from="Slider" to="." method="_on_btn_default_slider_max"]
 [connection signal="button_pressed" from="Pad" to="." method="_on_button_pressed"]
