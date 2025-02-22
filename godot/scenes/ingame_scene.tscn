@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=41 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -33,6 +33,7 @@
 [ext_resource type="Texture2D" uid="uid://dh5lhy33ihag0" path="res://art/drawer/drawer_closed.png" id="31_ug164"]
 [ext_resource type="PackedScene" uid="uid://dhgw6enyyltpn" path="res://scenes/draggables/key_draggable.tscn" id="32_s6xq2"]
 [ext_resource type="PackedScene" uid="uid://b1263b46q38kr" path="res://scenes/draggables/key_dropzone.tscn" id="33_30076"]
+[ext_resource type="PackedScene" uid="uid://c5ojkid1b3ja2" path="res://scenes/displays/disp_wave.tscn" id="34_tmhbh"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85n1e"]
 font_size = 32
@@ -196,7 +197,7 @@ theme_override_constants/line_spacing = 10
 text = "One more day at work.
 I'll have to turn on the computer as always to see how the reactor is doing. 
 What could go wrong?
-(Click on the computer to turn it on)"
+(Grab the key and turn it on)"
 label_settings = ExtResource("25_w1ccr")
 vertical_alignment = 1
 autowrap_mode = 2
@@ -255,6 +256,7 @@ Please lower the electrons'
 dance by moving 
 the slider."
 vertical_alignment = 1
+autowrap_mode = 2
 
 [node name="Botão 1" parent="." instance=ExtResource("5_lovnl")]
 position = Vector2(1229, 791)
@@ -305,6 +307,11 @@ show_percentage = false
 
 [node name="Dial" parent="." instance=ExtResource("10_ttvc3")]
 position = Vector2(1734, 952)
+rotation = 0.436332
+scale = Vector2(0.54, 0.54)
+
+[node name="Dial2" parent="." instance=ExtResource("10_ttvc3")]
+position = Vector2(1663, 1065)
 rotation = 0.436332
 scale = Vector2(0.54, 0.54)
 
@@ -396,11 +403,17 @@ position = Vector2(1796, 595)
 position = Vector2(1427, 792)
 scale = Vector2(0.5, 0.5)
 
+[node name="disp_wave" parent="." instance=ExtResource("34_tmhbh")]
+position = Vector2(1428, 614)
+rotation = 0.140813
+scale = Vector2(2, 2)
+
 [connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 2" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_pressed" from="Dial" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Dial2" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Blue Button 1" to="." method="_on_button_pressed"]
 [connection signal="slider_max" from="Slider" to="." method="_on_btn_default_slider_max"]
 [connection signal="button_pressed" from="Pad" to="." method="_on_button_pressed"]

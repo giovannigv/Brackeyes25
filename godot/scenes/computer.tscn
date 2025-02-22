@@ -25,3 +25,5 @@ rotation = -0.174533
 visible = false
 position = Vector2(79, 34)
 rotation = -0.174533
+
+[node name="Sprite2D" type="Sprite2D" parent="."]

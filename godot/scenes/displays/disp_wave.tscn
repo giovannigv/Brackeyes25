@@ -1,0 +1,34 @@
+[gd_scene load_steps=7 format=3 uid="uid://c5ojkid1b3ja2"]
+
+[ext_resource type="Texture2D" uid="uid://tyyqlve28ven" path="res://art/displays/disp_wave.png" id="1_2q5wr"]
+[ext_resource type="Script" path="res://scenes/displays/disp_wave.gd" id="1_rpsif"]
+[ext_resource type="Texture2D" uid="uid://dgwdlsatdyjo6" path="res://art/displays/disp_first_wave.png" id="2_hvr8h"]
+[ext_resource type="Texture2D" uid="uid://bbe2irbdg4vii" path="res://art/displays/disp_sec_wave.png" id="3_idfkq"]
+[ext_resource type="Texture2D" uid="uid://d0hvef2g0xnvl" path="res://art/displays/disp_third_wave.png" id="4_andn0"]
+[ext_resource type="Texture2D" uid="uid://rf2vwbgpjkp" path="res://art/displays/disp_four_wave.png" id="5_l5e7v"]
+
+[node name="disp_wave" type="Node2D"]
+script = ExtResource("1_rpsif")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(52, 31)
+texture = ExtResource("1_2q5wr")
+
+[node name="DispFirstWave" type="Sprite2D" parent="."]
+position = Vector2(52, 39)
+texture = ExtResource("2_hvr8h")
+
+[node name="DispSecWave" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(52, 39)
+texture = ExtResource("3_idfkq")
+
+[node name="DispThirdWave" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(52, 39)
+texture = ExtResource("4_andn0")
+
+[node name="DispFourWave" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(52, 39)
+texture = ExtResource("5_l5e7v")
