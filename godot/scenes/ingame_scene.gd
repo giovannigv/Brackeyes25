@@ -23,19 +23,19 @@ func _process(_delta: float) -> void:
 	#Sistema de gerenciamento da música
 	if stability <= 1.0 && stability >= 0.66:
 		var tween = create_tween()
-		tween.tween_property($Music, "volume_db", 0, 0.125)
-		tween.tween_property($Music2, "volume_db", -80, 0.125)
-		tween.tween_property($Music3, "volume_db", -80, 0.125)
+		tween.tween_property($Music, "volume_db", 0, 0.1)
+		tween.tween_property($Music2, "volume_db", -80, 0.1)
+		tween.tween_property($Music3, "volume_db", -80, 0.1)
 	elif stability <= 0.65 && stability >= 0.33:
 		var tween = create_tween()
-		tween.tween_property($Music, "volume_db", -80, 0.125)
-		tween.tween_property($Music2, "volume_db", -0, 0.125)
-		tween.tween_property($Music3, "volume_db", -80, 0.125)
+		tween.tween_property($Music, "volume_db", -80, 0.1)
+		tween.tween_property($Music2, "volume_db", -0, 0.1)
+		tween.tween_property($Music3, "volume_db", -80, 0.1)
 	elif stability <= 0.32 && stability >= 0:
 		var tween = create_tween()
-		tween.tween_property($Music, "volume_db", -80, 0.125)
-		tween.tween_property($Music2, "volume_db", -80, 0.125)
-		tween.tween_property($Music3, "volume_db", 0, 0.125)
+		tween.tween_property($Music, "volume_db", -80, 0.1)
+		tween.tween_property($Music2, "volume_db", -80, 0.1)
+		tween.tween_property($Music3, "volume_db", 0, 0.1)
 
 func _input(event) -> void:
 	if event.is_action_pressed("pause") and not pause_overlay.visible:
@@ -153,7 +153,7 @@ func _on_btn_default_slider_max() -> void:
 	if Global.level == 1:
 		Global.level = 2
 		reward_player()
-		$"Tutorial Computer".text = "Deposit the electrons\nto the channel\nby clicking one of\nthe blue buttons."
+		$"Tutorial Computer".text = "Deposit the electrons\nto the channel\nby clicking\nthe blue button."
 
 #Ativa quando o jogador terminou a sequência
 func _on_pad_pad_finished() -> void:

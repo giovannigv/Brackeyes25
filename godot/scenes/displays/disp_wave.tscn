@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://c5ojkid1b3ja2"]
+[gd_scene load_steps=7 format=3 uid="uid://dwy6jpf5ox0fk"]
 
 [ext_resource type="Texture2D" uid="uid://tyyqlve28ven" path="res://art/displays/disp_wave.png" id="1_2q5wr"]
 [ext_resource type="Script" path="res://scenes/displays/disp_wave.gd" id="1_rpsif"]
