@@ -43,7 +43,7 @@ func showOrder(indexLength):
 		if(beforeIndex >= 0):
 			arrayBtns[beforeIndex].use_parent_material = true
 		if(i < 5):
-			await get_tree().create_timer(0.2).timeout
+			#await get_tree().create_timer(0.2).timeout
 			arrayBtns[i].use_parent_material = false
 	
 	

@@ -11,6 +11,7 @@ var isOn = false
 signal turnPCOn
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 #Processamento do click e arrasto do objeto
 func _process(_delta: float) -> void:
@@ -34,6 +35,7 @@ func _process(_delta: float) -> void:
 				Global.is_key_dragging = false
 				var tween = get_tree().create_tween()
 				if is_inside_dropable == true:
+					is_droped = true
 					tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)
 				else:
 					tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
@@ -43,34 +45,46 @@ func _process(_delta: float) -> void:
 func _on_area_2d_mouse_entered() -> void:
 	if not Global.is_key_dragging:
 		draggable = true
+		print(1)
 		sprite_2d.texture = ResourceLoader.load("res://art/key/key_holding_hover.png")
 	if is_droped:
 		if isOn:
+			print(2)
 			sprite_2d.texture = ResourceLoader.load("res://art/key/key_turn_hover.png")
 		else:
+			print(3)
 			sprite_2d.texture = ResourceLoader.load("res://art/key/key_use_hover.png")
 
 #Quando o mouse sai da chave
 func _on_area_2d_mouse_exited() -> void:
 	if not Global.is_key_dragging:
 		draggable = false
+		print(1)
 		sprite_2d.texture = ResourceLoader.load("res://art/key/key_holding.png")
 	if is_droped:
 		if isOn:
+			print(4)
 			sprite_2d.texture = ResourceLoader.load("res://art/key/key_turn.png")
 		else:
+			print(5)
 			sprite_2d.texture = ResourceLoader.load("res://art/key/key_use.png")
 
 #Se a chave tocou na dropzone, altera a sprite
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("dropable"):
+		print(6)
 		is_inside_dropable = true
-		is_droped = true
+		audio_stream_player_2d.play()
 		sprite_2d.texture = ResourceLoader.load("res://art/key/key_use.png")
 		body_ref = body
 
-#Se a chave saiu da dropzone, altera a cor dela
+#Se a chave saiu da dropzone, altera a sprite
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("dropable"):
+		print(7, is_droped)
+		if(is_droped):
+			sprite_2d.texture = ResourceLoader.load("res://art/key/key_turn_hover.png")
+		else:
+			sprite_2d.texture = ResourceLoader.load("res://art/key/key_holding_hover.png")
 		is_inside_dropable = false
-		sprite_2d.texture = ResourceLoader.load("res://art/key/key_holding_hover.png")
+		

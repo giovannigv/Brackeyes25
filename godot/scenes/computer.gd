@@ -4,8 +4,10 @@ extends GameButton
 signal pc_on
 
 @onready var key_draggable: Node2D = $"../KeyDraggable"
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func turnOn():
+	audio_stream_player_2d.play()
 	emiteSinal()
 	emit_signal("pc_on")
 
