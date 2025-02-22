@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=41 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -27,14 +27,15 @@
 [ext_resource type="AudioStream" uid="uid://bgbs57lr2uhnv" path="res://music/Intensidade 3.ogg" id="22_k4et3"]
 [ext_resource type="PackedScene" uid="uid://llfs1trs66ko" path="res://scenes/buttons/btn_file.tscn" id="24_c3uwm"]
 [ext_resource type="Texture2D" uid="uid://1mn5vyiitgbv" path="res://art/ui/Painel_Settings.png" id="24_vdb4c"]
-[ext_resource type="LabelSettings" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
-[ext_resource type="PackedScene" path="res://scenes/displays/disp_hold_button.tscn" id="27_fxhw2"]
-[ext_resource type="PackedScene" path="res://scenes/buttons/btn_hold.tscn" id="28_5hmio"]
+[ext_resource type="LabelSettings" uid="uid://b0a2nwarrivfq" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
+[ext_resource type="PackedScene" uid="uid://ds2o3sceyjk8y" path="res://scenes/displays/disp_hold_button.tscn" id="27_fxhw2"]
+[ext_resource type="PackedScene" uid="uid://bopufqqgy6wy1" path="res://scenes/buttons/btn_hold.tscn" id="28_5hmio"]
 [ext_resource type="Texture2D" uid="uid://r7ke58np7yle" path="res://art/send_key.png" id="29_r0w6y"]
 [ext_resource type="Texture2D" uid="uid://dh5lhy33ihag0" path="res://art/drawer/drawer_closed.png" id="31_ug164"]
 [ext_resource type="PackedScene" uid="uid://dhgw6enyyltpn" path="res://scenes/draggables/key_draggable.tscn" id="32_s6xq2"]
 [ext_resource type="PackedScene" uid="uid://b1263b46q38kr" path="res://scenes/draggables/key_dropzone.tscn" id="33_30076"]
-[ext_resource type="PackedScene" path="res://scenes/displays/disp_wave.tscn" id="34_tmhbh"]
+[ext_resource type="PackedScene" uid="uid://c5ojkid1b3ja2" path="res://scenes/displays/disp_wave.tscn" id="34_tmhbh"]
+[ext_resource type="PackedScene" uid="uid://bvbd0val86c5d" path="res://scenes/buttons/btn_wave.tscn" id="36_saxb3"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85n1e"]
 font_size = 32
@@ -303,11 +304,6 @@ position = Vector2(1734, 952)
 rotation = 0.436332
 scale = Vector2(0.54, 0.54)
 
-[node name="Dial2" parent="." instance=ExtResource("10_ttvc3")]
-position = Vector2(1663, 1065)
-rotation = 0.436332
-scale = Vector2(0.54, 0.54)
-
 [node name="Blue Button 1" parent="." instance=ExtResource("11_72awg")]
 position = Vector2(540, 789)
 rotation = -0.552362
@@ -401,12 +397,16 @@ position = Vector2(1428, 614)
 rotation = 0.140813
 scale = Vector2(2, 2)
 
+[node name="btn_turn" parent="." instance=ExtResource("36_saxb3")]
+position = Vector2(1623, 1059)
+rotation = 0.462512
+scale = Vector2(0.5, 0.5)
+
 [connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 2" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_pressed" from="Dial" to="." method="_on_button_pressed"]
-[connection signal="button_pressed" from="Dial2" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Blue Button 1" to="." method="_on_button_pressed"]
 [connection signal="slider_max" from="Slider" to="." method="_on_btn_default_slider_max"]
 [connection signal="button_pressed" from="Pad" to="." method="_on_button_pressed"]
