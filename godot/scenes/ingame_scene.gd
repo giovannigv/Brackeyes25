@@ -122,6 +122,7 @@ func _on_computer_clicked() -> void:
 	$Computer/pwd2.set_visible(true)
 	$Computer/pwd3.set_visible(true)
 	$Computer/pwd4.set_visible(true)
+	$Computer/Pass.set_visible(true)
 	$Computer/btn_ok.set_visible(true)
 	
 	if $"Tutorial/TextureRect/Tutorial 1".visible == true:
@@ -137,6 +138,7 @@ func _on_btn_ok_button_pressed() -> void:
 		$Computer/pwd2.set_visible(false)
 		$Computer/pwd3.set_visible(false)
 		$Computer/pwd4.set_visible(false)
+		$Computer/Pass.set_visible(false)
 		$Computer/btn_ok.set_visible(false)
 		$"Tutorial/TextureRect/Tutorial 1".set_visible(false)
 		$"Tutorial/TextureRect/Tutorial 2".set_visible(false)

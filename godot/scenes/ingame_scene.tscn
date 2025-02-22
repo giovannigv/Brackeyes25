@@ -294,10 +294,10 @@ autostart = true
 script = ExtResource("10_82cjg")
 
 [node name="ProgressBar" type="ProgressBar" parent="Timer"]
-offset_left = 544.0
-offset_top = 652.0
-offset_right = 1060.0
-offset_bottom = 721.0
+offset_left = 645.0
+offset_top = 663.0
+offset_right = 1161.0
+offset_bottom = 732.0
 rotation = -1.5708
 theme_override_styles/background = SubResource("StyleBoxFlat_hl6dv")
 theme_override_styles/fill = SubResource("StyleBoxFlat_2thkp")
@@ -342,13 +342,13 @@ scale = Vector2(1.26, 1.26)
 
 [node name="Computer" parent="." instance=ExtResource("17_uo444")]
 z_index = 1
-position = Vector2(1354, 261)
+position = Vector2(1261, 212)
 rotation = 0.0645772
 skew = 0.0506145
 
 [node name="btn_ok" parent="Computer" instance=ExtResource("19_sbo42")]
 visible = false
-position = Vector2(114.578, 33.6144)
+position = Vector2(352.919, 132.101)
 
 [node name="BtnReader" type="Sprite2D" parent="."]
 position = Vector2(1818, 786)
@@ -397,7 +397,7 @@ position = Vector2(165, 547)
 texture = ExtResource("31_ug164")
 
 [node name="KeyDraggable" parent="." instance=ExtResource("32_s6xq2")]
-position = Vector2(1796, 595)
+position = Vector2(1831, 571)
 
 [node name="KeyDropzone" parent="." instance=ExtResource("33_30076")]
 position = Vector2(1427, 792)
