@@ -7,6 +7,9 @@ var is_inside_dropable: bool = false #Indica se o objeto se encontra em uma áre
 var offset: Vector2 #Distância entre o mouse e o objeto. Utilizado para suavizar a animação do objeto sendo arrastado
 var is_droped = false # Valida se ja foi deixada no ponto
 var isOn = false
+
+signal turnPCOn
+
 @onready var sprite_2d: Sprite2D = $Sprite2D
 
 #Processamento do click e arrasto do objeto
@@ -16,7 +19,7 @@ func _process(_delta: float) -> void:
 			#Se clicou, guarda a posição inicial do objeto e a distância entre o objeto e o mouse
 			if Input.is_action_just_pressed("click"):
 				if(is_droped):
-					print("turn on pc")
+					turnPCOn.emit()
 					isOn = true
 					sprite_2d.texture = ResourceLoader.load("res://art/key/key_turn.png")
 				initialPos = global_position

@@ -14,7 +14,7 @@ func _ready() -> void:
 	game_over_overlay.game_exited.connect(_save_game)
 	
 	$Timer.set_paused(true)
-	Global.level = 1
+	Global.level = 0
 
 func _process(_delta: float) -> void:
 	#Sistema de gerenciamento do estabilidade
@@ -118,7 +118,6 @@ func _on_button_pressed() -> void:
 
 #Quando o computador está desligado e é clicado, ele desativa a função de ligar e ativa os botões da senha
 func _on_computer_clicked() -> void:
-	$Computer/Sprite2D.set_visible(false)
 	$Computer/pwd1.set_visible(true)
 	$Computer/pwd2.set_visible(true)
 	$Computer/pwd3.set_visible(true)
