@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=39 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -26,9 +26,9 @@
 [ext_resource type="AudioStream" uid="uid://bgbs57lr2uhnv" path="res://music/Intensidade 3.ogg" id="22_k4et3"]
 [ext_resource type="PackedScene" uid="uid://llfs1trs66ko" path="res://scenes/buttons/btn_file.tscn" id="24_c3uwm"]
 [ext_resource type="Texture2D" uid="uid://1mn5vyiitgbv" path="res://art/ui/Painel_Settings.png" id="24_vdb4c"]
-[ext_resource type="LabelSettings" uid="uid://b0a2nwarrivfq" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
-[ext_resource type="PackedScene" uid="uid://ds2o3sceyjk8y" path="res://scenes/displays/disp_hold_button.tscn" id="27_fxhw2"]
-[ext_resource type="PackedScene" uid="uid://bopufqqgy6wy1" path="res://scenes/buttons/btn_hold.tscn" id="28_5hmio"]
+[ext_resource type="LabelSettings" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
+[ext_resource type="PackedScene" path="res://scenes/displays/disp_hold_button.tscn" id="27_fxhw2"]
+[ext_resource type="PackedScene" path="res://scenes/buttons/btn_hold.tscn" id="28_5hmio"]
 [ext_resource type="Texture2D" uid="uid://r7ke58np7yle" path="res://art/send_key.png" id="29_r0w6y"]
 [ext_resource type="Texture2D" uid="uid://cta1u4cjpvw6t" path="res://art/key/key_holding.png" id="30_0mx7b"]
 [ext_resource type="Texture2D" uid="uid://dh5lhy33ihag0" path="res://art/drawer/drawer_closed.png" id="31_ug164"]
@@ -119,183 +119,6 @@ _data = {
 "RESET": SubResource("Animation_nunr1"),
 "move_tutorial": SubResource("Animation_xica6")
 }
-
-[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p2rcx"]
-particles_animation = true
-particles_anim_h_frames = 1
-particles_anim_v_frames = 1
-particles_anim_loop = true
-
-[sub_resource type="Curve" id="Curve_iwbhd"]
-min_value = -360.0
-max_value = 360.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_1w034"]
-width = 500
-curve = SubResource("Curve_iwbhd")
-
-[sub_resource type="Curve" id="Curve_b5kya"]
-min_value = -1024.0
-max_value = 1024.0
-
-[sub_resource type="CurveTexture" id="CurveTexture_1mxgt"]
-width = 500
-curve = SubResource("Curve_b5kya")
-
-[sub_resource type="Curve" id="Curve_nkaq7"]
-max_value = 200.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_6dmfm"]
-width = 500
-curve = SubResource("Curve_nkaq7")
-
-[sub_resource type="Curve" id="Curve_26015"]
-max_value = 100.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_r62jw"]
-width = 500
-curve = SubResource("Curve_26015")
-
-[sub_resource type="Curve" id="Curve_x6jnx"]
-min_value = 0.99
-
-[sub_resource type="Curve" id="Curve_qdvd6"]
-min_value = 0.99
-
-[sub_resource type="Curve" id="Curve_wc6ph"]
-min_value = 0.99
-
-[sub_resource type="CurveXYZTexture" id="CurveXYZTexture_56fcj"]
-curve_x = SubResource("Curve_x6jnx")
-curve_y = SubResource("Curve_qdvd6")
-curve_z = SubResource("Curve_wc6ph")
-
-[sub_resource type="Curve" id="Curve_0diu0"]
-min_value = -1024.0
-max_value = 1024.0
-
-[sub_resource type="CurveTexture" id="CurveTexture_5mtl6"]
-width = 500
-curve = SubResource("Curve_0diu0")
-
-[sub_resource type="Curve" id="Curve_2g817"]
-min_value = -1024.0
-max_value = 1024.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_qewuk"]
-width = 500
-curve = SubResource("Curve_2g817")
-
-[sub_resource type="Curve" id="Curve_8glpf"]
-min_value = -2.0
-max_value = 2.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ndti7"]
-width = 500
-curve = SubResource("Curve_8glpf")
-
-[sub_resource type="Curve" id="Curve_655c1"]
-min_value = -1024.0
-max_value = 1024.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_441ib"]
-width = 500
-curve = SubResource("Curve_655c1")
-
-[sub_resource type="Curve" id="Curve_jr027"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_ps6ta"]
-width = 500
-curve = SubResource("Curve_jr027")
-
-[sub_resource type="Curve" id="Curve_a0hci"]
-min_value = -200.0
-max_value = 200.0
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_bnh6o"]
-width = 500
-curve = SubResource("Curve_a0hci")
-
-[sub_resource type="Curve" id="Curve_enyn0"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
-point_count = 2
-
-[sub_resource type="CurveTexture" id="CurveTexture_elhyy"]
-width = 500
-curve = SubResource("Curve_enyn0")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_u64ns"]
-lifetime_randomness = 0.5
-particle_flag_disable_z = true
-emission_shape = 1
-emission_sphere_radius = 15.0
-angle_min = -720.0
-angle_max = 720.0
-inherit_velocity_ratio = 1.0
-spread = 180.0
-flatness = 1.0
-angular_velocity_min = -720.0
-angular_velocity_max = 720.0
-angular_velocity_curve = SubResource("CurveTexture_1w034")
-directional_velocity_min = -720.0
-directional_velocity_max = 720.0
-directional_velocity_curve = SubResource("CurveXYZTexture_56fcj")
-orbit_velocity_curve = SubResource("CurveTexture_ndti7")
-gravity = Vector3(0, -98, 0)
-linear_accel_min = -100.0
-linear_accel_max = 100.0
-radial_accel_min = -100.0
-radial_accel_max = 100.0
-tangential_accel_min = -100.0
-tangential_accel_max = 100.0
-tangential_accel_curve = SubResource("CurveTexture_bnh6o")
-damping_max = 100.0
-damping_curve = SubResource("CurveTexture_r62jw")
-scale_max = 7.0
-scale_curve = SubResource("CurveTexture_441ib")
-scale_over_velocity_max = 1000.0
-scale_over_velocity_curve = SubResource("CurveTexture_ps6ta")
-emission_curve = SubResource("CurveTexture_5mtl6")
-hue_variation_min = -2.23517e-08
-hue_variation_max = 0.03
-hue_variation_curve = SubResource("CurveTexture_qewuk")
-anim_speed_max = 16.0
-anim_speed_curve = SubResource("CurveTexture_6dmfm")
-anim_offset_max = 1.0
-anim_offset_curve = SubResource("CurveTexture_1mxgt")
-turbulence_enabled = true
-turbulence_noise_strength = 10.0
-turbulence_noise_scale = 5.0
-turbulence_noise_speed = Vector3(10, 10, 10)
-turbulence_noise_speed_random = 2.0
-turbulence_influence_min = 0.0
-turbulence_influence_max = 0.5
-turbulence_initial_displacement_min = -25.0
-turbulence_initial_displacement_max = 25.0
-turbulence_influence_over_life = SubResource("CurveTexture_elhyy")
-collision_mode = 1
-collision_friction = 0.5
-collision_bounce = 0.5
-collision_use_scale = true
-sub_emitter_mode = 1
-sub_emitter_frequency = 50.0
-sub_emitter_keep_velocity = true
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hl6dv"]
 bg_color = Color(0.205117, 0.205117, 0.205117, 1)
@@ -432,17 +255,6 @@ dance by moving
 the slider."
 vertical_alignment = 1
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-material = SubResource("CanvasItemMaterial_p2rcx")
-position = Vector2(512, 334)
-amount = 40
-process_material = SubResource("ParticleProcessMaterial_u64ns")
-lifetime = 5.0
-preprocess = 2.0
-speed_scale = 2.0
-randomness = 0.5
-collision_base_size = 3.0
-
 [node name="Botão 1" parent="." instance=ExtResource("5_lovnl")]
 position = Vector2(1229, 791)
 rotation = 0.162316
@@ -548,16 +360,21 @@ position = Vector2(72, 180)
 stream = ExtResource("20_aia42")
 autoplay = true
 bus = &"Music"
+parameters/looping = true
 
 [node name="Music2" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("20_yqewc")
+volume_db = -80.0
 autoplay = true
 bus = &"Music"
+parameters/looping = true
 
 [node name="Music3" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("22_k4et3")
+volume_db = -80.0
 autoplay = true
 bus = &"Music"
+parameters/looping = true
 
 [node name="btn_hold" parent="." instance=ExtResource("28_5hmio")]
 position = Vector2(560, 919)
