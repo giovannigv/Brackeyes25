@@ -25,7 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://bgbs57lr2uhnv" path="res://music/Intensidade 3.ogg" id="22_k4et3"]
 [ext_resource type="PackedScene" uid="uid://llfs1trs66ko" path="res://scenes/buttons/btn_file.tscn" id="24_c3uwm"]
 [ext_resource type="Texture2D" uid="uid://1mn5vyiitgbv" path="res://art/ui/Painel_Settings.png" id="24_vdb4c"]
-[ext_resource type="LabelSettings" uid="uid://b0a2nwarrivfq" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
+[ext_resource type="LabelSettings" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85n1e"]
 font_size = 32

@@ -85,13 +85,13 @@ func _on_button_pressed() -> void:
 				$"Tutorial/TextureRect/Tutorial 2".set_visible(false)
 				$"Tutorial/TextureRect/Tutorial 3".set_visible(true)
 		
-		1: #Nível 1 - Lower electrons' dance
+		#Lower electrons' dance
+		1:
 			if $Slider.pressed_this_level == true:
 				$Slider.pressed_this_level = false
 				reward_player()
 			else:
 				punish_player()
-		
 		2: 
 			if $"Blue Button 1".pressed_this_level == true || $"Blue Button 2".pressed_this_level == true:
 				Global.level = 3
@@ -101,7 +101,8 @@ func _on_button_pressed() -> void:
 			else:
 				punish_player()
 		
-		3: #Nível 2 - Insert Base Substance Capsule
+		#Insert Base Substance Capsule
+		3:
 			if $"Pad".pressed_this_level == true:
 				$"Pad".pressed_this_level = false
 			else:
@@ -112,8 +113,11 @@ func _on_button_pressed() -> void:
 				Global.level = 5
 			else:
 				punish_player()
-		5:
-			pass
+		
+		#Rewind the protons in the inner layer
+		5: 
+			if $Dial.pressed_this_level == true:
+				$Dial.pressed_this_level = false
 
 #Quando o computador está desligado e é clicado, ele desativa a função de ligar e ativa os botões da senha
 func _on_computer_clicked() -> void:
@@ -166,4 +170,4 @@ func _on_selector_picked_correct() -> void:
 	$"Selector".started = false
 	Global.level = 5
 	reward_player()
-	$"Tutorial Computer".text = "Teste"
+	$"Tutorial Computer".text = "Please rewind the protons in the inner layer.\nIt can be done by using the dial to match the wave ondulation."
