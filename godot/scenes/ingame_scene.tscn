@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=40 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -8,8 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://dt78ulqtsoup5" path="res://scenes/buttons/btn_3step.tscn" id="5_lovnl"]
 [ext_resource type="Texture2D" uid="uid://c6cqinmsb3d1v" path="res://art/displays/tv.png" id="6_kogdk"]
 [ext_resource type="PackedScene" uid="uid://dnearrcq5yimx" path="res://scenes/buttons/btn_emergency.tscn" id="7_jw5hu"]
-[ext_resource type="PackedScene" uid="uid://cj2dfx21cqp1l" path="res://scenes/dropzone.tscn" id="8_8d3mv"]
-[ext_resource type="PackedScene" uid="uid://qad1g2kbaoan" path="res://scenes/objeto.tscn" id="8_o7glw"]
+[ext_resource type="PackedScene" uid="uid://cj2dfx21cqp1l" path="res://scenes/draggables/dropzone.tscn" id="8_8d3mv"]
+[ext_resource type="PackedScene" uid="uid://qad1g2kbaoan" path="res://scenes/draggables/objeto.tscn" id="8_o7glw"]
 [ext_resource type="FontFile" uid="uid://b1rs3eryvjadx" path="res://fonts/p22nudgewinkpro-regular.ttf" id="9_clux3"]
 [ext_resource type="Script" path="res://scenes/timer.gd" id="10_82cjg"]
 [ext_resource type="PackedScene" uid="uid://3u3kp1tl7n48" path="res://scenes/buttons/btn_turn.tscn" id="10_ttvc3"]
@@ -26,12 +26,13 @@
 [ext_resource type="AudioStream" uid="uid://bgbs57lr2uhnv" path="res://music/Intensidade 3.ogg" id="22_k4et3"]
 [ext_resource type="PackedScene" uid="uid://llfs1trs66ko" path="res://scenes/buttons/btn_file.tscn" id="24_c3uwm"]
 [ext_resource type="Texture2D" uid="uid://1mn5vyiitgbv" path="res://art/ui/Painel_Settings.png" id="24_vdb4c"]
-[ext_resource type="LabelSettings" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
-[ext_resource type="PackedScene" path="res://scenes/displays/disp_hold_button.tscn" id="27_fxhw2"]
-[ext_resource type="PackedScene" path="res://scenes/buttons/btn_hold.tscn" id="28_5hmio"]
+[ext_resource type="LabelSettings" uid="uid://b0a2nwarrivfq" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
+[ext_resource type="PackedScene" uid="uid://ds2o3sceyjk8y" path="res://scenes/displays/disp_hold_button.tscn" id="27_fxhw2"]
+[ext_resource type="PackedScene" uid="uid://bopufqqgy6wy1" path="res://scenes/buttons/btn_hold.tscn" id="28_5hmio"]
 [ext_resource type="Texture2D" uid="uid://r7ke58np7yle" path="res://art/send_key.png" id="29_r0w6y"]
-[ext_resource type="Texture2D" uid="uid://cta1u4cjpvw6t" path="res://art/key/key_holding.png" id="30_0mx7b"]
 [ext_resource type="Texture2D" uid="uid://dh5lhy33ihag0" path="res://art/drawer/drawer_closed.png" id="31_ug164"]
+[ext_resource type="PackedScene" uid="uid://dhgw6enyyltpn" path="res://scenes/draggables/key_draggable.tscn" id="32_s6xq2"]
+[ext_resource type="PackedScene" uid="uid://b1263b46q38kr" path="res://scenes/draggables/key_dropzone.tscn" id="33_30076"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85n1e"]
 font_size = 32
@@ -268,11 +269,6 @@ position = Vector2(363, 970)
 z_index = 1
 position = Vector2(1539, 947)
 
-[node name="Dropzone" parent="." instance=ExtResource("8_8d3mv")]
-position = Vector2(1544, 704)
-rotation = 0.0767945
-scale = Vector2(0.77, 0.77)
-
 [node name="Dropzone2" parent="." instance=ExtResource("8_8d3mv")]
 position = Vector2(1543, 950)
 rotation = 0.436332
@@ -389,13 +385,16 @@ offset_bottom = 864.0
 position = Vector2(439, 306)
 texture = ExtResource("29_r0w6y")
 
-[node name="KeyHolding" type="Sprite2D" parent="."]
-position = Vector2(1794, 605)
-texture = ExtResource("30_0mx7b")
-
 [node name="DrawerClosed" type="Sprite2D" parent="."]
 position = Vector2(165, 547)
 texture = ExtResource("31_ug164")
+
+[node name="KeyDraggable" parent="." instance=ExtResource("32_s6xq2")]
+position = Vector2(1796, 595)
+
+[node name="Dropzone4" parent="." instance=ExtResource("33_30076")]
+position = Vector2(1427, 795)
+scale = Vector2(0.5, 0.5)
 
 [connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 1" to="." method="_on_button_pressed"]

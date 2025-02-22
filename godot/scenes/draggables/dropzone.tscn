@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cj2dfx21cqp1l"]
 
-[ext_resource type="Script" path="res://scenes/dropzone.gd" id="1_05lti"]
+[ext_resource type="Script" path="res://scenes/draggables/dropzone.gd" id="1_05lti"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_c4jc7"]
 size = Vector2(128, 128)
