@@ -12,7 +12,7 @@ func _ready() -> void:
 	disp_wave.finish_event.connect(gotRightWave)
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event.is_action_pressed("click") and !gotRight:
+	if event.is_action_pressed("click") and !gotRight && Global.level == 5:
 		if(!finish_event):
 			if(sprite_button.rotation_degrees < 210 and sprite_button.rotation_degrees + 80 <= maxRot):
 				sprite_button.rotation_degrees += 80

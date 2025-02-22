@@ -115,6 +115,12 @@ func _on_button_pressed() -> void:
 		5: 
 			if $Dial.pressed_this_level == true:
 				$Dial.pressed_this_level = false
+				if $Dial.gotRight == true:
+					reward_player()
+		
+		6:
+			if $"Blue Button 2".pressed_this_level == true:
+				$"Blue Button 2".pressed_this_level = false
 
 #Quando o computador está desligado e é clicado, ele desativa a função de ligar e ativa os botões da senha
 func _on_computer_clicked() -> void:

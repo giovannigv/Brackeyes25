@@ -396,11 +396,6 @@ position = Vector2(1831, 571)
 position = Vector2(1427, 792)
 scale = Vector2(0.5, 0.5)
 
-[node name="disp_wave" parent="." instance=ExtResource("34_tmhbh")]
-position = Vector2(1428, 614)
-rotation = 0.140813
-scale = Vector2(2, 2)
-
 [connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 2" to="." method="_on_button_pressed"]
