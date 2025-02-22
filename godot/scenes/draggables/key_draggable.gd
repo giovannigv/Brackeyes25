@@ -12,27 +12,28 @@ var isOn = false
 #Processamento do click e arrasto do objeto
 func _process(_delta: float) -> void:
 	if draggable == true: #Se o objeto for arrastável
-		
-		#Se clicou, guarda a posição inicial do objeto e a distância entre o objeto e o mouse
-		if Input.is_action_just_pressed("click"):
-			if(is_droped):
-				print("turn on pc")
-				isOn = true
-				sprite_2d.texture = ResourceLoader.load("res://art/key/key_turn.png")
-			initialPos = global_position
-			offset = get_global_mouse_position() - global_position
-			Global.is_key_dragging = true
-		
-		#Se clicou e está segurando, arrasta o objeto
-		if Input.is_action_pressed("click"):
-			global_position = get_global_mouse_position() - offset
-		elif Input.is_action_just_released("click"): #Se soltou o click, move o objeto para a dropzone caso esteja em uma, se não o objeto será retornado à sua posição inicial
-			Global.is_key_dragging = false
-			var tween = get_tree().create_tween()
-			if is_inside_dropable == true:
-				tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)
-			else:
-				tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
+		if(!isOn):
+			#Se clicou, guarda a posição inicial do objeto e a distância entre o objeto e o mouse
+			if Input.is_action_just_pressed("click"):
+				if(is_droped):
+					print("turn on pc")
+					isOn = true
+					sprite_2d.texture = ResourceLoader.load("res://art/key/key_turn.png")
+				initialPos = global_position
+				offset = get_global_mouse_position() - global_position
+				Global.is_key_dragging = true
+				
+			
+			#Se clicou e está segurando, arrasta o objeto
+			if Input.is_action_pressed("click"):
+				global_position = get_global_mouse_position() - offset
+			elif Input.is_action_just_released("click"): #Se soltou o click, move o objeto para a dropzone caso esteja em uma, se não o objeto será retornado à sua posição inicial
+				Global.is_key_dragging = false
+				var tween = get_tree().create_tween()
+				if is_inside_dropable == true:
+					tween.tween_property(self, "position", body_ref.position, 0.2).set_ease(Tween.EASE_OUT)
+				else:
+					tween.tween_property(self, "global_position", initialPos, 0.2).set_ease(Tween.EASE_OUT)
 
 
 #Quando o mouse entra na chave

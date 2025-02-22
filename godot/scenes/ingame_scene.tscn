@@ -393,7 +393,7 @@ texture = ExtResource("31_ug164")
 position = Vector2(1796, 595)
 
 [node name="Dropzone4" parent="." instance=ExtResource("33_30076")]
-position = Vector2(1427, 795)
+position = Vector2(1423, 793)
 scale = Vector2(0.5, 0.5)
 
 [connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
