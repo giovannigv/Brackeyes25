@@ -22,21 +22,29 @@ func _process(_delta: float) -> void:
 	var stability = $Timer.time_left * 4/100 #Estabilidade do reator. Vai de 1 à 0
 	
 	#Sistema de gerenciamento da música
-	if stability <= 1.0 && stability >= 0.66:
+	if stability <= 1.0 && stability >= 0.56:
 		var tween = create_tween()
-		tween.tween_property($Music, "volume_db", 0, 0.1)
-		tween.tween_property($Music2, "volume_db", -80, 0.1)
-		tween.tween_property($Music3, "volume_db", -80, 0.1)
-	elif stability <= 0.65 && stability >= 0.33:
+		tween.tween_property($SFX/Music, "volume_db", 0, 0.1)
+		tween.tween_property($SFX/Music2, "volume_db", -80, 0.1)
+		tween.tween_property($SFX/Music3, "volume_db", -80, 0.1)
+		$SFX/alarm2.stop()
+		$SFX/alarm1.stop()
+	elif stability <= 0.55 && stability >= 0.33:
+		$SFX/alarm2.stop()
 		var tween = create_tween()
-		tween.tween_property($Music, "volume_db", -80, 0.1)
-		tween.tween_property($Music2, "volume_db", -0, 0.1)
-		tween.tween_property($Music3, "volume_db", -80, 0.1)
+		tween.tween_property($SFX/Music, "volume_db", -80, 0.1)
+		tween.tween_property($SFX/Music2, "volume_db", -0, 0.1)
+		tween.tween_property($SFX/Music3, "volume_db", -80, 0.1)
+		
+		$SFX/alarm1.play()
 	elif stability <= 0.32 && stability >= 0:
+		$SFX/alarm1.stop()
 		var tween = create_tween()
-		tween.tween_property($Music, "volume_db", -80, 0.1)
-		tween.tween_property($Music2, "volume_db", -80, 0.1)
-		tween.tween_property($Music3, "volume_db", 0, 0.1)
+		tween.tween_property($SFX/Music, "volume_db", -80, 0.1)
+		tween.tween_property($SFX/Music2, "volume_db", -80, 0.1)
+		tween.tween_property($SFX/Music3, "volume_db", 0, 0.1)
+		
+		$SFX/alarm2.play()
 
 func _input(event) -> void:
 	if event.is_action_pressed("pause") and not pause_overlay.visible:
@@ -46,6 +54,9 @@ func _input(event) -> void:
 		pause_overlay.visible = true
 
 func game_over() -> void:
+	$SFX/Music3.stop()
+	$SFX/explosion.play()
+	await get_tree().create_timer(3).timeout # wait 3 sec to show and pause game
 	get_viewport().set_input_as_handled()
 	get_tree().paused = true
 	game_over_overlay.visible = true

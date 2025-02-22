@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=44 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -25,7 +25,7 @@
 [ext_resource type="AudioStream" uid="uid://bgbs57lr2uhnv" path="res://music/Intensidade 3.ogg" id="22_k4et3"]
 [ext_resource type="PackedScene" uid="uid://llfs1trs66ko" path="res://scenes/buttons/btn_file.tscn" id="24_c3uwm"]
 [ext_resource type="Texture2D" uid="uid://1mn5vyiitgbv" path="res://art/ui/Painel_Settings.png" id="24_vdb4c"]
-[ext_resource type="LabelSettings" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
+[ext_resource type="LabelSettings" uid="uid://b0a2nwarrivfq" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
 [ext_resource type="PackedScene" uid="uid://ds2o3sceyjk8y" path="res://scenes/displays/disp_hold_button.tscn" id="27_fxhw2"]
 [ext_resource type="PackedScene" uid="uid://bopufqqgy6wy1" path="res://scenes/buttons/btn_hold.tscn" id="28_5hmio"]
 [ext_resource type="Texture2D" uid="uid://r7ke58np7yle" path="res://art/send_key.png" id="29_r0w6y"]
@@ -35,6 +35,10 @@
 [ext_resource type="PackedScene" uid="uid://dwy6jpf5ox0fk" path="res://scenes/displays/disp_wave.tscn" id="34_tmhbh"]
 [ext_resource type="PackedScene" uid="uid://by6y7chbnqowk" path="res://scenes/displays/disp_timer.tscn" id="36_q1iga"]
 [ext_resource type="PackedScene" uid="uid://6oxbkg1c5cbk" path="res://scenes/buttons/slap.tscn" id="36_u6ch2"]
+[ext_resource type="AudioStream" uid="uid://dcopblvjmp7b4" path="res://music/explosion.wav" id="36_y1gn7"]
+[ext_resource type="Texture2D" uid="uid://b5jdbamqdjex4" path="res://art/select_calendar.png" id="37_wgruh"]
+[ext_resource type="AudioStream" uid="uid://b0dcwux1xoaqc" path="res://music/sfx/alarm1.wav" id="38_lnvag"]
+[ext_resource type="AudioStream" uid="uid://c8r5j3h56yxx8" path="res://music/sfx/alarm2.wav" id="39_f63rw"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85n1e"]
 font_size = 32
@@ -255,10 +259,10 @@ position = Vector2(363, 970)
 
 [node name="Big F Button 2" parent="." instance=ExtResource("7_jw5hu")]
 z_index = 1
-position = Vector2(1539, 947)
+position = Vector2(1659, 851)
 
 [node name="Dropzone2" parent="." instance=ExtResource("8_8d3mv")]
-position = Vector2(1543, 950)
+position = Vector2(1660, 855)
 rotation = 0.436332
 scale = Vector2(0.94, 0.94)
 
@@ -269,7 +273,7 @@ scale = Vector2(0.94, 0.94)
 
 [node name="Objeto" parent="." instance=ExtResource("8_o7glw")]
 z_index = 2
-position = Vector2(124, 330)
+position = Vector2(363, 685)
 rotation = -0.0418879
 scale = Vector2(0.985, 0.985)
 
@@ -290,17 +294,17 @@ fill_mode = 3
 texture_progress = ExtResource("15_6ptmx")
 
 [node name="disp_wave" parent="." instance=ExtResource("34_tmhbh")]
-position = Vector2(1428, 614)
+position = Vector2(1304, 596)
 rotation = 0.140813
 scale = Vector2(2, 2)
 
 [node name="Dial" parent="." instance=ExtResource("10_ttvc3")]
-position = Vector2(1727, 919)
+position = Vector2(1615, 968)
 rotation = 0.436332
 scale = Vector2(0.54, 0.54)
 
 [node name="Blue Button 1" parent="." instance=ExtResource("11_72awg")]
-position = Vector2(1255, 746)
+position = Vector2(1282, 773)
 
 [node name="Slider" parent="." instance=ExtResource("12_5ps5e")]
 position = Vector2(874, 704)
@@ -312,7 +316,7 @@ position = Vector2(698, 810)
 scale = Vector2(1.24, 1.24)
 
 [node name="Selector" parent="." instance=ExtResource("14_cydub")]
-position = Vector2(1090, 873)
+position = Vector2(1004, 831)
 
 [node name="disp_measurer" parent="." instance=ExtResource("15_we4ge")]
 position = Vector2(921, 621)
@@ -339,27 +343,7 @@ scale = Vector2(1.85227, 2.03731)
 texture = ExtResource("22_8o2tj")
 
 [node name="btn_file" parent="." instance=ExtResource("24_c3uwm")]
-position = Vector2(72, 180)
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_aia42")
-autoplay = true
-bus = &"Music"
-parameters/looping = true
-
-[node name="Music2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_yqewc")
-volume_db = -80.0
-autoplay = true
-bus = &"Music"
-parameters/looping = true
-
-[node name="Music3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_k4et3")
-volume_db = -80.0
-autoplay = true
-bus = &"Music"
-parameters/looping = true
+position = Vector2(82, 386)
 
 [node name="Blue Button 2" parent="." instance=ExtResource("28_5hmio")]
 position = Vector2(615, 766)
@@ -408,6 +392,44 @@ position = Vector2(1587, 404)
 
 [node name="disp_timer" parent="." instance=ExtResource("36_q1iga")]
 position = Vector2(134, 907)
+
+[node name="SelectCalendar" type="Sprite2D" parent="."]
+position = Vector2(174, 151)
+texture = ExtResource("37_wgruh")
+
+[node name="SFX" type="Node2D" parent="."]
+
+[node name="Music" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("20_aia42")
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Music2" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("20_yqewc")
+volume_db = -80.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="Music3" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("22_k4et3")
+volume_db = -80.0
+autoplay = true
+bus = &"Music"
+parameters/looping = true
+
+[node name="explosion" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("36_y1gn7")
+bus = &"Sound"
+
+[node name="alarm1" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("38_lnvag")
+bus = &"Sound"
+
+[node name="alarm2" type="AudioStreamPlayer2D" parent="SFX"]
+stream = ExtResource("39_f63rw")
+bus = &"Sound"
 
 [connection signal="button_pressed" from="Big F Button 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 2" to="." method="_on_button_pressed"]
