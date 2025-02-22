@@ -298,8 +298,13 @@ value = 7.0
 fill_mode = 3
 texture_progress = ExtResource("15_6ptmx")
 
+[node name="disp_wave" parent="." instance=ExtResource("34_tmhbh")]
+position = Vector2(1428, 614)
+rotation = 0.140813
+scale = Vector2(2, 2)
+
 [node name="Dial" parent="." instance=ExtResource("10_ttvc3")]
-position = Vector2(1734, 952)
+position = Vector2(1727, 919)
 rotation = 0.436332
 scale = Vector2(0.54, 0.54)
 
