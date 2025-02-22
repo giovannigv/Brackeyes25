@@ -13,6 +13,7 @@ func _ready() -> void:
 	pause_overlay.game_exited.connect(_save_game)
 	game_over_overlay.game_exited.connect(_save_game)
 	
+	#set restart Game
 	$Timer.set_paused(true)
 	Global.level = 0
 
@@ -116,11 +117,20 @@ func _on_button_pressed() -> void:
 			if $Dial.pressed_this_level == true:
 				$Dial.pressed_this_level = false
 				if $Dial.gotRight == true:
+					Global.level = 6
 					reward_player()
 		
 		6:
 			if $"Blue Button 2".pressed_this_level == true:
 				$"Blue Button 2".pressed_this_level = false
+		
+		#Reduce Core Power
+		7:
+			if $Dial.pressed_this_level == true:
+				$Dial.pressed_this_level = false
+				if $Dial.gotRight == true:
+					reward_player()
+		
 
 #Quando o computador está desligado e é clicado, ele desativa a função de ligar e ativa os botões da senha
 func _on_computer_clicked() -> void:
@@ -175,6 +185,8 @@ func _on_selector_picked_correct() -> void:
 	Global.level = 5
 	reward_player()
 	$"Tutorial Computer".text = "Please rewind the protons in the inner layer.\nIt can be done by using the dial to match the wave ondulation."
+
+func 
 
 #Ativa quando o computador é ligado
 func _on_computer_pc_on() -> void:

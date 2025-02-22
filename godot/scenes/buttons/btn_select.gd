@@ -11,7 +11,6 @@ signal picked_correct
 
 var buttons: Array[TextureButton]
 var chosen: TextureButton
-var finish_event = false
 var button_dict = {
 	"yellow": "btn_mini",
 	"orange": "btn_mini_2",

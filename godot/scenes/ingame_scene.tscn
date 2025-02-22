@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=41 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -35,6 +35,7 @@
 [ext_resource type="PackedScene" uid="uid://dhgw6enyyltpn" path="res://scenes/draggables/key_draggable.tscn" id="32_s6xq2"]
 [ext_resource type="PackedScene" uid="uid://b1263b46q38kr" path="res://scenes/draggables/key_dropzone.tscn" id="33_30076"]
 [ext_resource type="PackedScene" uid="uid://dwy6jpf5ox0fk" path="res://scenes/displays/disp_wave.tscn" id="34_tmhbh"]
+[ext_resource type="PackedScene" uid="uid://6oxbkg1c5cbk" path="res://scenes/buttons/slap.tscn" id="36_u6ch2"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85n1e"]
 font_size = 32
@@ -398,6 +399,9 @@ scale = Vector2(0.5, 0.5)
 
 [node name="KeyDropzone2" parent="." instance=ExtResource("33_30076")]
 position = Vector2(434, 310)
+
+[node name="slap" parent="." instance=ExtResource("36_u6ch2")]
+position = Vector2(1607, 436)
 
 [connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 1" to="." method="_on_button_pressed"]

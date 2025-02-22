@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://6oxbkg1c5cbk"]
+
+[ext_resource type="Script" path="res://scenes/buttons/game_button.gd" id="1_3hcq0"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sm6vj"]
+
+[node name="slap" type="Node2D"]
+script = ExtResource("1_3hcq0")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("PlaceholderTexture2D_sm6vj")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 94.0
+offset_bottom = 90.0
+color = Color(0.196078, 0.196078, 0.196078, 0.603922)
