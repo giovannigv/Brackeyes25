@@ -37,7 +37,7 @@ func _on_area_2d_mouse_entered() -> void:
 
 #Quando o mouse sai, tira o Hover
 func _on_area_2d_mouse_exited() -> void:
-	if ResourceLoader.exists(texture_path) == true:
+	if ResourceLoader.exists(texture_path_hover) == true:
 		sprite_2d.texture = ResourceLoader.load(texture_path)
 	else:
 		scale = Vector2(scale.x + 0.01, scale.y + 0.01)
