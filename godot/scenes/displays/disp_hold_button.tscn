@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://ds2o3sceyjk8y"]
+
+[ext_resource type="Texture2D" uid="uid://c0qpxfit0kpq6" path="res://art/displays/disp_hold_button.png" id="1_t8l2s"]
+[ext_resource type="Script" path="res://scenes/displays/disp_hold_button.gd" id="2_grem2"]
+
+[node name="DispHoldButton" type="TextureProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+max_value = 8.0
+texture_under = ExtResource("1_t8l2s")
+texture_progress = ExtResource("1_t8l2s")
+tint_under = Color(0.051971, 0.051971, 0.051971, 1)
+script = ExtResource("2_grem2")
+
+[node name="HoldTimer" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 8.0
+one_shot = true
+
+[connection signal="timeout" from="HoldTimer" to="." method="_on_hold_timer_timeout"]

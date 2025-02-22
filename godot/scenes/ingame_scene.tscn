@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=64 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -25,10 +25,99 @@
 [ext_resource type="AudioStream" uid="uid://bgbs57lr2uhnv" path="res://music/Intensidade 3.ogg" id="22_k4et3"]
 [ext_resource type="PackedScene" uid="uid://llfs1trs66ko" path="res://scenes/buttons/btn_file.tscn" id="24_c3uwm"]
 [ext_resource type="Texture2D" uid="uid://1mn5vyiitgbv" path="res://art/ui/Painel_Settings.png" id="24_vdb4c"]
-[ext_resource type="LabelSettings" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
+[ext_resource type="LabelSettings" uid="uid://b0a2nwarrivfq" path="res://ui/tutorial_label_mat.tres" id="25_w1ccr"]
+[ext_resource type="PackedScene" uid="uid://ds2o3sceyjk8y" path="res://scenes/displays/disp_hold_button.tscn" id="27_fxhw2"]
+[ext_resource type="PackedScene" uid="uid://bopufqqgy6wy1" path="res://scenes/buttons/btn_hold.tscn" id="28_5hmio"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85n1e"]
 font_size = 32
+
+[sub_resource type="Animation" id="Animation_nunr1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(583, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(17, -423)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0.32, 0.32)]
+}
+
+[sub_resource type="Animation" id="Animation_xica6"]
+resource_name = "move_tutorial"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(583, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(244, -178), Vector2(36, -5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.32, 0.32), Vector2(1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uyjuq"]
+_data = {
+"RESET": SubResource("Animation_nunr1"),
+"move_tutorial": SubResource("Animation_xica6")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_0cdbj"]
+font_size = 14
 
 [sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_p2rcx"]
 particles_animation = true
@@ -213,93 +302,6 @@ bg_color = Color(0.205117, 0.205117, 0.205117, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2thkp"]
 bg_color = Color(0.23017, 0.708015, 0.335578, 1)
 
-[sub_resource type="Animation" id="Animation_nunr1"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(583, 50)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(17, -423)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(0.32, 0.32)]
-}
-
-[sub_resource type="Animation" id="Animation_xica6"]
-resource_name = "move_tutorial"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(583, 50)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(244, -178), Vector2(36, -5)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.32, 0.32), Vector2(1, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_uyjuq"]
-_data = {
-"RESET": SubResource("Animation_nunr1"),
-"move_tutorial": SubResource("Animation_xica6")
-}
-
-[sub_resource type="LabelSettings" id="LabelSettings_0cdbj"]
-font_size = 14
-
 [node name="IngameScene" type="Node2D"]
 script = ExtResource("1_objyc")
 
@@ -334,141 +336,6 @@ offset_bottom = 72.0
 label_settings = SubResource("LabelSettings_85n1e")
 horizontal_alignment = 1
 vertical_alignment = 1
-
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-material = SubResource("CanvasItemMaterial_p2rcx")
-position = Vector2(512, 334)
-amount = 40
-process_material = SubResource("ParticleProcessMaterial_u64ns")
-lifetime = 5.0
-preprocess = 2.0
-speed_scale = 2.0
-randomness = 0.5
-collision_base_size = 3.0
-
-[node name="Botão 1" parent="." instance=ExtResource("5_lovnl")]
-position = Vector2(1310, 768)
-rotation = 0.162316
-scale = Vector2(1.77, 1.788)
-
-[node name="Botão 2" parent="." instance=ExtResource("6_5vyx7")]
-position = Vector2(331, 742)
-rotation = -0.261799
-scale = Vector2(1.865, 1.865)
-
-[node name="Big F Button 1" parent="." instance=ExtResource("7_jw5hu")]
-z_index = 1
-position = Vector2(326, 969)
-rotation = -0.436332
-scale = Vector2(1.565, 1.565)
-
-[node name="Big F Button 2" parent="." instance=ExtResource("7_jw5hu")]
-z_index = 1
-position = Vector2(1781, 917)
-rotation = 0.436332
-scale = Vector2(1.52, 1.52)
-
-[node name="Dropzone" parent="." instance=ExtResource("8_8d3mv")]
-position = Vector2(1775, 594)
-rotation = 0.0767945
-scale = Vector2(0.77, 0.77)
-
-[node name="Dropzone2" parent="." instance=ExtResource("8_8d3mv")]
-position = Vector2(1779, 916)
-rotation = 0.436332
-scale = Vector2(0.94, 0.94)
-
-[node name="Dropzone3" parent="." instance=ExtResource("8_8d3mv")]
-position = Vector2(318, 971)
-rotation = -0.436332
-scale = Vector2(0.94, 0.94)
-
-[node name="Objeto" parent="." instance=ExtResource("8_o7glw")]
-z_index = 2
-position = Vector2(134, 476)
-rotation = -0.0418879
-scale = Vector2(0.985, 0.985)
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 25.0
-one_shot = true
-autostart = true
-script = ExtResource("10_82cjg")
-
-[node name="ProgressBar" type="ProgressBar" parent="Timer"]
-offset_left = 479.0
-offset_top = 558.0
-offset_right = 995.0
-offset_bottom = 627.0
-rotation = -1.5708
-theme_override_styles/background = SubResource("StyleBoxFlat_hl6dv")
-theme_override_styles/fill = SubResource("StyleBoxFlat_2thkp")
-max_value = 60.0
-value = 50.0
-show_percentage = false
-
-[node name="Dial" parent="." instance=ExtResource("10_ttvc3")]
-position = Vector2(1577, 915)
-rotation = 0.436332
-scale = Vector2(0.54, 0.54)
-
-[node name="Blue Button 1" parent="." instance=ExtResource("11_72awg")]
-position = Vector2(606, 765)
-rotation = -0.552362
-scale = Vector2(1.815, 1.815)
-
-[node name="Blue Button 2" parent="." instance=ExtResource("11_72awg")]
-position = Vector2(611, 884)
-rotation = -0.552362
-scale = Vector2(1.815, 1.815)
-
-[node name="Slider" parent="." instance=ExtResource("12_5ps5e")]
-position = Vector2(989, 896)
-scale = Vector2(1.045, 1.045)
-
-[node name="Pad" parent="." instance=ExtResource("13_4vwrj")]
-position = Vector2(698, 810)
-scale = Vector2(1.24, 1.24)
-
-[node name="Selector" parent="." instance=ExtResource("14_cydub")]
-position = Vector2(1156, 840)
-
-[node name="disp_measurer" parent="." instance=ExtResource("15_we4ge")]
-position = Vector2(920, 662)
-scale = Vector2(1.41, 1.41)
-
-[node name="disp_measurer2" parent="." instance=ExtResource("15_we4ge")]
-position = Vector2(1087, 684)
-scale = Vector2(1.26, 1.26)
-
-[node name="Computer" parent="." instance=ExtResource("17_uo444")]
-position = Vector2(1473, 297)
-rotation = 0.174533
-
-[node name="btn_ok" parent="Computer" instance=ExtResource("19_sbo42")]
-visible = false
-position = Vector2(114.578, 33.6144)
-
-[node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_aia42")
-autoplay = true
-bus = &"Music"
-
-[node name="Music2" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("20_yqewc")
-autoplay = true
-bus = &"Music"
-
-[node name="Music3" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("22_k4et3")
-autoplay = true
-bus = &"Music"
-
-[node name="BtnReader" type="Sprite2D" parent="."]
-position = Vector2(1795, 729)
-rotation = 0.445068
-scale = Vector2(1.85227, 2.03731)
-texture = ExtResource("22_8o2tj")
 
 [node name="Tutorial" type="Control" parent="."]
 layout_mode = 3
@@ -557,8 +424,147 @@ label_settings = SubResource("LabelSettings_0cdbj")
 horizontal_alignment = 1
 vertical_alignment = 1
 
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_p2rcx")
+position = Vector2(512, 334)
+amount = 40
+process_material = SubResource("ParticleProcessMaterial_u64ns")
+lifetime = 5.0
+preprocess = 2.0
+speed_scale = 2.0
+randomness = 0.5
+collision_base_size = 3.0
+
+[node name="Botão 1" parent="." instance=ExtResource("5_lovnl")]
+position = Vector2(1310, 768)
+rotation = 0.162316
+scale = Vector2(1.77, 1.788)
+
+[node name="Botão 2" parent="." instance=ExtResource("6_5vyx7")]
+position = Vector2(279, 764)
+rotation = -0.261799
+scale = Vector2(1.865, 1.865)
+
+[node name="Big F Button 1" parent="." instance=ExtResource("7_jw5hu")]
+z_index = 1
+position = Vector2(326, 969)
+rotation = -0.436332
+scale = Vector2(1.565, 1.565)
+
+[node name="Big F Button 2" parent="." instance=ExtResource("7_jw5hu")]
+z_index = 1
+position = Vector2(1781, 917)
+rotation = 0.436332
+scale = Vector2(1.52, 1.52)
+
+[node name="Dropzone" parent="." instance=ExtResource("8_8d3mv")]
+position = Vector2(1775, 594)
+rotation = 0.0767945
+scale = Vector2(0.77, 0.77)
+
+[node name="Dropzone2" parent="." instance=ExtResource("8_8d3mv")]
+position = Vector2(1779, 916)
+rotation = 0.436332
+scale = Vector2(0.94, 0.94)
+
+[node name="Dropzone3" parent="." instance=ExtResource("8_8d3mv")]
+position = Vector2(318, 971)
+rotation = -0.436332
+scale = Vector2(0.94, 0.94)
+
+[node name="Objeto" parent="." instance=ExtResource("8_o7glw")]
+z_index = 2
+position = Vector2(134, 476)
+rotation = -0.0418879
+scale = Vector2(0.985, 0.985)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 25.0
+one_shot = true
+autostart = true
+script = ExtResource("10_82cjg")
+
+[node name="ProgressBar" type="ProgressBar" parent="Timer"]
+offset_left = 479.0
+offset_top = 558.0
+offset_right = 995.0
+offset_bottom = 627.0
+rotation = -1.5708
+theme_override_styles/background = SubResource("StyleBoxFlat_hl6dv")
+theme_override_styles/fill = SubResource("StyleBoxFlat_2thkp")
+max_value = 60.0
+value = 50.0
+show_percentage = false
+
+[node name="Dial" parent="." instance=ExtResource("10_ttvc3")]
+position = Vector2(1577, 915)
+rotation = 0.436332
+scale = Vector2(0.54, 0.54)
+
+[node name="Blue Button 1" parent="." instance=ExtResource("11_72awg")]
+position = Vector2(599, 775)
+rotation = -0.552362
+scale = Vector2(1.815, 1.815)
+
+[node name="Slider" parent="." instance=ExtResource("12_5ps5e")]
+position = Vector2(989, 896)
+scale = Vector2(1.045, 1.045)
+
+[node name="Pad" parent="." instance=ExtResource("13_4vwrj")]
+position = Vector2(698, 810)
+scale = Vector2(1.24, 1.24)
+
+[node name="Selector" parent="." instance=ExtResource("14_cydub")]
+position = Vector2(1156, 840)
+
+[node name="disp_measurer" parent="." instance=ExtResource("15_we4ge")]
+position = Vector2(920, 662)
+scale = Vector2(1.41, 1.41)
+
+[node name="disp_measurer2" parent="." instance=ExtResource("15_we4ge")]
+position = Vector2(1087, 684)
+scale = Vector2(1.26, 1.26)
+
+[node name="Computer" parent="." instance=ExtResource("17_uo444")]
+position = Vector2(1473, 297)
+rotation = 0.174533
+
+[node name="btn_ok" parent="Computer" instance=ExtResource("19_sbo42")]
+visible = false
+position = Vector2(114.578, 33.6144)
+
+[node name="BtnReader" type="Sprite2D" parent="."]
+position = Vector2(1795, 729)
+rotation = 0.445068
+scale = Vector2(1.85227, 2.03731)
+texture = ExtResource("22_8o2tj")
+
 [node name="btn_file" parent="." instance=ExtResource("24_c3uwm")]
 position = Vector2(58, 333)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_aia42")
+autoplay = true
+bus = &"Music"
+
+[node name="Music2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("20_yqewc")
+autoplay = true
+bus = &"Music"
+
+[node name="Music3" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("22_k4et3")
+autoplay = true
+bus = &"Music"
+
+[node name="btn_hold" parent="." instance=ExtResource("28_5hmio")]
+position = Vector2(602, 896)
+
+[node name="DispHoldButton" parent="." instance=ExtResource("27_fxhw2")]
+offset_left = 455.0
+offset_top = 574.0
+offset_right = 749.0
+offset_bottom = 689.0
 
 [connection signal="button_pressed" from="Botão 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Botão 2" to="." method="_on_button_pressed"]
@@ -567,7 +573,6 @@ position = Vector2(58, 333)
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="button_pressed" from="Dial" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Blue Button 1" to="." method="_on_button_pressed"]
-[connection signal="button_pressed" from="Blue Button 2" to="." method="_on_button_pressed"]
 [connection signal="slider_max" from="Slider" to="." method="_on_btn_default_slider_max"]
 [connection signal="button_pressed" from="Pad" to="." method="_on_button_pressed"]
 [connection signal="pad_finished" from="Pad" to="." method="_on_pad_pad_finished"]
