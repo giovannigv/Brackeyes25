@@ -14,12 +14,11 @@ func _ready() -> void:
 	game_over_overlay.game_exited.connect(_save_game)
 	
 	$Timer.set_paused(true)
-	Global.level = 0
+	Global.level = 1
 
 func _process(_delta: float) -> void:
 	#Sistema de gerenciamento do estabilidade
 	var stability = $Timer.time_left * 4/100 #Estabilidade do reator. Vai de 1 à 0
-	var intensidade = 1.0 - stability
 	
 	#Sistema de gerenciamento da música
 	if stability <= 1.0 && stability >= 0.66:
