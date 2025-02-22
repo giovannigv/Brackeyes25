@@ -3,6 +3,7 @@ extends Node2D
 
 @warning_ignore("unused_signal")
 signal button_pressed #Sinal que indica que um botão foi pressionado
+@onready var sprite_2d: Sprite2D = $Sprite2D
 
 @onready var btn_label := get_tree().get_root().get_node("IngameScene").get_node("btn_label")
 var pressed_this_level = false #Se o botão já foi pressionado no nível atual
@@ -17,13 +18,14 @@ func emiteSinal():
 	pressed_this_level = true
 	emit_signal("button_pressed")
 
-#Quando o mouse entra, diminui levemente a escala do botão para ressaltar que é interativo
+#Quando o mouse entra, mostra o Hover
 func _on_area_2d_mouse_entered() -> void:
-	scale = Vector2(scale.x - 0.01, scale.y - 0.01)
+	sprite_2d.texture = ResourceLoader.load("res://art/buttons/btn_emergency_hover.png")
 	if Global.level != 0:
 		btn_label.text = self.name
 
-#Quando o mouse sai, aumenta levemente a escala do botão para ressaltar que é interativo
+#Quando o mouse sai, tira o Hover
 func _on_area_2d_mouse_exited() -> void:
-	scale = Vector2(scale.x + 0.01, scale.y + 0.01)
+	sprite_2d.texture = ResourceLoader.load("res://art/buttons/btn_emergency.png")
 	btn_label.text = ""
+	

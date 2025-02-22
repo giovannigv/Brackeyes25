@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6sbny5y50avf"
-path="res://.godot/imported/btn_emergency.png-0ce5bb4260bbb847001777e040980689.ctex"
+uid="uid://vfpqpkhehbdh"
+path="res://.godot/imported/key_turn_hover.png-c40a1d37a4e736f1e32014b60e187521.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/buttons/btn_emergency.png"
-dest_files=["res://.godot/imported/btn_emergency.png-0ce5bb4260bbb847001777e040980689.ctex"]
+source_file="res://art/key/key_turn_hover.png"
+dest_files=["res://.godot/imported/key_turn_hover.png-c40a1d37a4e736f1e32014b60e187521.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6sbny5y50avf"
-path="res://.godot/imported/btn_emergency.png-0ce5bb4260bbb847001777e040980689.ctex"
+uid="uid://dh5lhy33ihag0"
+path="res://.godot/imported/drawer_closed.png-dbfa51fde3cfffc0be5cc8edd33c59b6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/buttons/btn_emergency.png"
-dest_files=["res://.godot/imported/btn_emergency.png-0ce5bb4260bbb847001777e040980689.ctex"]
+source_file="res://art/drawer/drawer_closed.png"
+dest_files=["res://.godot/imported/drawer_closed.png-dbfa51fde3cfffc0be5cc8edd33c59b6.ctex"]
 
 [params]
 
