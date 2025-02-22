@@ -169,3 +169,7 @@ func _on_selector_picked_correct() -> void:
 	Global.level = 5
 	reward_player()
 	$"Tutorial Computer".text = "Please rewind the protons in the inner layer.\nIt can be done by using the dial to match the wave ondulation."
+
+#Ativa quando o computador é ligado
+func _on_computer_pc_on() -> void:
+	$KeyDropzone.queue_free()
