@@ -1,11 +1,10 @@
-[gd_scene load_steps=41 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=40 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
 [ext_resource type="PackedScene" uid="uid://jyv4g54adkmo" path="res://ui/overlays/pause_overlay.tscn" id="3_8o178"]
 [ext_resource type="Texture2D" uid="uid://bd61mt0afsxkc" path="res://art/worktable.png" id="4_cg5xa"]
 [ext_resource type="PackedScene" uid="uid://bvb35n80s7iiu" path="res://ui/overlays/game_over_overlay.tscn" id="4_j3emw"]
-[ext_resource type="Texture2D" uid="uid://c6cqinmsb3d1v" path="res://art/displays/tv.png" id="6_kogdk"]
 [ext_resource type="PackedScene" uid="uid://dnearrcq5yimx" path="res://scenes/buttons/btn_emergency.tscn" id="7_jw5hu"]
 [ext_resource type="PackedScene" uid="uid://cj2dfx21cqp1l" path="res://scenes/draggables/dropzone.tscn" id="8_8d3mv"]
 [ext_resource type="PackedScene" uid="uid://qad1g2kbaoan" path="res://scenes/draggables/objeto.tscn" id="8_o7glw"]
@@ -149,10 +148,6 @@ offset_right = 7104.0
 offset_bottom = 2810.0
 scale = Vector2(0.27, 0.385)
 texture = ExtResource("4_cg5xa")
-
-[node name="Tv" type="Sprite2D" parent="."]
-position = Vector2(1447, 299)
-texture = ExtResource("6_kogdk")
 
 [node name="btn_label" type="Label" parent="."]
 offset_left = 946.0
@@ -406,11 +401,10 @@ position = Vector2(1427, 792)
 scale = Vector2(0.5, 0.5)
 
 [node name="KeyDropzone2" parent="." instance=ExtResource("33_30076")]
-position = Vector2(434, 310)
+position = Vector2(445, 311)
 
 [node name="slap" parent="." instance=ExtResource("36_u6ch2")]
-visible = false
-position = Vector2(1607, 436)
+position = Vector2(1587, 404)
 
 [node name="disp_timer" parent="." instance=ExtResource("36_q1iga")]
 position = Vector2(134, 907)
