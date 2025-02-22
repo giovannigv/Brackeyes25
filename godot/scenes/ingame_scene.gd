@@ -135,7 +135,7 @@ func _on_button_pressed() -> void:
 func showLevelObjective():
 	match Global.level:
 		6:
-			$"Tutorial Computer".text = "Hold another Blue Button to inset protons impact on inner Layer."
+			$"Tutorial Computer".text = "Hold the other Blue Button to insert protons on inner layer."
 
 #Quando o computador está desligado e é clicado, ele desativa a função de ligar e ativa os botões da senha
 func _on_computer_clicked() -> void:
@@ -195,7 +195,6 @@ func _on_dial_finish_turn() -> void:
 	Global.level = 6
 	reward_player()
 	showLevelObjective()
-
 
 #Ativa quando o computador é ligado
 func _on_computer_pc_on() -> void:
