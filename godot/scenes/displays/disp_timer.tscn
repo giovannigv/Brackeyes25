@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b01q2fq1kyw4d"]
+
+[ext_resource type="Texture2D" uid="uid://c2nlnt7snvcrs" path="res://art/displays/disp_ring.png" id="1_bd50v"]
+[ext_resource type="Script" path="res://scenes/displays/disp_timer.gd" id="2_q5hsr"]
+
+[node name="disp_timer" type="TextureProgressBar"]
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 4
+texture_under = ExtResource("1_bd50v")
+texture_progress = ExtResource("1_bd50v")
+tint_under = Color(0.360784, 0.360784, 0.360784, 0)
+tint_progress = Color(0.148932, 0.734665, 0.454045, 1)
+script = ExtResource("2_q5hsr")
+
+[node name="timer_to_complete" type="Timer" parent="."]
+unique_name_in_owner = true
+wait_time = 10.0
+one_shot = true
+
+[connection signal="timeout" from="timer_to_complete" to="." method="_on_timer_to_complete_timeout"]

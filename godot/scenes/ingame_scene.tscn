@@ -213,45 +213,6 @@ bg_color = Color(0.205117, 0.205117, 0.205117, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2thkp"]
 bg_color = Color(0.23017, 0.708015, 0.335578, 1)
 
-[sub_resource type="Animation" id="Animation_xica6"]
-resource_name = "move_tutorial"
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:position")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector2(583, 50)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:position")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(244, -178), Vector2(36, -5)]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("TextureRect:scale")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0.32, 0.32), Vector2(1, 1)]
-}
-
 [sub_resource type="Animation" id="Animation_nunr1"]
 length = 0.001
 tracks/0/type = "value"
@@ -289,6 +250,45 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(0.32, 0.32)]
+}
+
+[sub_resource type="Animation" id="Animation_xica6"]
+resource_name = "move_tutorial"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(583, 50)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(244, -178), Vector2(36, -5)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TextureRect:scale")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.32, 0.32), Vector2(1, 1)]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_uyjuq"]
@@ -490,6 +490,7 @@ expand_mode = 1
 
 [node name="Tutorial 1" type="Label" parent="Tutorial/TextureRect"]
 z_index = 1
+layout_mode = 0
 offset_left = 83.0
 offset_top = 86.0
 offset_right = 487.0
@@ -507,6 +508,7 @@ autowrap_mode = 2
 [node name="Tutorial 2" type="Label" parent="Tutorial/TextureRect"]
 visible = false
 z_index = 1
+layout_mode = 0
 offset_left = 77.0
 offset_top = 68.0
 offset_right = 495.0
@@ -521,6 +523,7 @@ autowrap_mode = 3
 [node name="Tutorial 3" type="Label" parent="Tutorial/TextureRect"]
 visible = false
 z_index = 1
+layout_mode = 0
 offset_left = 78.0
 offset_top = 61.0
 offset_right = 495.0
