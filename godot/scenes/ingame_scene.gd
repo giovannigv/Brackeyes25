@@ -4,6 +4,8 @@ extends Node2D
 @onready var pause_overlay = %PauseOverlay
 @onready var game_over_overlay = %GameOverOverlay
 
+var count_slap: int = 0
+
 func _ready() -> void:
 	fade_overlay.visible = true
 	
@@ -138,15 +140,37 @@ func _on_button_pressed() -> void:
 		
 		#Reduce Core Power
 		7:
-			if $Dial.pressed_this_level == true:
-				$Dial.pressed_this_level = false
-				if $Dial.gotRight == true:
-					reward_player()
+			if $Slap.pressed_this_level == true:
+				$Slap.pressed_this_level = false
+				count_slap += 1
+				match count_slap:
+					
+					1:
+						$"Tutorial Computer".text = "Again."
+					
+					2:
+						$"Tutorial Computer".text = "Hit me harder!"
+					
+					4:
+						$"Tutorial Computer".text = "Harder, daddy!"
+					
+					6:
+						$"Tutorial Computer".text = "Oh yeah! I like it!"
+					
+					8:
+						$"Tutorial Computer".text = "Ok, now you're hurting me."
+					
+					10:
+						$"Tutorial Computer".text = "I'm back. You can stop now!"
+						Global.level = 8
+						reward_player()
+			else:
+				punish_player()
 		
 func showLevelObjective():
 	match Global.level:
 		6:
-			$"Tutorial Computer".text = "Hold the other Blue Button to insert protons on inner layer."
+			$"Tutorial Computer".text = "Hold the other Blue Button to insert protons on the inner layer."
 
 #Quando o computador está desligado e é clicado, ele desativa a função de ligar e ativa os botões da senha
 func _on_computer_clicked() -> void:
@@ -210,3 +234,10 @@ func _on_dial_finish_turn() -> void:
 #Ativa quando o computador é ligado
 func _on_computer_pc_on() -> void:
 	$KeyDropzone.queue_free()
+
+#Ativa quando a barra estiver cheia
+func _on_blue_button_2_button_pressed() -> void:
+	Global.level = 7
+	reward_player()
+	$"Tutorial Computer".text = "I'm malfunctioning. Hit me until I come back to my senses."
+	$Slap.set_visible(true)

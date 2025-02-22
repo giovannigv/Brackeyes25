@@ -385,9 +385,10 @@ position = Vector2(1427, 792)
 scale = Vector2(0.5, 0.5)
 
 [node name="KeyDropzone2" parent="." instance=ExtResource("33_30076")]
+visible = false
 position = Vector2(445, 311)
 
-[node name="slap" parent="." instance=ExtResource("36_u6ch2")]
+[node name="Slap" parent="." instance=ExtResource("36_u6ch2")]
 position = Vector2(1587, 404)
 
 [node name="disp_timer" parent="." instance=ExtResource("36_q1iga")]
@@ -446,3 +447,5 @@ bus = &"Sound"
 [connection signal="pc_on" from="Computer" to="." method="_on_computer_pc_on"]
 [connection signal="button_pressed" from="Computer/btn_ok" to="." method="_on_btn_ok_button_pressed"]
 [connection signal="button_pressed" from="btn_file" to="." method="_on_button_pressed"]
+[connection signal="button_pressed" from="Blue Button 2" to="." method="_on_blue_button_2_button_pressed"]
+[connection signal="button_pressed" from="Slap" to="." method="_on_button_pressed"]

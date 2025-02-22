@@ -14,7 +14,7 @@ signal turnPCOn
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _ready() -> void:
-	draggable == true
+	#draggable == true
 	is_inside_dropable = false
 	is_droped = false
 	isOn = false
