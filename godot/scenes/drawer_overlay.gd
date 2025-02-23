@@ -45,12 +45,12 @@ func _on_disk5_area_2d_mouse_exited() -> void:
 	disk_5.texture = ResourceLoader.load("res://art/drawer/disk5.png")
 
 # Press Button
-func _on_disk1_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_disk1_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
 		audio_wrong.play()
 
 
-func _on_disk2_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_disk2_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
 		audio_correct.play()
 		await get_tree().create_timer(1).timeout
@@ -58,16 +58,16 @@ func _on_disk2_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx:
 		finish_event.emit()
 
 
-func _on_disk3_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_disk3_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
 		audio_wrong.play()
 
 
-func _on_disk4_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_disk4_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
 		audio_wrong.play()
 
 
-func _on_disk5_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_disk5_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
 		audio_wrong.play()
