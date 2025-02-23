@@ -9,6 +9,8 @@ signal picked_correct
 @onready var btn_mini_4: TextureButton = $btn_mini_4
 @onready var btn_mini_5: TextureButton = $btn_mini_5
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 var buttons: Array[TextureButton]
 var chosen: TextureButton
 var button_dict = {
@@ -27,6 +29,7 @@ func _ready() -> void:
 	buttons = [btn_mini, btn_mini_2, btn_mini_3, btn_mini_4, btn_mini_5]
 
 func verifyButton(nameButton: String) -> void:
+	audio_stream_player_2d.play()
 	if started == true:
 		if chosen.name == button_dict[nameButton]:
 			print("Correct")

@@ -4,6 +4,7 @@ extends Node2D
 @warning_ignore("unused_signal")
 signal button_pressed #Sinal que indica que um botão foi pressionado
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@onready var audio_player_2d: AudioStreamPlayer2D = $AudioPlayer2D
 
 @onready var btn_label := get_tree().get_root().get_node("IngameScene").get_node("btn_label")
 var pressed_this_level = false #Se o botão já foi pressionado no nível atual
@@ -14,13 +15,12 @@ var texture_path_hover: String
 func _ready() -> void:
 	if sprite_2d.texture != null:
 		texture_path = sprite_2d.texture.get_path()
-		print('TEXPATH ', texture_path,' ', sprite_2d.texture.get_path().length() - 4)
 		texture_path_hover = texture_path.insert(sprite_2d.texture.get_path().length() - 4, "_hover")
-		print("texture_path_hover: ", texture_path_hover)
 
 #Quando o botão é clicado, faz algo
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click"):
+		audio_player_2d.play()
 		emiteSinal()
 
 #Função utilizada pelos botões para emitir o sinal de que foi pressionado

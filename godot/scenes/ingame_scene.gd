@@ -5,6 +5,7 @@ extends Node2D
 @onready var game_over_overlay = %GameOverOverlay
 
 var count_slap: int = 0
+var isSFXPlaying = false
 
 func _ready() -> void:
 	fade_overlay.visible = true
@@ -38,7 +39,7 @@ func _process(_delta: float) -> void:
 		tween.tween_property($SFX/Music2, "volume_db", -0, 0.1)
 		tween.tween_property($SFX/Music3, "volume_db", -80, 0.1)
 		
-		#$SFX/alarm1.play()
+		playSound($SFX/alarm2)
 	elif stability <= 0.32 && stability >= 0:
 		#$SFX/alarm1.stop()
 		var tween = create_tween()
@@ -47,6 +48,18 @@ func _process(_delta: float) -> void:
 		tween.tween_property($SFX/Music3, "volume_db", 0, 0.1)
 		
 		#$SFX/alarm2.play()
+
+func playSound(sound: AudioStreamPlayer2D):
+	if !isSFXPlaying:
+		sound.play()
+		isSFXPlaying= true
+
+func _on_alarm_1_finished() -> void:
+	isSFXPlaying= false
+
+func _on_alarm_2_finished() -> void:
+	isSFXPlaying= false
+
 
 func _input(event) -> void:
 	if event.is_action_pressed("pause") and not pause_overlay.visible:

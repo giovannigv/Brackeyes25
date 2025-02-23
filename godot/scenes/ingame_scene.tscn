@@ -444,3 +444,5 @@ texture = ExtResource("22_8o2tj")
 [connection signal="button_pressed" from="btn_file" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Blue Button 2" to="." method="_on_blue_button_2_button_pressed"]
 [connection signal="finish_event" from="DispHoldButton" to="Blue Button 2" method="_on_disp_hold_button_finish_event"]
+[connection signal="finished" from="SFX/alarm1" to="." method="_on_alarm_1_finished"]
+[connection signal="finished" from="SFX/alarm2" to="." method="_on_alarm_2_finished"]

@@ -1,6 +1,7 @@
 extends GameButton
 
 @onready var disp_wave: Node2D = $"../disp_wave"
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @warning_ignore("unused_signal")
 signal finish_turn
@@ -16,6 +17,7 @@ var gotRight = false
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click") and !gotRight && (Global.level == 5 || Global.level == 7):
+		audio_stream_player_2d.play()
 		if(index > 3):
 			index = 0
 		match index:
@@ -27,7 +29,6 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 		disp_wave.changeWave()
 
 func gotRightWave():
-	print("WAVE")
 	gotRight = true
 	emit_signal("finish_turn")
 	emiteSinal()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://blhkshp77a2xk"]
+[gd_scene load_steps=12 format=3 uid="uid://blhkshp77a2xk"]
 
 [ext_resource type="Script" path="res://scenes/buttons/btn_select.gd" id="1_6o6gy"]
 [ext_resource type="Texture2D" uid="uid://b6rrp0t1irnsh" path="res://art/buttons/btn_select.jpg" id="2_822ai"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bc5dvbvujkimv" path="res://art/buttons/btn_pad_pink.png" id="7_kvn3c"]
 [ext_resource type="Texture2D" uid="uid://k0hs3xprckhv" path="res://art/buttons/btn_pad_blue.png" id="8_411kp"]
 [ext_resource type="Texture2D" uid="uid://dj8tq1h2ow5r2" path="res://art/buttons/btn_mini.png" id="9_8ufnk"]
+[ext_resource type="AudioStream" uid="uid://bg7gkjqai0txm" path="res://music/sfx/btn_press_2.mp3" id="10_sj6v0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngaa"]
 size = Vector2(214, 74)
@@ -130,6 +131,14 @@ offset_right = 211.0
 offset_bottom = 70.0
 texture_normal = ExtResource("9_8ufnk")
 stretch_mode = 0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_sj6v0")
+bus = &"Sound"
+
+[node name="AudioPlayer2D" type="AudioStreamPlayer2D" parent="."]
+visible = false
+bus = &"Sound"
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]

@@ -46,3 +46,8 @@ texture = ExtResource("3_bg7s7")
 stream = ExtResource("4_0iybr")
 volume_db = -10.0
 bus = &"Sound"
+
+[node name="AudioPlayer2D" type="AudioStreamPlayer2D" parent="."]
+visible = false
+volume_db = -10.0
+bus = &"Sound"

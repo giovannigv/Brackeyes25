@@ -5,6 +5,7 @@ signal slider_max
 
 @onready var disp_measurer: Node2D = $"../disp_measurer"
 @onready var broken_disp_measurer: Node2D = $"../disp_measurer2"
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click") and Global.level >= 1:

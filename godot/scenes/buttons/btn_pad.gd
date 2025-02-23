@@ -9,6 +9,8 @@ signal pad_finished
 @onready var btn_pink3: TextureButton = $btn_pink3
 @onready var btn_blue4: TextureButton = $btn_blue4
 
+@onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
+
 var enabled: bool = true
 var index = 0
 var finish_event = false
@@ -32,6 +34,7 @@ func padControl(namePad: String):
 	else:
 		index = 0
 		print("Wrong")
+	audio_stream_player_2d.play()
 
 #ISSO É GAMBIARRA TIRAR DEPOIS DA NOVA SPRITE
 func showOrder(indexLength):
