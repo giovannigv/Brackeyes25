@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://dii8u1emf6ujl"]
+
+[ext_resource type="FontFile" uid="uid://b1rs3eryvjadx" path="res://fonts/p22nudgewinkpro-regular.ttf" id="1_vbmra"]
+[ext_resource type="Script" path="res://ui/overlays/pause_overlay.gd" id="2_ys7nd"]
+[ext_resource type="Texture2D" uid="uid://jr6ajkqgshkm" path="res://art/ui/PS_caixa_texto.png" id="4_a3bk5"]
+
+[sub_resource type="Theme" id="Theme_a2rd4"]
+default_font = ExtResource("1_vbmra")
+
+[node name="WinOverlay" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a2rd4")
+script = ExtResource("2_ys7nd")
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="."]
+custom_minimum_size = Vector2(420, 0)
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer3"]
+layout_mode = 2
+theme_type_variation = &"HeaderLarge"
+theme_override_font_sizes/font_size = 50
+text = "game_win"
+horizontal_alignment = 1
+
+[node name="MenuContainer" type="VBoxContainer" parent="VBoxContainer3"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 8
+
+[node name="ExitButton" type="Button" parent="VBoxContainer3/MenuContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_colors/font_pressed_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_colors/font_focus_color = Color(0.235294, 0.235294, 0.235294, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_constants/icon_max_width = 350
+theme_override_font_sizes/font_size = 30
+text = "leave_game"
+icon = ExtResource("4_a3bk5")
+flat = true
+icon_alignment = 1
