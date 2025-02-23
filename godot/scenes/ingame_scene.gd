@@ -196,6 +196,7 @@ func _on_button_pressed() -> void:
 			Global.level = 11
 			$Timer.stop()
 			showLevelObjective()
+		
 		#8: Nao pode se mexer
 		#9: Gaveta ta sempre disponivel, mas nessa hora tem q pedir para clicar no leitor
 		#10: Apertar os dois botoes ao mesmo tempo
