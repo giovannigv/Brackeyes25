@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://dd6cah4xir2a"]
+
+[ext_resource type="FontFile" uid="uid://b1rs3eryvjadx" path="res://fonts/p22nudgewinkpro-regular.ttf" id="1_1me64"]
+[ext_resource type="Script" path="res://scenes/drawer_overlay.gd" id="2_wyaiy"]
+[ext_resource type="Texture2D" uid="uid://d0s8ae7phib87" path="res://art/drawer/disc_box.png" id="3_owbpb"]
+[ext_resource type="Texture2D" uid="uid://pyic5x4ey56h" path="res://art/drawer/disk1.png" id="4_3sdtr"]
+[ext_resource type="Texture2D" uid="uid://brnkv2tbth6ny" path="res://art/drawer/disk2.png" id="5_anv1h"]
+[ext_resource type="Texture2D" uid="uid://dj351fxikolkx" path="res://art/drawer/disk3.png" id="6_mt6gd"]
+[ext_resource type="Texture2D" uid="uid://cxk11upwyalvi" path="res://art/drawer/disk4.png" id="7_yqgn8"]
+[ext_resource type="Texture2D" uid="uid://irimj6xyfhou" path="res://art/drawer/disk5.png" id="8_x5u06"]
+[ext_resource type="AudioStream" uid="uid://dry16jhfvjgai" path="res://music/sfx/correct.wav" id="9_733c2"]
+[ext_resource type="AudioStream" uid="uid://d174da5d8wuws" path="res://music/sfx/wrong.wav" id="10_jgelq"]
+
+[sub_resource type="Theme" id="Theme_a2rd4"]
+default_font = ExtResource("1_1me64")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rxk2k"]
+size = Vector2(480, 104.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_awk2j"]
+size = Vector2(479, 344)
+
+[node name="DrawerOverlay" type="CenterContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_a2rd4")
+script = ExtResource("2_wyaiy")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 2
+texture = ExtResource("3_owbpb")
+
+[node name="Disk1" type="Sprite2D" parent="."]
+position = Vector2(935, 290)
+texture = ExtResource("4_3sdtr")
+
+[node name="Area2D" type="Area2D" parent="Disk1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Disk1/Area2D"]
+position = Vector2(-7, -193)
+shape = SubResource("RectangleShape2D_rxk2k")
+
+[node name="Disk2" type="Sprite2D" parent="."]
+position = Vector2(931, 376)
+texture = ExtResource("5_anv1h")
+
+[node name="Area2D" type="Area2D" parent="Disk2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Disk2/Area2D"]
+position = Vector2(-2, -186)
+shape = SubResource("RectangleShape2D_rxk2k")
+
+[node name="Disk3" type="Sprite2D" parent="."]
+position = Vector2(935, 466)
+texture = ExtResource("6_mt6gd")
+
+[node name="Area2D" type="Area2D" parent="Disk3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Disk3/Area2D"]
+position = Vector2(-4, -182)
+shape = SubResource("RectangleShape2D_rxk2k")
+
+[node name="Disk4" type="Sprite2D" parent="."]
+position = Vector2(931, 538)
+texture = ExtResource("7_yqgn8")
+
+[node name="Area2D" type="Area2D" parent="Disk4"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Disk4/Area2D"]
+position = Vector2(-3, -153)
+shape = SubResource("RectangleShape2D_rxk2k")
+
+[node name="Disk5" type="Sprite2D" parent="."]
+position = Vector2(926, 597)
+texture = ExtResource("8_x5u06")
+
+[node name="Area2D" type="Area2D" parent="Disk5"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Disk5/Area2D"]
+position = Vector2(-3.5, 10)
+shape = SubResource("RectangleShape2D_awk2j")
+
+[node name="AudioCorrect" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_733c2")
+
+[node name="AudioWrong" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_jgelq")
+
+[connection signal="ready" from="." to="." method="_on_ready"]
+[connection signal="input_event" from="Disk1/Area2D" to="." method="_on_disk1_area_2d_input_event"]
+[connection signal="mouse_entered" from="Disk1/Area2D" to="." method="_on_disk1_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Disk1/Area2D" to="." method="_on_disk1_area_2d_mouse_exited"]
+[connection signal="input_event" from="Disk2/Area2D" to="." method="_on_disk2_area_2d_input_event"]
+[connection signal="mouse_entered" from="Disk2/Area2D" to="." method="_on_disk2_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Disk2/Area2D" to="." method="_on_disk2_area_2d_mouse_exited"]
+[connection signal="input_event" from="Disk3/Area2D" to="." method="_on_disk3_area_2d_input_event"]
+[connection signal="mouse_entered" from="Disk3/Area2D" to="." method="_on_disk3_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Disk3/Area2D" to="." method="_on_disk3_area_2d_mouse_exited"]
+[connection signal="input_event" from="Disk4/Area2D" to="." method="_on_disk4_area_2d_input_event"]
+[connection signal="mouse_entered" from="Disk4/Area2D" to="." method="_on_disk4_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Disk4/Area2D" to="." method="_on_disk4_area_2d_mouse_exited"]
+[connection signal="input_event" from="Disk5/Area2D" to="." method="_on_disk5_area_2d_input_event"]
+[connection signal="mouse_entered" from="Disk5/Area2D" to="." method="_on_disk5_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Disk5/Area2D" to="." method="_on_disk5_area_2d_mouse_exited"]

@@ -179,6 +179,11 @@ func _on_button_pressed() -> void:
 						reward_player()
 			else:
 				punish_player()
+		#8: Nao pode se mexer
+		#9: Gaveta ta sempre disponivel, mas nessa hora tem q pedir para clicar no leitor
+		#10: Apertar os dois botoes ao mesmo tempo
+		#11: Devoler chaves
+		
 		
 func showLevelObjective():
 	match Global.level:

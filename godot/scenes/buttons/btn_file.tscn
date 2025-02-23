@@ -1,24 +1,59 @@
-[gd_scene load_steps=4 format=3 uid="uid://llfs1trs66ko"]
+[gd_scene load_steps=11 format=3 uid="uid://llfs1trs66ko"]
 
 [ext_resource type="Script" path="res://scenes/buttons/game_button.gd" id="1_lvcb0"]
 [ext_resource type="AudioStream" uid="uid://cp6x5i4xtghbh" path="res://music/sfx/book.wav" id="2_btmyc"]
+[ext_resource type="Texture2D" uid="uid://7qi0tmnhrf8i" path="res://art/book/livro_amarelo_a.png" id="3_4cgjm"]
+[ext_resource type="Texture2D" uid="uid://bswsn0tx1c4cw" path="res://art/book/livro_pink_a.png" id="4_4f1xh"]
+[ext_resource type="Texture2D" uid="uid://tyu8j8mocmrj" path="res://art/book/livro_vermelho_a.png" id="5_hml3h"]
+[ext_resource type="Texture2D" uid="uid://nvealdhyako5" path="res://art/book/livro_azul_a.png" id="6_esh3x"]
+[ext_resource type="Texture2D" uid="uid://b8scxaoadothf" path="res://art/book/livro_cinza_a.png" id="7_q61i7"]
+[ext_resource type="Texture2D" uid="uid://xm3uioa7qu0q" path="res://art/book/livro_ciano_a.png" id="8_dbsj5"]
+[ext_resource type="Texture2D" uid="uid://daigjrs7pqh33" path="res://art/book/livro_bege_a.png" id="9_3idsh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngaa"]
-size = Vector2(169, 56)
+size = Vector2(239, 168)
 
 [node name="btn_file" type="Node2D"]
 script = ExtResource("1_lvcb0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 
+[node name="AudioPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_btmyc")
+
+[node name="LivroAmareloA" type="Sprite2D" parent="."]
+position = Vector2(112, 117.5)
+texture = ExtResource("3_4cgjm")
+
+[node name="LivroPinkA" type="Sprite2D" parent="."]
+position = Vector2(118, 158.5)
+texture = ExtResource("4_4f1xh")
+
+[node name="LivroVermelhoA" type="Sprite2D" parent="."]
+position = Vector2(114, 132.5)
+texture = ExtResource("5_hml3h")
+
+[node name="LivroAzulA" type="Sprite2D" parent="."]
+position = Vector2(119, 78.5)
+texture = ExtResource("6_esh3x")
+
+[node name="LivroCinzaA" type="Sprite2D" parent="."]
+position = Vector2(108, 87.5)
+texture = ExtResource("7_q61i7")
+
+[node name="LivroCianoA" type="Sprite2D" parent="."]
+position = Vector2(116, 46.5)
+texture = ExtResource("8_dbsj5")
+
+[node name="LivroBegeA" type="Sprite2D" parent="."]
+position = Vector2(85, 15.5)
+texture = ExtResource("9_3idsh")
+
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(58.5, 0)
+position = Vector2(117.5, 85)
 shape = SubResource("RectangleShape2D_4ngaa")
-
-[node name="AudioPlayer2D" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("2_btmyc")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
