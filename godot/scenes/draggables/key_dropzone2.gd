@@ -11,7 +11,7 @@ func _process(_delta: float) -> void:
 	else:
 		visible = false
 	
-	if Global.level == 0:
+	if Global.level == 11:
 		process_mode = PROCESS_MODE_INHERIT
 		
 	else:

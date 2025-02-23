@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=46 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -29,6 +29,7 @@
 [ext_resource type="PackedScene" uid="uid://ds2o3sceyjk8y" path="res://scenes/displays/disp_hold_button.tscn" id="27_fxhw2"]
 [ext_resource type="PackedScene" uid="uid://bopufqqgy6wy1" path="res://scenes/buttons/btn_hold.tscn" id="28_5hmio"]
 [ext_resource type="Texture2D" uid="uid://r7ke58np7yle" path="res://art/send_key.png" id="29_r0w6y"]
+[ext_resource type="PackedScene" uid="uid://bh7kq4vejoa8k" path="res://scenes/draggables/key_dropzone2.tscn" id="30_b85yk"]
 [ext_resource type="PackedScene" uid="uid://dhgw6enyyltpn" path="res://scenes/draggables/key_draggable.tscn" id="32_s6xq2"]
 [ext_resource type="PackedScene" uid="uid://b1263b46q38kr" path="res://scenes/draggables/key_dropzone.tscn" id="33_30076"]
 [ext_resource type="PackedScene" uid="uid://dwy6jpf5ox0fk" path="res://scenes/displays/disp_wave.tscn" id="34_tmhbh"]
@@ -375,8 +376,7 @@ position = Vector2(1831, 571)
 position = Vector2(1427, 792)
 scale = Vector2(0.5, 0.5)
 
-[node name="KeyDropzone2" parent="." instance=ExtResource("33_30076")]
-visible = false
+[node name="KeyDropzone2" parent="." instance=ExtResource("30_b85yk")]
 position = Vector2(445, 311)
 
 [node name="disp_timer" parent="." instance=ExtResource("36_q1iga")]

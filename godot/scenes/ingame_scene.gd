@@ -284,7 +284,6 @@ func _on_blue_button_2_button_pressed() -> void:
 	$Slap.set_visible(true)
 	
 
-
 func _on_btn_drawer_got_floppy_disk() -> void:
 	Global.gotDisk = true
 	showLevelObjective()
