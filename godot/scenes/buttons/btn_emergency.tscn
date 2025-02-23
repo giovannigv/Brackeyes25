@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://dnearrcq5yimx"]
 
-[ext_resource type="Script" path="res://scenes/buttons/game_button.gd" id="1_m6w1b"]
+[ext_resource type="Script" path="res://scenes/buttons/btn_emergency.gd" id="1_cyien"]
 [ext_resource type="Texture2D" uid="uid://b6sbny5y50avf" path="res://art/buttons/btn_emergency.png" id="2_tgoxn"]
 [ext_resource type="AudioStream" uid="uid://bg7gkjqai0txm" path="res://music/sfx/btn_press_2.mp3" id="3_2xi3h"]
 
@@ -8,7 +8,7 @@
 size = Vector2(70, 62)
 
 [node name="btn_emergency" type="Node2D"]
-script = ExtResource("1_m6w1b")
+script = ExtResource("1_cyien")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_tgoxn")
