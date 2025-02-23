@@ -120,7 +120,7 @@ func _on_button_pressed() -> void:
 			if $"Blue Button 1".pressed_this_level == true || $"Blue Button 2".pressed_this_level == true:
 				Global.level = 3
 				reward_player()
-				$"Tutorial Computer".text = "tutorial_4"
+				$"Tutorial Computer".text = "tutorial_6"
 				$Pad.showOrder(0)
 			else:
 				punish_player()
@@ -159,22 +159,22 @@ func _on_button_pressed() -> void:
 				match count_slap:
 					
 					1:
-						$"Tutorial Computer".text = "tutorial_10"
-					
-					2:
 						$"Tutorial Computer".text = "tutorial_11"
 					
-					4:
+					2:
 						$"Tutorial Computer".text = "tutorial_12"
 					
-					6:
+					4:
 						$"Tutorial Computer".text = "tutorial_13"
 					
-					8:
+					6:
 						$"Tutorial Computer".text = "tutorial_14"
 					
-					10:
+					8:
 						$"Tutorial Computer".text = "tutorial_15"
+					
+					10:
+						$"Tutorial Computer".text = "tutorial_16"
 						Global.level = 8
 						reward_player()
 						#await get_tree().create_timer(3).timeout
@@ -220,18 +220,18 @@ func _on_button_pressed() -> void:
 func showLevelObjective():
 	match Global.level:
 		6:
-			$"Tutorial Computer".text = "tutorial_8"
+			$"Tutorial Computer".text = "tutorial_9"
 		8:
-			$"Tutorial Computer".text = "tutorial_16"
+			$"Tutorial Computer".text = "tutorial_17"
 		9:
 			if(Global.gotDisk):
-				$"Tutorial Computer".text = "tutorial_18"
+				$"Tutorial Computer".text = "tutorial_19"
 			else:
-				$"Tutorial Computer".text = "tutorial_17"
-		10:
-			$"Tutorial Computer".text = "To SHUTDOWN the engine, \nyou have to press the two BIG Buttons at the same time!"
+				$"Tutorial Computer".text = "tutorial_18"
+		#10:
+			#$"Tutorial Computer".text = "To SHUTDOWN the engine, \nyou have to press the two BIG Buttons at the same time!"
 		11:
-			$"Tutorial Computer".text = "tutorial_19"
+			$"Tutorial Computer".text = "tutorial_20"
 			
 		
 
@@ -278,7 +278,7 @@ func _on_btn_default_slider_max() -> void:
 func _on_pad_pad_finished() -> void:
 	Global.level = 4
 	reward_player()
-	$"Tutorial Computer".text = "tutorial_6"
+	$"Tutorial Computer".text = "tutorial_7"
 	$"Selector".started = true
 	$"Selector".chooseRandomButton()
 
@@ -287,7 +287,7 @@ func _on_selector_picked_correct() -> void:
 	$"Selector".started = false
 	Global.level = 5
 	reward_player()
-	$"Tutorial Computer".text = "tutorial_7"
+	$"Tutorial Computer".text = "tutorial_8"
 
 func _on_dial_finish_turn() -> void:
 	Global.level = 6
@@ -302,7 +302,7 @@ func _on_computer_pc_on() -> void:
 func _on_blue_button_2_button_pressed() -> void:
 	Global.level = 7
 	reward_player()
-	$"Tutorial Computer".text = "tutorial_9"
+	$"Tutorial Computer".text = "tutorial_10"
 	await get_tree().create_timer(3).timeout
 	$Slap.set_visible(true)
 	
