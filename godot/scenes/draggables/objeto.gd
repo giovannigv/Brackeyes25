@@ -44,6 +44,7 @@ func _on_area_2d_mouse_exited() -> void:
 #Se o objeto tocou na dropzone, altera a cor dela
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("dropable"):
+		whereIsHolding(body.name)
 		is_inside_dropable = true
 		Global.pressingButton = true
 		body_ref = body
@@ -53,3 +54,16 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("dropable"):
 		is_inside_dropable = false
 		Global.pressingButton = false
+		$"../Big F Button 1".isPressing = false
+		$"../Big F Button 2".isPressing = false
+		
+func whereIsHolding(name: String):
+	if(name == "Dropzone2"):
+		print('2')
+		$"../Big F Button 2".isPressing = true
+		
+	if(name == "Dropzone3"):
+		print('1')
+		$"../Big F Button 1".isPressing = true
+		
+	

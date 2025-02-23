@@ -191,6 +191,11 @@ func _on_button_pressed() -> void:
 			Global.level = 10
 			reward_player()
 			showLevelObjective()
+		
+		10:
+			Global.level = 11
+			$Timer.stop()
+			showLevelObjective()
 		#8: Nao pode se mexer
 		#9: Gaveta ta sempre disponivel, mas nessa hora tem q pedir para clicar no leitor
 		#10: Apertar os dois botoes ao mesmo tempo
@@ -210,6 +215,9 @@ func showLevelObjective():
 				$"Tutorial Computer".text = "To Restore core temporal Health, you need to find \nTODAY\n Floppy Disk"
 		10:
 			$"Tutorial Computer".text = "To SHUTDOWN Engine, \nyou have to press at the same time 2 BIG Buttons!"
+		11:
+			$"Tutorial Computer".text = "Congrats! You actually avoid a HUGE meltdown Mayham. \n Before you go, don't forget to send the keys back to Wesley"
+			
 		
 
 #Quando o computador está desligado e é clicado, ele desativa a função de ligar e ativa os botões da senha
