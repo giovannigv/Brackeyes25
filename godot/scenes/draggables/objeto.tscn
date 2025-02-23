@@ -1,22 +1,23 @@
 [gd_scene load_steps=4 format=3 uid="uid://qad1g2kbaoan"]
 
 [ext_resource type="Script" path="res://scenes/draggables/objeto.gd" id="1_ekv24"]
-[ext_resource type="Texture2D" uid="uid://bku6xhvtbsoua" path="res://art/mug.jpg" id="2_jpn7g"]
+[ext_resource type="Texture2D" uid="uid://drjr17ewaw53r" path="res://art/mug.png" id="2_ive5m"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngaa"]
-size = Vector2(336, 336)
+size = Vector2(112, 104)
 
 [node name="Objeto" type="Node2D"]
 script = ExtResource("1_ekv24")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_jpn7g")
+texture = ExtResource("2_ive5m")
 
 [node name="Area2D" type="Area2D" parent="."]
 scale = Vector2(0.5, 0.5)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-2, 0)
 shape = SubResource("RectangleShape2D_4ngaa")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

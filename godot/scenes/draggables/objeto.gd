@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var sprite_2d: Sprite2D = $Sprite2D
+
 var body_ref: Node2D #Armazena o body que o objeto está em contato
 var draggable: bool = false #indica se o objeto é arrastável
 var initialPos: Vector2 #Armazena a posição inicial do objeto. Utilizado quando o objeto é solto em um lugar inválido, sendo assim retornado à sua posição original
@@ -31,23 +33,23 @@ func _process(_delta: float) -> void:
 func _on_area_2d_mouse_entered() -> void:
 	if not Global.is_dragging:
 		draggable = true
-		scale = Vector2(scale.x - 0.01, scale.y - 0.01)
+		sprite_2d.texture = ResourceLoader.load("res://art/mug_hover.png")
 
 #Quando o mouse sai, aumenta levemente a escala do botão para ressaltar que é interativo
 func _on_area_2d_mouse_exited() -> void:
 	if not Global.is_dragging:
 		draggable = false
-		scale = Vector2(scale.x + 0.01, scale.y + 0.01)
+		sprite_2d.texture = ResourceLoader.load("res://art/mug.png")
 
 #Se o objeto tocou na dropzone, altera a cor dela
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("dropable"):
 		is_inside_dropable = true
-		body.modulate = Color(Color.GRAY, 1)
+		Global.pressingButton = true
 		body_ref = body
 
 #Se o objeto saiu da dropzone, altera a cor dela
 func _on_area_2d_body_exited(body: Node2D) -> void:
 	if body.is_in_group("dropable"):
 		is_inside_dropable = false
-		body.modulate = Color(Color.DIM_GRAY, 0.7)
+		Global.pressingButton = false
