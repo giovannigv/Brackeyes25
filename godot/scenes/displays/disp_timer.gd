@@ -6,7 +6,8 @@ extends Node2D
 const fullTime = 10
 const eachStep = 36 #degree for rotation
 var moved = false
-var finish_event = false
+var isFinish = false
+signal button_pressed
 
 func activateTimer():
 	timer_to_complete.start()
@@ -16,12 +17,17 @@ func _input(event):
 		moved = true
 	
 func _process(_delta: float) -> void:
-	if(moved):
-		sprite_2d.rotation_degrees = 0
-		timer_to_complete.start(fullTime)
-		moved = false
+	if(!isFinish):
+		if(moved):
+			sprite_2d.rotation_degrees = 0
+			timer_to_complete.start(fullTime)
+			moved = false
+		else:
+			sprite_2d.rotation_degrees =  eachStep * timer_to_complete.time_left
 	else:
-		sprite_2d.rotation_degrees =  eachStep * timer_to_complete.time_left
+		sprite_2d.rotation_degrees = 0
 
 func _on_timer_to_complete_timeout() -> void:
-	finish_event = true
+	if(Global.level == 8):
+		isFinish = true
+		button_pressed.emit()

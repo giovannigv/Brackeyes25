@@ -12,3 +12,5 @@ offset = Vector2(-8.915, -2.86)
 
 [node name="timer_to_complete" type="Timer" parent="."]
 wait_time = 10.0
+
+[connection signal="timeout" from="timer_to_complete" to="." method="_on_timer_to_complete_timeout"]

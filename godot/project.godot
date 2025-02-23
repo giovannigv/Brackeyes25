@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Brackeys25"
+config/name="Chain Reaction: Meltdown Mayhem"
 run/main_scene="res://scenes/boot/godot/godot_bootsplash_scene.tscn"
 config/features=PackedStringArray("4.3")
 config/icon="res://icon.png"

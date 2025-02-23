@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://btjb8bk6gaudi"
-path="res://.godot/imported/btn_reader_hover.png-371ac3ec3c663978cbde9856c524b355.ctex"
+uid="uid://dvlcc6dyjhao"
+path="res://.godot/imported/btn_floppy_reader.png-1122ddadde6732bb04b7762a15a09463.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/btn_reader_hover.png"
-dest_files=["res://.godot/imported/btn_reader_hover.png-371ac3ec3c663978cbde9856c524b355.ctex"]
+source_file="res://art/buttons/btn_floppy_reader.png"
+dest_files=["res://.godot/imported/btn_floppy_reader.png-1122ddadde6732bb04b7762a15a09463.ctex"]
 
 [params]
 

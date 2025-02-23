@@ -22,7 +22,6 @@
 [ext_resource type="PackedScene" uid="uid://c24ks6s1fm2rt" path="res://scenes/buttons/btn_ok.tscn" id="19_sbo42"]
 [ext_resource type="AudioStream" uid="uid://p1yj5d85bcde" path="res://music/Intensidade 1.ogg" id="20_aia42"]
 [ext_resource type="AudioStream" uid="uid://xqixo5r3tdvu" path="res://music/Intensidade 2.ogg" id="20_yqewc"]
-[ext_resource type="Texture2D" uid="uid://dvlcc6dyjhao" path="res://art/btn_reader.png" id="22_8o2tj"]
 [ext_resource type="AudioStream" uid="uid://bgbs57lr2uhnv" path="res://music/Intensidade 3.ogg" id="22_k4et3"]
 [ext_resource type="PackedScene" uid="uid://llfs1trs66ko" path="res://scenes/buttons/btn_file.tscn" id="24_c3uwm"]
 [ext_resource type="Texture2D" uid="uid://1mn5vyiitgbv" path="res://art/ui/Painel_Settings.png" id="24_vdb4c"]
@@ -40,6 +39,7 @@
 [ext_resource type="AudioStream" uid="uid://b0dcwux1xoaqc" path="res://music/sfx/alarm1.wav" id="38_lnvag"]
 [ext_resource type="AudioStream" uid="uid://c8r5j3h56yxx8" path="res://music/sfx/alarm2.wav" id="39_f63rw"]
 [ext_resource type="PackedScene" uid="uid://baxu561nsqlrf" path="res://scenes/drawer.tscn" id="39_rif1y"]
+[ext_resource type="PackedScene" uid="uid://hapl5iufx3e7" path="res://scenes/buttons/btn_floppy_reader.tscn" id="40_hefui"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_85n1e"]
 font_size = 32
@@ -240,22 +240,21 @@ autoplay = "move_tutorial"
 [node name="Tutorial Computer" type="Label" parent="."]
 visible = false
 z_index = 2
-offset_left = 1265.0
-offset_top = 99.0
-offset_right = 1672.0
-offset_bottom = 400.0
-rotation = 0.0785398
+offset_left = 1266.0
+offset_top = 90.0
+offset_right = 1673.0
+offset_bottom = 391.0
+rotation = 0.0698132
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 10
 theme_override_fonts/font = ExtResource("9_clux3")
 theme_override_font_sizes/font_size = 28
 text = "Alert! 
 Reactor meltdown detected!
-The electrons are 
-dancing too crazily.
-Please lower the electrons' 
-dance by moving 
-the slider."
+The electrons are dancing
+too crazily.
+Please lower the electrons' dance
+ by moving the SLIDER."
 vertical_alignment = 1
 autowrap_mode = 2
 
@@ -265,10 +264,10 @@ position = Vector2(363, 970)
 
 [node name="Big F Button 2" parent="." instance=ExtResource("7_jw5hu")]
 z_index = 1
-position = Vector2(1659, 851)
+position = Vector2(1597, 851)
 
 [node name="Dropzone2" parent="." instance=ExtResource("8_8d3mv")]
-position = Vector2(1660, 855)
+position = Vector2(1596, 844)
 rotation = 0.436332
 scale = Vector2(0.94, 0.94)
 
@@ -422,14 +421,16 @@ stream = ExtResource("39_f63rw")
 bus = &"Sound"
 
 [node name="Slap" parent="." instance=ExtResource("36_u6ch2")]
-position = Vector2(1599, 417)
-
-[node name="BtnReader" type="Sprite2D" parent="."]
-position = Vector2(1793, 783)
-texture = ExtResource("22_8o2tj")
+visible = false
+position = Vector2(1561, 201)
+rotation = 0.418879
+scale = Vector2(2, 2)
 
 [node name="btn_drawer" parent="." instance=ExtResource("39_rif1y")]
 position = Vector2(171, 550)
+
+[node name="btn_floppy_reader" parent="." instance=ExtResource("40_hefui")]
+position = Vector2(1792, 782)
 
 [connection signal="finish_event" from="UI/DrawerOverlay" to="btn_drawer" method="_on_drawer_overlay_finish_event"]
 [connection signal="button_pressed" from="Big F Button 1" to="." method="_on_button_pressed"]
@@ -450,5 +451,9 @@ position = Vector2(171, 550)
 [connection signal="button_pressed" from="btn_file" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Blue Button 2" to="." method="_on_blue_button_2_button_pressed"]
 [connection signal="finish_event" from="DispHoldButton" to="Blue Button 2" method="_on_disp_hold_button_finish_event"]
+[connection signal="button_pressed" from="disp_timer" to="." method="_on_button_pressed"]
 [connection signal="finished" from="SFX/alarm1" to="." method="_on_alarm_1_finished"]
 [connection signal="finished" from="SFX/alarm2" to="." method="_on_alarm_2_finished"]
+[connection signal="button_pressed" from="Slap" to="." method="_on_button_pressed"]
+[connection signal="gotFloppyDisk" from="btn_drawer" to="." method="_on_btn_drawer_got_floppy_disk"]
+[connection signal="button_pressed" from="btn_floppy_reader" to="." method="_on_button_pressed"]

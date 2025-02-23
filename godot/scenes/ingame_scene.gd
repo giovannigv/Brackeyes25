@@ -177,8 +177,20 @@ func _on_button_pressed() -> void:
 						$"Tutorial Computer".text = "I'm back. You can stop now!"
 						Global.level = 8
 						reward_player()
+						await get_tree().create_timer(3).timeout
+						showLevelObjective()
+						$Slap.set_visible(false)
 			else:
 				punish_player()
+		8:
+			Global.level = 9
+			reward_player()
+			showLevelObjective()
+		
+		9:
+			Global.level = 10
+			reward_player()
+			showLevelObjective()
 		#8: Nao pode se mexer
 		#9: Gaveta ta sempre disponivel, mas nessa hora tem q pedir para clicar no leitor
 		#10: Apertar os dois botoes ao mesmo tempo
@@ -189,6 +201,16 @@ func showLevelObjective():
 	match Global.level:
 		6:
 			$"Tutorial Computer".text = "Hold the other Blue Button to insert protons on the inner layer."
+		8:
+			$"Tutorial Computer".text = "DON'T MOVE! To maintain levels of Bibiri Babiri."
+		9:
+			if(Global.gotDisk):
+				$"Tutorial Computer".text = "INSERT Floppy disk into the reader! \nNOW!"
+			else:
+				$"Tutorial Computer".text = "To Restore core temporal Health, you need to find \nTODAY\n Floppy Disk"
+		10:
+			$"Tutorial Computer".text = "To SHUTDOWN Engine, \nyou have to press at the same time 2 BIG Buttons!"
+		
 
 #Quando o computador está desligado e é clicado, ele desativa a função de ligar e ativa os botões da senha
 func _on_computer_clicked() -> void:
@@ -258,4 +280,12 @@ func _on_blue_button_2_button_pressed() -> void:
 	Global.level = 7
 	reward_player()
 	$"Tutorial Computer".text = "I'm malfunctioning. Hit me until I come back to my senses."
+	await get_tree().create_timer(3).timeout
 	$Slap.set_visible(true)
+	
+
+
+func _on_btn_drawer_got_floppy_disk() -> void:
+	Global.gotDisk = true
+	showLevelObjective()
+	
