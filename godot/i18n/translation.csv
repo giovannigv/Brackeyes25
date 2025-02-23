@@ -18,3 +18,22 @@ resume_game,Resume game,Weiterspielen,Continuar
 restart_game,Restart game,Spiel neu starten,Reiniciar
 game_over,Game Over,Spiel vorbei,Fim de Jogo
 game_win,You Won,Sie haben gewonnen,Parabéns
+tutorial_1,One more day at work.\nI'll have to turn on the computer as always to see how the reactor is doing.\nWhat could go wrong?\n(Grab the key and turn it on),Noch ein Arbeitstag.\nIch muss wie immer den Computer einschalten um zu sehen wie es dem Reaktor geht.\nWas könnte schief gehen?\n(Nehmen Sie den Schlüssel und schalten Sie ihn ein),Mais um dia de trabalho.\nTerei que ligar o computador como sempre para ver como está o reator.\nO que pode dar errado?\n(Pegue a chave e ligue-o)
+tutorial_2,Looks like I need the password for today.\nIt should be in a notebook or file around here.\nI should look around.,Anscheinend brauche ich das Passwort für heute.\nEs sollte sich hier in einem Notizbuch oder einer Datei befinden.\nIch sollte mich umschauen.,Parece que preciso da senha para hoje.\nEla deve estar em um caderno ou arquivo por aqui.\nDevo dar uma olhada.
+tutorial_3,It says here that the password is 0451.,Hier steht dass das Passwort 0451 ist.,Diz aqui que a senha é 0451.
+tutorial_4,Alert!\nReactor meltdown detected!\nThe electrons are dancing\ntoo crazily.\nPlease lower the electrons' dance\n by moving the SLIDER.,Alarm!\nReaktorschmelze erkannt!\nDie Elektronen tanzen\nzu verrückt.\nBitte senken Sie den Tanz der Elektronen\n indem Sie den SLIDER bewegen.,Alerta!\nColapso do reator detectado!\nOs elétrons estão dançando\nmuito loucamente.\nPor favor diminua a dança dos elétrons\n movendo o SLIDER.
+tutorial_5,Deposit the electrons\nto the channel\nby clicking\nthe blue button.,Legen Sie die Elektronen\nauf dem Kanal ab\nindem Sie\nauf die blaue Schaltfläche klicken.,Deposite os elétrons\no canal\nclicando\no botão azul.
+tutorial_6,Now use the selector\nto pick the\ncorrect rail that\nthe capsule must go.,Verwenden Sie nun den Auswahlschalter\num die\nrichtige Schiene auszuwählen\nauf die die Kapsel passen soll.,Agora use o seletor\npara escolher o\ntrilho correto\nque a cápsula deve ficar.
+tutorial_7,Please rewind the protons in the inner layer.\nIt can be done by using the dial to match the wave ondulation.,Bitte spulen Sie die Protonen in der inneren Schicht zurück.\nDies kann mithilfe des Drehknopfs erfolgen um die Wellenwellen anzupassen.,Por favor rebobine os prótons na camada interna.\nIsso pode ser feito usando o mostrador para combinar com a ondulação da onda.
+tutorial_8,Hold the other Blue Button to insert protons on the inner layer.,Halten Sie die andere blaue Taste gedrückt um Protonen in die innere Schicht einzufügen.,Segure o outro botão azul para inserir prótons na camada interna.
+tutorial_9,I'm malfunctioning. Hit me until I come back to my senses.,Ich habe eine Fehlfunktion. Schlag mich bis ich wieder zur Besinnung komme.,Estou com defeito. Bata em mim até eu voltar aos meus sentidos.
+tutorial_10,Again.,Wieder.,De novo.
+tutorial_11,Hit me harder!,Schlag mich härter!,Bata-me com mais força!
+tutorial_12,Harder daddy!,Härter Papa!,Mais forte papai!
+tutorial_13,Oh yeah! I like it!,Oh ja! Mir gefällt es!,Oh sim! Eu gosto disso!
+tutorial_14,Now you're hurting me.,Jetzt tust du mir weh.,Agora você está me machucando.
+tutorial_15,I'm back. You can stop now!,Ich bin zurück. Du kannst jetzt aufhören!,Voltei. Você pode parar agora!
+tutorial_16,DON'T MOVE to maintain levels of Bibiri Babiri!,BEWEGEN SIE SICH NICHT um den Bibiri-Babiri-Spiegel aufrechtzuerhalten!,NÃO SE MOVA para manter os níveis de Bibiri Babiri!
+tutorial_17,To restore core temporal health you need to find \nTODAY'S\n floppy disk.,Um die temporale Gesundheit des Kerns wiederherzustellen müssen Sie \nHEUTE\n die Diskette finden.,Para restaurar a integridade temporal central você precisa encontrar o disquete de\nHOJE.
+tutorial_18,INSERT the floppy disk into the reader! \nNOW!,Legen Sie die Diskette in das Lesegerät ein! \nJETZT!,INSIRA o disquete no leitor! \nAGORA!
+tutorial_19,Congrats! You actually avoided a HUGE meltdown mayhem. \n Before you go don't forget to send the keys back to Wesley.,Glückwunsch! Sie haben tatsächlich eine RIESIGE Kernschmelze vermieden. \n Bevor du gehst vergiss nicht die Schlüssel an Wesley zurückzusenden.,Parabéns! Na verdade você evitou um ENORME colapso. \n Antes de ir não se esqueça de devolver as chaves para Wesley.

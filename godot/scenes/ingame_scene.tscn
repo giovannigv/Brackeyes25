@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=47 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -200,10 +200,7 @@ offset_right = 487.0
 offset_bottom = 326.0
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_constants/line_spacing = 10
-text = "One more day at work.
-I'll have to turn on the computer as always to see how the reactor is doing. 
-What could go wrong?
-(Grab the key and turn it on)"
+text = "tutorial_1"
 label_settings = ExtResource("25_w1ccr")
 vertical_alignment = 1
 autowrap_mode = 2
@@ -216,9 +213,7 @@ offset_left = 77.0
 offset_top = 68.0
 offset_right = 495.0
 offset_bottom = 319.0
-text = "Looks like I need the password for today.
-It should be in a notebook or file around here.
-I should look around."
+text = "tutorial_2"
 label_settings = ExtResource("25_w1ccr")
 vertical_alignment = 1
 autowrap_mode = 3
@@ -231,7 +226,7 @@ offset_left = 78.0
 offset_top = 61.0
 offset_right = 495.0
 offset_bottom = 321.0
-text = "It says here that the password is 0451."
+text = "tutorial_3"
 label_settings = ExtResource("25_w1ccr")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -254,12 +249,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 10
 theme_override_fonts/font = ExtResource("9_clux3")
 theme_override_font_sizes/font_size = 28
-text = "Alert! 
-Reactor meltdown detected!
-The electrons are dancing
-too crazily.
-Please lower the electrons' dance
- by moving the SLIDER."
+text = "tutorial_4"
 vertical_alignment = 1
 autowrap_mode = 2
 

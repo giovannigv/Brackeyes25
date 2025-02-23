@@ -120,7 +120,7 @@ func _on_button_pressed() -> void:
 			if $"Blue Button 1".pressed_this_level == true || $"Blue Button 2".pressed_this_level == true:
 				Global.level = 3
 				reward_player()
-				$"Tutorial Computer".text = "Good. Now insert the\nbase substance capsule.\nYou can do it by\ninteracting with the pad."
+				$"Tutorial Computer".text = "tutorial_4"
 				$Pad.showOrder(0)
 			else:
 				punish_player()
@@ -159,22 +159,22 @@ func _on_button_pressed() -> void:
 				match count_slap:
 					
 					1:
-						$"Tutorial Computer".text = "Again."
+						$"Tutorial Computer".text = "tutorial_10"
 					
 					2:
-						$"Tutorial Computer".text = "Hit me harder!"
+						$"Tutorial Computer".text = "tutorial_11"
 					
 					4:
-						$"Tutorial Computer".text = "Harder, daddy!"
+						$"Tutorial Computer".text = "tutorial_12"
 					
 					6:
-						$"Tutorial Computer".text = "Oh yeah! I like it!"
+						$"Tutorial Computer".text = "tutorial_13"
 					
 					8:
-						$"Tutorial Computer".text = "Ok, now you're hurting me."
+						$"Tutorial Computer".text = "tutorial_14"
 					
 					10:
-						$"Tutorial Computer".text = "I'm back. You can stop now!"
+						$"Tutorial Computer".text = "tutorial_15"
 						Global.level = 8
 						reward_player()
 						#await get_tree().create_timer(3).timeout
@@ -220,18 +220,18 @@ func _on_button_pressed() -> void:
 func showLevelObjective():
 	match Global.level:
 		6:
-			$"Tutorial Computer".text = "Hold the other Blue Button to insert protons on the inner layer."
+			$"Tutorial Computer".text = "tutorial_8"
 		8:
-			$"Tutorial Computer".text = "DON'T MOVE to maintain levels of Bibiri Babiri!"
+			$"Tutorial Computer".text = "tutorial_16"
 		9:
 			if(Global.gotDisk):
-				$"Tutorial Computer".text = "INSERT the floppy disk into the reader! \nNOW!"
+				$"Tutorial Computer".text = "tutorial_18"
 			else:
-				$"Tutorial Computer".text = "To restore core temporal health, you need to find \nTODAY'S\n floppy disk."
+				$"Tutorial Computer".text = "tutorial_17"
 		10:
 			$"Tutorial Computer".text = "To SHUTDOWN the engine, \nyou have to press the two BIG Buttons at the same time!"
 		11:
-			$"Tutorial Computer".text = "Congrats! You actually avoided a HUGE meltdown mayhem. \n Before you go, don't forget to send the keys back to Wesley."
+			$"Tutorial Computer".text = "tutorial_19"
 			
 		
 
@@ -272,13 +272,13 @@ func _on_btn_default_slider_max() -> void:
 	if Global.level == 1:
 		Global.level = 2
 		reward_player()
-		$"Tutorial Computer".text = "Deposit the electrons\nto the channel\nby clicking\nthe blue button."
+		$"Tutorial Computer".text = "tutorial_5"
 
 #Ativa quando o jogador terminou a sequência
 func _on_pad_pad_finished() -> void:
 	Global.level = 4
 	reward_player()
-	$"Tutorial Computer".text = "Now use the selector\nto pick the\ncorrect rail that\nthe capsule must go."
+	$"Tutorial Computer".text = "tutorial_6"
 	$"Selector".started = true
 	$"Selector".chooseRandomButton()
 
@@ -287,7 +287,7 @@ func _on_selector_picked_correct() -> void:
 	$"Selector".started = false
 	Global.level = 5
 	reward_player()
-	$"Tutorial Computer".text = "Please rewind the protons in the inner layer.\nIt can be done by using the dial to match the wave ondulation."
+	$"Tutorial Computer".text = "tutorial_7"
 
 func _on_dial_finish_turn() -> void:
 	Global.level = 6
@@ -302,7 +302,7 @@ func _on_computer_pc_on() -> void:
 func _on_blue_button_2_button_pressed() -> void:
 	Global.level = 7
 	reward_player()
-	$"Tutorial Computer".text = "I'm malfunctioning. Hit me until I come back to my senses."
+	$"Tutorial Computer".text = "tutorial_9"
 	await get_tree().create_timer(3).timeout
 	$Slap.set_visible(true)
 	
