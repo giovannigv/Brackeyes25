@@ -193,14 +193,18 @@ func _on_button_pressed() -> void:
 				punish_player()
 		
 		9:
-			Global.level = 10
-			reward_player()
-			showLevelObjective()
+			if $Drawer.pressed_this_level == true:
+				$Drawer.pressed_this_level = false
+				reward_player()
+			else:
+				punish_player()
 		
 		10:
-			Global.level = 11
-			$Timer.stop()
-			showLevelObjective()
+			if $"Floppy Reader".pressed_this_level == true:
+				$"Floppy Reader".pressed_this_level = false
+				Global.level = 11
+				$Timer.stop()
+				showLevelObjective()
 		
 		#8: Nao pode se mexer
 		#9: Gaveta ta sempre disponivel, mas nessa hora tem q pedir para clicar no leitor
@@ -216,13 +220,13 @@ func showLevelObjective():
 			$"Tutorial Computer".text = "DON'T MOVE to maintain levels of Bibiri Babiri!"
 		9:
 			if(Global.gotDisk):
-				$"Tutorial Computer".text = "INSERT Floppy disk into the reader! \nNOW!"
+				$"Tutorial Computer".text = "INSERT the floppy disk into the reader! \nNOW!"
 			else:
-				$"Tutorial Computer".text = "To Restore core temporal Health, you need to find \nTODAY\n Floppy Disk"
+				$"Tutorial Computer".text = "To restore core temporal health, you need to find \nTODAY'S\n floppy disk."
 		10:
-			$"Tutorial Computer".text = "To SHUTDOWN Engine, \nyou have to press at the same time 2 BIG Buttons!"
+			$"Tutorial Computer".text = "To SHUTDOWN the engine, \nyou have to press the two BIG Buttons at the same time!"
 		11:
-			$"Tutorial Computer".text = "Congrats! You actually avoid a HUGE meltdown Mayham. \n Before you go, don't forget to send the keys back to Wesley"
+			$"Tutorial Computer".text = "Congrats! You actually avoided a HUGE meltdown mayhem. \n Before you go, don't forget to send the keys back to Wesley."
 			
 		
 
@@ -297,8 +301,8 @@ func _on_blue_button_2_button_pressed() -> void:
 	await get_tree().create_timer(3).timeout
 	$Slap.set_visible(true)
 	
-
 func _on_btn_drawer_got_floppy_disk() -> void:
 	Global.gotDisk = true
 	showLevelObjective()
+	Global.level = 10
 	

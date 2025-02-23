@@ -4,7 +4,7 @@ extends GameButton
 signal gotFloppyDisk
 
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
-	if event.is_action_pressed("click"):
+	if event.is_action_pressed("click") && Global.level == 9:
 		sprite_2d.texture = ResourceLoader.load("res://art/drawer/drawer_open.png")
 		drawer_overlay.visible = true
 		get_viewport().set_input_as_handled()
