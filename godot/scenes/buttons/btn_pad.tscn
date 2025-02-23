@@ -1,14 +1,17 @@
-[gd_scene load_steps=11 format=3 uid="uid://4lgm6qxinri2"]
+[gd_scene load_steps=14 format=3 uid="uid://4lgm6qxinri2"]
 
 [ext_resource type="Script" path="res://scenes/buttons/btn_pad.gd" id="1_34431"]
 [ext_resource type="Texture2D" uid="uid://dyp8srn6lgr8j" path="res://art/buttons/btn_pad_backgroung.png" id="2_wh4nc"]
 [ext_resource type="Texture2D" uid="uid://b8a5iwwjmle2l" path="res://art/buttons/btn_pad_yellow.png" id="3_51yud"]
 [ext_resource type="Material" uid="uid://seaqwilel5wq" path="res://art/buttons/material/btn_active_mat.tres" id="3_alvqq"]
-[ext_resource type="Texture2D" uid="uid://cb1tcj4x8ohym" path="res://art/buttons/btn_pad_orange.png" id="4_rafuy"]
 [ext_resource type="Texture2D" uid="uid://dec8ts2khunje" path="res://art/buttons/btn_pad_red.png" id="5_c2v2g"]
+[ext_resource type="Texture2D" uid="uid://bt73yc8ow11yv" path="res://art/buttons/btn_pad_red_hover.png" id="5_d7vdg"]
 [ext_resource type="Texture2D" uid="uid://bc5dvbvujkimv" path="res://art/buttons/btn_pad_pink.png" id="6_gvuwq"]
+[ext_resource type="Texture2D" uid="uid://dk37l86wlchx" path="res://art/buttons/btn_pad_yellow_hover.png" id="7_cmhlk"]
 [ext_resource type="Texture2D" uid="uid://k0hs3xprckhv" path="res://art/buttons/btn_pad_blue.png" id="7_dqdrm"]
 [ext_resource type="AudioStream" uid="uid://bg7gkjqai0txm" path="res://music/sfx/btn_press_2.mp3" id="9_knny6"]
+[ext_resource type="Texture2D" uid="uid://b02t40wxwja6l" path="res://art/buttons/btn_pad_pink_hover.png" id="9_oxg5d"]
+[ext_resource type="Texture2D" uid="uid://demulm6ytjma" path="res://art/buttons/btn_pad_blue_hover.png" id="10_6e8u2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4ngaa"]
 size = Vector2(156.5, 133)
@@ -17,214 +20,191 @@ size = Vector2(156.5, 133)
 script = ExtResource("1_34431")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(80, 68)
 texture = ExtResource("2_wh4nc")
 
 [node name="Area2D" type="Area2D" parent="."]
+visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(79.75, 67.5)
+position = Vector2(80, 64)
 shape = SubResource("RectangleShape2D_4ngaa")
-
-[node name="btn_yellow" type="TextureButton" parent="."]
-material = ExtResource("3_alvqq")
-use_parent_material = true
-custom_minimum_size = Vector2(27, 27)
-offset_left = 13.0
-offset_top = 16.0
-offset_right = 40.0
-offset_bottom = 43.0
-texture_normal = ExtResource("3_51yud")
-
-[node name="btn_yellow2" type="TextureButton" parent="."]
-material = ExtResource("3_alvqq")
-use_parent_material = true
-custom_minimum_size = Vector2(27, 27)
-offset_left = 13.0
-offset_top = 43.0
-offset_right = 40.0
-offset_bottom = 70.0
-texture_normal = ExtResource("3_51yud")
-
-[node name="btn_yellow3" type="TextureButton" parent="."]
-material = ExtResource("3_alvqq")
-use_parent_material = true
-custom_minimum_size = Vector2(27, 27)
-offset_left = 13.0
-offset_top = 70.0
-offset_right = 40.0
-offset_bottom = 97.0
-texture_normal = ExtResource("3_51yud")
-
-[node name="btn_yellow4" type="TextureButton" parent="."]
-material = ExtResource("3_alvqq")
-use_parent_material = true
-custom_minimum_size = Vector2(27, 27)
-offset_left = 13.0
-offset_top = 97.0
-offset_right = 40.0
-offset_bottom = 124.0
-texture_normal = ExtResource("3_51yud")
-
-[node name="btn_orange" type="TextureButton" parent="."]
-material = ExtResource("3_alvqq")
-use_parent_material = true
-custom_minimum_size = Vector2(27, 27)
-offset_left = 40.0
-offset_top = 17.0
-offset_right = 67.0
-offset_bottom = 44.0
-texture_normal = ExtResource("4_rafuy")
-
-[node name="btn_orange2" type="TextureButton" parent="."]
-material = ExtResource("3_alvqq")
-use_parent_material = true
-custom_minimum_size = Vector2(27, 27)
-offset_left = 40.0
-offset_top = 44.0
-offset_right = 67.0
-offset_bottom = 71.0
-texture_normal = ExtResource("4_rafuy")
-
-[node name="btn_orange3" type="TextureButton" parent="."]
-material = ExtResource("3_alvqq")
-use_parent_material = true
-custom_minimum_size = Vector2(27, 27)
-offset_left = 40.0
-offset_top = 71.0
-offset_right = 67.0
-offset_bottom = 98.0
-texture_normal = ExtResource("4_rafuy")
-
-[node name="btn_orange4" type="TextureButton" parent="."]
-material = ExtResource("3_alvqq")
-use_parent_material = true
-custom_minimum_size = Vector2(27, 27)
-offset_left = 40.0
-offset_top = 98.0
-offset_right = 67.0
-offset_bottom = 125.0
-texture_normal = ExtResource("4_rafuy")
 
 [node name="btn_red" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
-custom_minimum_size = Vector2(27, 27)
-offset_left = 67.0
-offset_top = 16.0
-offset_right = 94.0
-offset_bottom = 43.0
+offset_left = -193.0
+offset_top = -68.0
+offset_right = -67.0
+offset_bottom = -24.0
 texture_normal = ExtResource("5_c2v2g")
+texture_hover = ExtResource("5_d7vdg")
 
 [node name="btn_red2" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
 custom_minimum_size = Vector2(27, 27)
-offset_left = 67.0
-offset_top = 43.0
-offset_right = 94.0
-offset_bottom = 70.0
+offset_left = -210.0
+offset_top = -36.0
+offset_right = -84.0
+offset_bottom = 8.0
 texture_normal = ExtResource("5_c2v2g")
+texture_hover = ExtResource("5_d7vdg")
 
 [node name="btn_red3" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
 custom_minimum_size = Vector2(27, 27)
-offset_left = 67.0
-offset_top = 70.0
-offset_right = 94.0
-offset_bottom = 97.0
+offset_left = -231.0
+offset_top = -5.0
+offset_right = -105.0
+offset_bottom = 39.0
 texture_normal = ExtResource("5_c2v2g")
+texture_hover = ExtResource("5_d7vdg")
 
 [node name="btn_red4" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
 custom_minimum_size = Vector2(27, 27)
-offset_left = 67.0
-offset_top = 97.0
-offset_right = 94.0
-offset_bottom = 124.0
+offset_left = -242.0
+offset_top = 29.0
+offset_right = -116.0
+offset_bottom = 73.0
 texture_normal = ExtResource("5_c2v2g")
+texture_hover = ExtResource("5_d7vdg")
+
+[node name="btn_yellow" type="TextureButton" parent="."]
+material = ExtResource("3_alvqq")
+use_parent_material = true
+custom_minimum_size = Vector2(27, 27)
+offset_left = -105.0
+offset_top = -67.0
+offset_right = 22.0
+offset_bottom = -21.0
+texture_normal = ExtResource("3_51yud")
+texture_hover = ExtResource("7_cmhlk")
+
+[node name="btn_yellow2" type="TextureButton" parent="."]
+material = ExtResource("3_alvqq")
+use_parent_material = true
+custom_minimum_size = Vector2(27, 27)
+offset_left = -108.0
+offset_top = -34.0
+offset_right = 19.0
+offset_bottom = 12.0
+texture_normal = ExtResource("3_51yud")
+texture_hover = ExtResource("7_cmhlk")
+
+[node name="btn_yellow3" type="TextureButton" parent="."]
+material = ExtResource("3_alvqq")
+use_parent_material = true
+custom_minimum_size = Vector2(27, 27)
+offset_left = -112.0
+offset_top = -4.0
+offset_right = 15.0
+offset_bottom = 42.0
+texture_normal = ExtResource("3_51yud")
+texture_hover = ExtResource("7_cmhlk")
+
+[node name="btn_yellow4" type="TextureButton" parent="."]
+material = ExtResource("3_alvqq")
+use_parent_material = true
+custom_minimum_size = Vector2(27, 27)
+offset_left = -121.0
+offset_top = 31.0
+offset_right = 6.0
+offset_bottom = 77.0
+texture_normal = ExtResource("3_51yud")
+texture_hover = ExtResource("7_cmhlk")
 
 [node name="btn_pink" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
 custom_minimum_size = Vector2(27, 27)
-offset_left = 94.0
-offset_top = 16.0
-offset_right = 121.0
-offset_bottom = 43.0
+offset_left = 118.0
+offset_top = -67.0
+offset_right = 247.0
+offset_bottom = -23.0
 texture_normal = ExtResource("6_gvuwq")
+texture_hover = ExtResource("9_oxg5d")
 
 [node name="btn_pink2" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
 custom_minimum_size = Vector2(27, 27)
-offset_left = 94.0
-offset_top = 43.0
-offset_right = 121.0
-offset_bottom = 70.0
+offset_left = 125.0
+offset_top = -33.0
+offset_right = 254.0
+offset_bottom = 11.0
 texture_normal = ExtResource("6_gvuwq")
+texture_hover = ExtResource("9_oxg5d")
 
 [node name="btn_pink3" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
 custom_minimum_size = Vector2(27, 27)
-offset_left = 94.0
-offset_top = 70.0
-offset_right = 121.0
-offset_bottom = 97.0
+offset_left = 122.0
+offset_top = -2.0
+offset_right = 251.0
+offset_bottom = 42.0
 texture_normal = ExtResource("6_gvuwq")
+texture_hover = ExtResource("9_oxg5d")
 
 [node name="btn_pink4" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
 custom_minimum_size = Vector2(27, 27)
-offset_left = 94.0
-offset_top = 97.0
-offset_right = 121.0
-offset_bottom = 124.0
+offset_left = 128.0
+offset_top = 31.0
+offset_right = 257.0
+offset_bottom = 75.0
 texture_normal = ExtResource("6_gvuwq")
+texture_hover = ExtResource("9_oxg5d")
 
 [node name="btn_blue" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
 custom_minimum_size = Vector2(27, 27)
-offset_left = 121.0
-offset_top = 16.0
-offset_right = 148.0
-offset_bottom = 43.0
+offset_left = 16.0
+offset_top = -67.0
+offset_right = 143.0
+offset_bottom = -21.0
 texture_normal = ExtResource("7_dqdrm")
+texture_hover = ExtResource("10_6e8u2")
 
 [node name="btn_blue2" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
 custom_minimum_size = Vector2(27, 27)
-offset_left = 121.0
-offset_top = 43.0
-offset_right = 148.0
-offset_bottom = 70.0
+offset_left = 22.0
+offset_top = -32.0
+offset_right = 149.0
+offset_bottom = 14.0
 texture_normal = ExtResource("7_dqdrm")
+texture_hover = ExtResource("10_6e8u2")
 
 [node name="btn_blue3" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
 custom_minimum_size = Vector2(27, 27)
-offset_left = 121.0
-offset_top = 70.0
-offset_right = 148.0
-offset_bottom = 97.0
+offset_left = 14.0
+offset_top = -3.0
+offset_right = 141.0
+offset_bottom = 43.0
 texture_normal = ExtResource("7_dqdrm")
+texture_hover = ExtResource("10_6e8u2")
 
 [node name="btn_blue4" type="TextureButton" parent="."]
 material = ExtResource("3_alvqq")
 use_parent_material = true
 custom_minimum_size = Vector2(27, 27)
-offset_left = 121.0
-offset_top = 97.0
-offset_right = 148.0
-offset_bottom = 124.0
+offset_left = 15.0
+offset_top = 32.0
+offset_right = 142.0
+offset_bottom = 78.0
 texture_normal = ExtResource("7_dqdrm")
+texture_hover = ExtResource("10_6e8u2")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_knny6")
@@ -238,18 +218,14 @@ bus = &"Sound"
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
 [connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]
-[connection signal="button_up" from="btn_yellow" to="." method="_on_btn_yellow_button_up"]
-[connection signal="button_up" from="btn_yellow2" to="." method="_on_btn_yellow_2_button_up"]
-[connection signal="button_up" from="btn_yellow3" to="." method="_on_btn_yellow_3_button_up"]
-[connection signal="button_up" from="btn_yellow4" to="." method="_on_btn_yellow_4_button_up"]
-[connection signal="button_up" from="btn_orange" to="." method="_on_btn_orange_button_up"]
-[connection signal="button_up" from="btn_orange2" to="." method="_on_btn_orange_2_button_up"]
-[connection signal="button_up" from="btn_orange3" to="." method="_on_btn_orange_3_button_up"]
-[connection signal="button_up" from="btn_orange4" to="." method="_on_btn_orange_4_button_up"]
 [connection signal="button_up" from="btn_red" to="." method="_on_btn_red_button_up"]
 [connection signal="button_up" from="btn_red2" to="." method="_on_btn_red_2_button_up"]
 [connection signal="button_up" from="btn_red3" to="." method="_on_btn_red_3_button_up"]
 [connection signal="button_up" from="btn_red4" to="." method="_on_btn_red_4_button_up"]
+[connection signal="button_up" from="btn_yellow" to="." method="_on_btn_yellow_button_up"]
+[connection signal="button_up" from="btn_yellow2" to="." method="_on_btn_yellow_2_button_up"]
+[connection signal="button_up" from="btn_yellow3" to="." method="_on_btn_yellow_3_button_up"]
+[connection signal="button_up" from="btn_yellow4" to="." method="_on_btn_yellow_4_button_up"]
 [connection signal="button_up" from="btn_pink" to="." method="_on_btn_pink_button_up"]
 [connection signal="button_up" from="btn_pink2" to="." method="_on_btn_pink_2_button_up"]
 [connection signal="button_up" from="btn_pink3" to="." method="_on_btn_pink_3_button_up"]

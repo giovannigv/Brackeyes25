@@ -1,4 +1,4 @@
-[gd_scene load_steps=47 format=3 uid="uid://cik30de5gaaah"]
+[gd_scene load_steps=46 format=3 uid="uid://cik30de5gaaah"]
 
 [ext_resource type="Script" path="res://scenes/ingame_scene.gd" id="1_objyc"]
 [ext_resource type="PackedScene" uid="uid://bkk87o2ooo6at" path="res://ui/overlays/fade_overlay.tscn" id="1_y6ebv"]
@@ -317,11 +317,10 @@ rotation = 1.5708
 scale = Vector2(1, 1.175)
 
 [node name="Pad" parent="." instance=ExtResource("13_4vwrj")]
-position = Vector2(698, 810)
-scale = Vector2(1.24, 1.24)
+position = Vector2(888, 850)
 
 [node name="Selector" parent="." instance=ExtResource("14_cydub")]
-position = Vector2(1167, 832)
+position = Vector2(1156, 820)
 
 [node name="disp_measurer" parent="." instance=ExtResource("15_we4ge")]
 position = Vector2(922, 624)
