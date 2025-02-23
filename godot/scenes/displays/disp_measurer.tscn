@@ -15,4 +15,4 @@ texture = ExtResource("1_2c1sk")
 position = Vector2(0, 20)
 rotation = -1.5708
 texture = ExtResource("2_2djbw")
-offset = Vector2(0, -10)
+offset = Vector2(0, -9)

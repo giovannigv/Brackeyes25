@@ -19,8 +19,9 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 			disp_hold_button_2.releaseButton()
 			disp_hold_button_3.releaseButton()
 
-func _ready() -> void:
-	disp_hold_button.finish_event.connect(finish_event)
-	
 func finish_event():
 	emiteSinal()
+
+
+func _on_disp_hold_button_finish_event() -> void:
+	finish_event()

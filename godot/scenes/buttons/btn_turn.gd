@@ -14,9 +14,6 @@ var maxRot = 249
 var index = 1
 var gotRight = false
 
-func _ready() -> void:
-	disp_wave.finish_event.connect(gotRightWave)
-
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_action_pressed("click") and !gotRight && (Global.level == 5 || Global.level == 7):
 		if(index > 3):
@@ -34,3 +31,7 @@ func gotRightWave():
 	gotRight = true
 	emit_signal("finish_turn")
 	emiteSinal()
+
+
+func _on_disp_wave_finish_event() -> void:
+	gotRightWave()

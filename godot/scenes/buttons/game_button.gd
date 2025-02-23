@@ -14,7 +14,9 @@ var texture_path_hover: String
 func _ready() -> void:
 	if sprite_2d.texture != null:
 		texture_path = sprite_2d.texture.get_path()
+		print('TEXPATH ', texture_path,' ', sprite_2d.texture.get_path().length() - 4)
 		texture_path_hover = texture_path.insert(sprite_2d.texture.get_path().length() - 4, "_hover")
+		print("texture_path_hover: ", texture_path_hover)
 
 #Quando o botão é clicado, faz algo
 func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:

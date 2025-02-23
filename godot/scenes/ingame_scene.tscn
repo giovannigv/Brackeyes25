@@ -303,9 +303,9 @@ position = Vector2(1613, 970)
 position = Vector2(1282, 773)
 
 [node name="Slider" parent="." instance=ExtResource("12_5ps5e")]
-position = Vector2(874, 704)
+position = Vector2(880, 701)
 rotation = 1.5708
-scale = Vector2(1.045, 1.045)
+scale = Vector2(1, 1.175)
 
 [node name="Pad" parent="." instance=ExtResource("13_4vwrj")]
 position = Vector2(698, 810)
@@ -331,12 +331,6 @@ skew = 0.0506145
 [node name="btn_ok" parent="Computer" instance=ExtResource("19_sbo42")]
 visible = false
 position = Vector2(352.919, 132.101)
-
-[node name="BtnReader" type="Sprite2D" parent="."]
-position = Vector2(1818, 786)
-rotation = 0.445068
-scale = Vector2(1.85227, 2.03731)
-texture = ExtResource("22_8o2tj")
 
 [node name="btn_file" parent="." instance=ExtResource("24_c3uwm")]
 position = Vector2(82, 386)
@@ -428,9 +422,14 @@ bus = &"Sound"
 [node name="Slap" parent="." instance=ExtResource("36_u6ch2")]
 position = Vector2(1599, 417)
 
+[node name="BtnReader" type="Sprite2D" parent="."]
+position = Vector2(1793, 783)
+texture = ExtResource("22_8o2tj")
+
 [connection signal="button_pressed" from="Big F Button 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 2" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="finish_event" from="disp_wave" to="Dial" method="_on_disp_wave_finish_event"]
 [connection signal="button_pressed" from="Dial" to="." method="_on_button_pressed"]
 [connection signal="finish_turn" from="Dial" to="." method="_on_dial_finish_turn"]
 [connection signal="button_pressed" from="Blue Button 1" to="." method="_on_button_pressed"]
@@ -444,3 +443,4 @@ position = Vector2(1599, 417)
 [connection signal="button_pressed" from="Computer/btn_ok" to="." method="_on_btn_ok_button_pressed"]
 [connection signal="button_pressed" from="btn_file" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Blue Button 2" to="." method="_on_blue_button_2_button_pressed"]
+[connection signal="finish_event" from="DispHoldButton" to="Blue Button 2" method="_on_disp_hold_button_finish_event"]
