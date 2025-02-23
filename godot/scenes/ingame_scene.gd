@@ -204,7 +204,12 @@ func _on_button_pressed() -> void:
 				$"Floppy Reader".pressed_this_level = false
 				Global.level = 11
 				$Timer.stop()
+				$KeyDraggable.draggable = true
+				$KeyDraggable.isOn = false
+				$KeyDraggable.is_droped = false
+				$KeyDropzone2.process_mode = Node.PROCESS_MODE_INHERIT
 				showLevelObjective()
+				
 		
 		#8: Nao pode se mexer
 		#9: Gaveta ta sempre disponivel, mas nessa hora tem q pedir para clicar no leitor
@@ -306,3 +311,5 @@ func _on_btn_drawer_got_floppy_disk() -> void:
 	showLevelObjective()
 	Global.level = 10
 	
+func _on_key_draggable_win() -> void:
+	$UI/WinOverlay.set_visible(true)

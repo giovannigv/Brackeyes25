@@ -9,6 +9,7 @@ var is_droped = false # Valida se ja foi deixada no ponto
 var isOn = false
 
 signal turnPCOn
+signal win
 
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @onready var audio_stream_player_2d: AudioStreamPlayer2D = $AudioStreamPlayer2D
@@ -27,10 +28,13 @@ func _process(_delta: float) -> void:
 			#Se clicou, guarda a posição inicial do objeto e a distância entre o objeto e o mouse
 			if Input.is_action_just_pressed("click"):
 				if(is_droped):
-					turnPCOn.emit()
-					isOn = true
-					Global.is_key_dragging = false
-					sprite_2d.texture = ResourceLoader.load("res://art/key/key_turn.png")
+					if Global.level == 11:
+						win.emit()
+					else:
+						turnPCOn.emit()
+						isOn = true
+						Global.is_key_dragging = false
+						sprite_2d.texture = ResourceLoader.load("res://art/key/key_turn.png")
 				initialPos = global_position
 				offset = get_global_mouse_position() - global_position
 				Global.is_key_dragging = true
