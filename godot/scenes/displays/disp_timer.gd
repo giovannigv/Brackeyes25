@@ -7,6 +7,7 @@ const fullTime = 10
 const eachStep = 36 #degree for rotation
 var moved = false
 var isFinish = false
+var pressed_this_level = false
 signal button_pressed
 
 func activateTimer():
@@ -28,6 +29,7 @@ func _process(_delta: float) -> void:
 		sprite_2d.rotation_degrees = 0
 
 func _on_timer_to_complete_timeout() -> void:
-	if(Global.level == 8):
+	if Global.level == 8:
 		isFinish = true
+		pressed_this_level = true
 		button_pressed.emit()

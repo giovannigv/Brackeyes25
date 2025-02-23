@@ -177,15 +177,20 @@ func _on_button_pressed() -> void:
 						$"Tutorial Computer".text = "I'm back. You can stop now!"
 						Global.level = 8
 						reward_player()
-						await get_tree().create_timer(3).timeout
+						#await get_tree().create_timer(3).timeout
 						showLevelObjective()
 						$Slap.set_visible(false)
 			else:
 				punish_player()
+		
 		8:
-			Global.level = 9
-			reward_player()
-			showLevelObjective()
+			if $disp_timer.pressed_this_level == true:
+				$disp_timer.pressed_this_level = false
+				reward_player()
+				Global.level = 9
+				showLevelObjective()
+			else:
+				punish_player()
 		
 		9:
 			Global.level = 10
@@ -207,7 +212,7 @@ func showLevelObjective():
 		6:
 			$"Tutorial Computer".text = "Hold the other Blue Button to insert protons on the inner layer."
 		8:
-			$"Tutorial Computer".text = "DON'T MOVE! To maintain levels of Bibiri Babiri."
+			$"Tutorial Computer".text = "DON'T MOVE to maintain levels of Bibiri Babiri!"
 		9:
 			if(Global.gotDisk):
 				$"Tutorial Computer".text = "INSERT Floppy disk into the reader! \nNOW!"
