@@ -13,27 +13,31 @@ var randomChose = randi_range(1,3)
 
 func _ready() -> void:
 	waves = [disp_first_wave, disp_sec_wave, disp_third_wave, disp_four_wave]
-# So serve para a primeira vez q liga ele, precisa ter pra segunda
+
 func changeWave():
-	if(index > 2):
-		index = 0
-		waves[3].set_visible(false)
-		waves[index].set_visible(true)
-	else:
-		if(index == 0):
+	match index:
+		0: 
+			waves[0].set_visible(true)
 			waves[3].set_visible(false)
-			waves[index].set_visible(true)
-		else:
-			waves[index].set_visible(true)
-			waves[index-1].set_visible(false)
-			index += 1
+		1:
+			waves[1].set_visible(true)
+			waves[0].set_visible(false)
+		2:
+			waves[2].set_visible(true)
+			waves[1].set_visible(false)
+		3:
+			waves[3].set_visible(true)
+			waves[2].set_visible(false)
 	if(index == randomChose):
 		finish_event.emit()
+	else:
+		index += 1
 
-func restart():
-	index = 0
-	randomChose = randi_range(1,3)
-	disp_first_wave.set_visible(true)
-	disp_sec_wave.set_visible(false)
-	disp_third_wave.set_visible(false)
-	disp_four_wave.set_visible(false)
+#Usar apenas se tiver uma segunda tentativa
+#func restart():
+	#index = 0
+	#randomChose = randi_range(1,3)
+	#disp_first_wave.set_visible(true)
+	#disp_sec_wave.set_visible(false)
+	#disp_third_wave.set_visible(false)
+	#disp_four_wave.set_visible(false)

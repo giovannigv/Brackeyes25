@@ -1,36 +1,23 @@
-[gd_scene load_steps=5 format=3 uid="uid://6oxbkg1c5cbk"]
+[gd_scene load_steps=4 format=3 uid="uid://6oxbkg1c5cbk"]
 
-[ext_resource type="Script" path="res://scenes/buttons/game_button.gd" id="1_3hcq0"]
+[ext_resource type="Script" path="res://scenes/buttons/slap.gd" id="1_j41by"]
 [ext_resource type="Texture2D" uid="uid://8mwumub1daqt" path="res://art/slap.png" id="2_bxuoi"]
 
-[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_sm6vj"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dtmfe"]
+size = Vector2(131, 131)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pju6e"]
-size = Vector2(135, 135)
-
-[node name="slap" type="Node2D"]
-script = ExtResource("1_3hcq0")
+[node name="Slap" type="Node2D"]
+script = ExtResource("1_j41by")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = SubResource("PlaceholderTexture2D_sm6vj")
-
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-position = Vector2(67.5, 67.5)
-scale = Vector2(0.337, 0.337)
+position = Vector2(67, 67)
+scale = Vector2(0.337656, 0.337969)
 texture = ExtResource("2_bxuoi")
 
 [node name="Area2D" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(67.5, 67.5)
-shape = SubResource("RectangleShape2D_pju6e")
-
-[node name="ColorRect" type="ColorRect" parent="."]
-offset_right = 90.0
-offset_bottom = 90.0
-scale = Vector2(1.5, 1.5)
-color = Color(0.196078, 0.196078, 0.196078, 0.603922)
+position = Vector2(65.5, 67)
+shape = SubResource("RectangleShape2D_dtmfe")
 
 [connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
-[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
-[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

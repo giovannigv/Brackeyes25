@@ -1,34 +1,29 @@
-[gd_scene load_steps=7 format=3 uid="uid://dwy6jpf5ox0fk"]
+[gd_scene load_steps=6 format=3 uid="uid://dwy6jpf5ox0fk"]
 
-[ext_resource type="Texture2D" uid="uid://tyyqlve28ven" path="res://art/displays/disp_wave.png" id="1_2q5wr"]
 [ext_resource type="Script" path="res://scenes/displays/disp_wave.gd" id="1_rpsif"]
-[ext_resource type="Texture2D" uid="uid://dgwdlsatdyjo6" path="res://art/displays/disp_first_wave.png" id="2_hvr8h"]
-[ext_resource type="Texture2D" uid="uid://bbe2irbdg4vii" path="res://art/displays/disp_sec_wave.png" id="3_idfkq"]
-[ext_resource type="Texture2D" uid="uid://d0hvef2g0xnvl" path="res://art/displays/disp_third_wave.png" id="4_andn0"]
-[ext_resource type="Texture2D" uid="uid://rf2vwbgpjkp" path="res://art/displays/disp_four_wave.png" id="5_l5e7v"]
+[ext_resource type="Texture2D" uid="uid://clc8il64fr6ik" path="res://art/displays/disp_wave1.png" id="2_o1aru"]
+[ext_resource type="Texture2D" uid="uid://b7n6q8t8rdtg8" path="res://art/displays/disp_wave2.png" id="3_8nbn3"]
+[ext_resource type="Texture2D" uid="uid://yafelohs0vsi" path="res://art/displays/disp_wave3.png" id="4_q11oa"]
+[ext_resource type="Texture2D" uid="uid://pdkht8wwufqj" path="res://art/displays/disp_wave4.png" id="5_ts8dx"]
 
 [node name="disp_wave" type="Node2D"]
 script = ExtResource("1_rpsif")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(52, 31)
-texture = ExtResource("1_2q5wr")
-
 [node name="DispFirstWave" type="Sprite2D" parent="."]
 position = Vector2(52, 39)
-texture = ExtResource("2_hvr8h")
+texture = ExtResource("2_o1aru")
 
 [node name="DispSecWave" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(52, 39)
-texture = ExtResource("3_idfkq")
+texture = ExtResource("3_8nbn3")
 
 [node name="DispThirdWave" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(52, 39)
-texture = ExtResource("4_andn0")
+texture = ExtResource("4_q11oa")
 
 [node name="DispFourWave" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(52, 39)
-texture = ExtResource("5_l5e7v")
+texture = ExtResource("5_ts8dx")

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://rf2vwbgpjkp"
-path="res://.godot/imported/disp_four_wave.png-c55c5cafeb69322e51e25ead733bb560.ctex"
+uid="uid://pdkht8wwufqj"
+path="res://.godot/imported/disp_wave4.png-208b3f89961157b79a62370a45b3b47f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://art/displays/disp_four_wave.png"
-dest_files=["res://.godot/imported/disp_four_wave.png-c55c5cafeb69322e51e25ead733bb560.ctex"]
+source_file="res://art/displays/disp_wave4.png"
+dest_files=["res://.godot/imported/disp_wave4.png-208b3f89961157b79a62370a45b3b47f.ctex"]
 
 [params]
 

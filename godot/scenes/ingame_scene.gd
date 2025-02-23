@@ -29,24 +29,24 @@ func _process(_delta: float) -> void:
 		tween.tween_property($SFX/Music, "volume_db", 0, 0.1)
 		tween.tween_property($SFX/Music2, "volume_db", -80, 0.1)
 		tween.tween_property($SFX/Music3, "volume_db", -80, 0.1)
-		$SFX/alarm2.stop()
-		$SFX/alarm1.stop()
+		#$SFX/alarm2.stop()
+		#$SFX/alarm1.stop()
 	elif stability <= 0.55 && stability >= 0.33:
-		$SFX/alarm2.stop()
+		#$SFX/alarm2.stop()
 		var tween = create_tween()
 		tween.tween_property($SFX/Music, "volume_db", -80, 0.1)
 		tween.tween_property($SFX/Music2, "volume_db", -0, 0.1)
 		tween.tween_property($SFX/Music3, "volume_db", -80, 0.1)
 		
-		$SFX/alarm1.play()
+		#$SFX/alarm1.play()
 	elif stability <= 0.32 && stability >= 0:
-		$SFX/alarm1.stop()
+		#$SFX/alarm1.stop()
 		var tween = create_tween()
 		tween.tween_property($SFX/Music, "volume_db", -80, 0.1)
 		tween.tween_property($SFX/Music2, "volume_db", -80, 0.1)
 		tween.tween_property($SFX/Music3, "volume_db", 0, 0.1)
 		
-		$SFX/alarm2.play()
+		#$SFX/alarm2.play()
 
 func _input(event) -> void:
 	if event.is_action_pressed("pause") and not pause_overlay.visible:

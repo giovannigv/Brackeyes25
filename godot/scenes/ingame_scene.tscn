@@ -234,10 +234,10 @@ autoplay = "move_tutorial"
 [node name="Tutorial Computer" type="Label" parent="."]
 visible = false
 z_index = 2
-offset_left = 1245.0
-offset_top = 110.0
-offset_right = 1652.0
-offset_bottom = 411.0
+offset_left = 1265.0
+offset_top = 99.0
+offset_right = 1672.0
+offset_bottom = 400.0
 rotation = 0.0785398
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_constants/line_spacing = 10
@@ -294,14 +294,10 @@ fill_mode = 3
 texture_progress = ExtResource("15_6ptmx")
 
 [node name="disp_wave" parent="." instance=ExtResource("34_tmhbh")]
-position = Vector2(1304, 596)
-rotation = 0.140813
-scale = Vector2(2, 2)
+position = Vector2(1354, 634)
 
 [node name="Dial" parent="." instance=ExtResource("10_ttvc3")]
-position = Vector2(1615, 968)
-rotation = 0.436332
-scale = Vector2(0.54, 0.54)
+position = Vector2(1613, 970)
 
 [node name="Blue Button 1" parent="." instance=ExtResource("11_72awg")]
 position = Vector2(1282, 773)
@@ -319,7 +315,7 @@ scale = Vector2(1.24, 1.24)
 position = Vector2(1004, 831)
 
 [node name="disp_measurer" parent="." instance=ExtResource("15_we4ge")]
-position = Vector2(921, 621)
+position = Vector2(922, 624)
 scale = Vector2(1.41, 1.41)
 
 [node name="disp_measurer2" parent="." instance=ExtResource("15_we4ge")]
@@ -388,9 +384,6 @@ scale = Vector2(0.5, 0.5)
 visible = false
 position = Vector2(445, 311)
 
-[node name="Slap" parent="." instance=ExtResource("36_u6ch2")]
-position = Vector2(1587, 404)
-
 [node name="disp_timer" parent="." instance=ExtResource("36_q1iga")]
 position = Vector2(134, 907)
 
@@ -432,6 +425,9 @@ bus = &"Sound"
 stream = ExtResource("39_f63rw")
 bus = &"Sound"
 
+[node name="Slap" parent="." instance=ExtResource("36_u6ch2")]
+position = Vector2(1599, 417)
+
 [connection signal="button_pressed" from="Big F Button 1" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Big F Button 2" to="." method="_on_button_pressed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
@@ -448,4 +444,3 @@ bus = &"Sound"
 [connection signal="button_pressed" from="Computer/btn_ok" to="." method="_on_btn_ok_button_pressed"]
 [connection signal="button_pressed" from="btn_file" to="." method="_on_button_pressed"]
 [connection signal="button_pressed" from="Blue Button 2" to="." method="_on_blue_button_2_button_pressed"]
-[connection signal="button_pressed" from="Slap" to="." method="_on_button_pressed"]
