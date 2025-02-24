@@ -202,7 +202,13 @@ func _on_button_pressed() -> void:
 		10:
 			if $"Floppy Reader".pressed_this_level == true:
 				$"Floppy Reader".pressed_this_level = false
+				showLevelObjective()
 				Global.level = 11
+		#end game
+		11:
+			if $"Big F Button 1".pressed_this_level == true || $"Big F Button 2".pressed_this_level == true:
+				$"Big F Button 1".pressed_this_level = false
+				$"Big F Button 2".pressed_this_level = false
 				$Timer.stop()
 				$KeyDraggable.draggable = true
 				$KeyDraggable.isOn = false
@@ -210,13 +216,6 @@ func _on_button_pressed() -> void:
 				$KeyDropzone2.process_mode = Node.PROCESS_MODE_INHERIT
 				showLevelObjective()
 				
-		
-		#8: Nao pode se mexer
-		#9: Gaveta ta sempre disponivel, mas nessa hora tem q pedir para clicar no leitor
-		#10: Apertar os dois botoes ao mesmo tempo
-		#11: Devoler chaves
-		
-		
 func showLevelObjective():
 	match Global.level:
 		6:
@@ -228,8 +227,8 @@ func showLevelObjective():
 				$"Tutorial Computer".text = "tutorial_19"
 			else:
 				$"Tutorial Computer".text = "tutorial_18"
-		#10:
-			#$"Tutorial Computer".text = "To SHUTDOWN the engine, \nyou have to press the two BIG Buttons at the same time!"
+		10:
+			$"Tutorial Computer".text = "To SHUTDOWN the engine, \nyou have to press the two BIG Buttons at the same time!"
 		11:
 			$"Tutorial Computer".text = "tutorial_20"
 			

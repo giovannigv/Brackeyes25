@@ -18,6 +18,7 @@ resume_game,Resume game,Weiterspielen,Continuar
 restart_game,Restart game,Spiel neu starten,Reiniciar
 game_over,Game Over,Spiel vorbei,Fim de Jogo
 game_win,You Won,Sie haben gewonnen,Parabéns
+back_menu,Return to Menu,zurück zum Menü,Volte ao menu
 tutorial_1,One more day at work.\nI'll have to turn on the computer as always to see how the reactor is doing.\nWhat could go wrong?\n(Grab the key and turn it on),Noch ein Arbeitstag.\nIch muss wie immer den Computer einschalten um zu sehen wie es dem Reaktor geht.\nWas könnte schief gehen?\n(Nehmen Sie den Schlüssel und schalten Sie ihn ein),Mais um dia de trabalho.\nTerei que ligar o computador como sempre para ver como está o reator.\nO que pode dar errado?\n(Pegue a chave e ligue-o)
 tutorial_2,Looks like I need the password for today.\nIt should be in a notebook or file around here.\nI should look around.,Anscheinend brauche ich das Passwort für heute.\nEs sollte sich hier in einem Notizbuch oder einer Datei befinden.\nIch sollte mich umschauen.,Parece que preciso da senha para hoje.\nEla deve estar em um caderno ou arquivo por aqui.\nDevo dar uma olhada.
 tutorial_3,It says here that the password is 0451.,Hier steht dass das Passwort 0451 ist.,Diz aqui que a senha é 0451.
@@ -38,3 +39,4 @@ tutorial_17,DON'T MOVE to maintain levels of Bibiri Babiri!,BEWEGEN SIE SICH NIC
 tutorial_18,To restore core temporal health you need to find \nTODAY'S\n floppy disk.,Um die temporale Gesundheit des Kerns wiederherzustellen müssen Sie \nHEUTE\n die Diskette finden.,Para restaurar a integridade temporal central você precisa encontrar o disquete de\nHOJE.
 tutorial_19,INSERT the floppy disk into the reader! \nNOW!,Legen Sie die Diskette in das Lesegerät ein! \nJETZT!,INSIRA o disquete no leitor! \nAGORA!
 tutorial_20,Congrats! You actually avoided a HUGE meltdown mayhem. \n Before you go don't forget to send the keys back to Wesley.,Glückwunsch! Sie haben tatsächlich eine RIESIGE Kernschmelze vermieden. \n Bevor du gehst vergiss nicht die Schlüssel an Wesley zurückzusenden.,Parabéns! Na verdade você evitou um ENORME colapso. \n Antes de ir não se esqueça de devolver as chaves para Wesley.
+tutoiral_21,Hurry! SHUTDOWN the engine! \nYou have to press the two BIG Buttons at the same time!,Beeil dich! Schalte den Motor ab! \Du musst die beiden GROSSEN Knöpfe gleichzeitig drücken!,Rápido! DESLIGUE o motor! \Você tem que apertar os dois botões GRANDES ao mesmo tempo!

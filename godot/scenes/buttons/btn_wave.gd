@@ -13,4 +13,3 @@ func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int
 				sprite_button.rotation = 249
 				emiteSinal()
 				
-			print("End: ", sprite_button.rotation_degrees)

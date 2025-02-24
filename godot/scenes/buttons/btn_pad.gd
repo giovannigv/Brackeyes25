@@ -41,11 +41,9 @@ func padControl(namePad: String):
 	#Lembrar q esse materi btn_active_mat é POC pra teste
 	if(array[index] == namePad):
 		index += 1
-		print("Correct")
 		showOrder(index)
 	else:
 		index = 0
-		print("Wrong")
 	audio_stream_player_2d.play()
 
 #ISSO É GAMBIARRA TIRAR DEPOIS DA NOVA SPRITE

@@ -38,10 +38,8 @@ func verifyButton(nameButton: String) -> void:
 	audio_stream_player_2d.play()
 	if started == true:
 		if chosen.name == button_dict[nameButton]:
-			print("Correct")
 			emit_signal("picked_correct")
 		else:
-			print("Wrong")
 			chooseRandomButton()
 
 func chooseRandomButton():

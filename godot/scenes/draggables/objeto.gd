@@ -59,11 +59,9 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 		
 func whereIsHolding(name: String):
 	if(name == "Dropzone2"):
-		print('2')
 		$"../Big F Button 2".isPressing = true
 		
 	if(name == "Dropzone3"):
-		print('1')
 		$"../Big F Button 1".isPressing = true
 		
 	
